@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import Home from "./routes/home";
 import About from "./routes/about";
+import Prompts from "./routes/prompts";
 import ErrorPage from "./error-page";
 
 function App() {
@@ -14,11 +15,12 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <Home /> },
-        { path: "/home", element: <Home /> },
+        { path: "home", element: <Home /> },
         {
           path: "about",
           element: <About />,
         },
+        { path: "prompts", element: <Prompts /> },
       ],
     },
   ]);
