@@ -1,4 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { Box, Flex, Center, Button } from "@chakra-ui/react";
 /**
  *
  * photo background considering
@@ -9,8 +10,13 @@ import { Box } from "@chakra-ui/react";
  */
 
 export default function Home() {
+  const navigate = useNavigate();
   const backgroundImgUrl: string =
     "https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+  function goToPrompts() {
+    navigate("/prompts");
+  }
   return (
     <>
       <Box
@@ -20,7 +26,22 @@ export default function Home() {
         height="100vh"
         rounded="md"
       >
-        <h1>homepage</h1>
+        <Flex
+          width={"100vw"}
+          height={"100vh"}
+          alignContent={"center"}
+          justifyContent={"center"}
+          flexDir={"column"}
+        >
+          <Center>
+            <h1>homepage</h1>
+          </Center>
+          <Center>
+            <Button onClick={goToPrompts} colorScheme="teal">
+              Get Started
+            </Button>
+          </Center>
+        </Flex>
       </Box>
     </>
   );
