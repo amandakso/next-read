@@ -1,3 +1,9 @@
+import Sidebar from "../components/Sidebar";
+
 export default function Prompts() {
-  return <h1>prompts</h1>;
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
 }
