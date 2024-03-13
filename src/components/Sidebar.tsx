@@ -19,14 +19,15 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 interface LinkItemProps {
   name: string;
   icon?: React.ReactNode;
+  url: string;
 }
 const LinkItems: Array<LinkItemProps> = [
-  { name: "Genre" },
-  { name: "Title" },
-  { name: "Publish Date" },
-  { name: "Best Sellers" },
-  { name: "Personal Faves" },
-  { name: "Customize" },
+  { name: "Genre", url: "genre" },
+  { name: "Title", url: "title" },
+  { name: "Publish Date", url: "publish-date" },
+  { name: "Best Sellers", url: "best-sellers" },
+  { name: "Personal Faves", url: "faves" },
+  { name: "Customize", url: "customize" },
 ];
 
 export default function SimpleSidebar() {
@@ -82,6 +83,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {LinkItems.map((link) => (
         <NavItem
           key={link.name}
+          url={link.url}
           /*icon={link.icon} */
         >
           {link.name}
@@ -94,12 +96,13 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
 interface NavItemProps extends FlexProps {
   icon?: React.ReactNode;
   children: React.ReactNode;
+  url: string;
 }
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, children, url, ...rest }: NavItemProps) => {
   return (
     <Box
       as="a"
-      href="#"
+      href={`/prompts/${url}`}
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
     >

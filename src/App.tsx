@@ -5,6 +5,7 @@ import Root from "./routes/root";
 import Home from "./routes/home";
 import About from "./routes/about";
 import Prompts from "./routes/prompts";
+import Category from "./routes/category";
 import ErrorPage from "./error-page";
 
 function App() {
@@ -20,7 +21,11 @@ function App() {
           path: "about",
           element: <About />,
         },
-        { path: "prompts", element: <Prompts /> },
+        {
+          path: "prompts",
+          element: <Prompts />,
+          children: [{ path: ":category", element: <Category /> }],
+        },
       ],
     },
   ]);
