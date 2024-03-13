@@ -14,6 +14,7 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <Home /> },
+        { path: "/home", element: <Home /> },
         {
           path: "about",
           element: <About />,
