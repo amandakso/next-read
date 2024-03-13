@@ -65,7 +65,7 @@ export default function Nav() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link} href={link.toLowerCase()}>
+                <NavLink key={link} href={`/${link.toLowerCase()}`}>
                   {link}
                 </NavLink>
               ))}
@@ -84,7 +84,7 @@ export default function Nav() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link} href={link.toLocaleLowerCase()}>
+                <NavLink key={link} href={`/${link.toLowerCase()}`}>
                   {link}
                 </NavLink>
               ))}
