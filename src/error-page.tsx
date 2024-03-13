@@ -1,8 +1,8 @@
 import { useRouteError } from "react-router-dom";
+import { Link, Text } from "@chakra-ui/react";
 
 export default function ErrorPage() {
   const error: unknown = useRouteError();
-  console.error(error);
 
   return (
     <div id="error-page">
@@ -14,6 +14,12 @@ export default function ErrorPage() {
             (error as { statusText?: string })?.statusText}
         </i>
       </p>
+      <Text>
+        Return to home page{" "}
+        <Link color="teal.500" href="/home">
+          CLICK HERE
+        </Link>
+      </Text>
     </div>
   );
 }
