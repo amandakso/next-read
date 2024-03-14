@@ -7,6 +7,7 @@ interface CategoryPageProps {
 export default function CategoryPage(props: CategoryPageProps) {
   const category = props.category;
   const validCategories = [
+    "genre",
     "title",
     "publish-date",
     "best-sellers",
