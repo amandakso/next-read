@@ -1,3 +1,13 @@
+import { useParams } from "react-router-dom";
+
+import CategoryPage from "../components/CategoryPage";
+
 export default function Category() {
-  return <h1>Category</h1>;
+  const { category } = useParams();
+
+  return (
+    <>
+      <CategoryPage category={category} />
+    </>
+  );
 }
