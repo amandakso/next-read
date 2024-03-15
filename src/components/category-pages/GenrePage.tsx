@@ -4,6 +4,7 @@ import { getRandomIndexNumber } from "../../utilities/helpers";
 import { genres } from "../../utilities/constants";
 export default function GenrePage() {
   const [genrePrompt, setGenrePrompt] = useState<string>("");
+  const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
 
   function generateGenrePrompt() {
     const max = genres.length;
@@ -15,6 +16,7 @@ export default function GenrePage() {
     const prompt = generateGenrePrompt();
     console.log(prompt);
     setGenrePrompt(prompt.prompt);
+    setIsPrompt(true);
   }
 
   return (
@@ -25,7 +27,7 @@ export default function GenrePage() {
       <Button onClick={handleGenreClick} colorScheme="teal">
         Generate Prompt
       </Button>
-      <Text>{genrePrompt}</Text>
+      {isPromptGenerated ? <Text>{genrePrompt}</Text> : null}
     </>
   );
 }
