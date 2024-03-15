@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Heading, Button, Text } from "@chakra-ui/react";
 import { getRandomIndexNumber } from "../../utilities/helpers";
-import { genres, testResponse, Book } from "../../utilities/constants";
+import { genres, testResponse, BookInterface } from "../../utilities/constants";
+import Books from "../../components/Books";
 export default function GenrePage() {
   const [genrePrompt, setGenrePrompt] = useState<string>("");
   const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
-  const [books, setBooks] = useState<Book[]>([]);
+  const [books, setBooks] = useState<BookInterface[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false); // check if http get request was received
   const [gotBooks, setGotBooks] = useState<boolean>(false); // check if res json includes books
@@ -38,7 +39,7 @@ export default function GenrePage() {
         if (response.length) {
           if (response.length > 3) {
             const numbersUsed: number[] = [];
-            const bookSuggestions: Book[] = [];
+            const bookSuggestions: BookInterface[] = [];
             const max = response.length;
             while (bookSuggestions.length < 3) {
               const index = getRandomIndexNumber(max);
@@ -114,7 +115,7 @@ export default function GenrePage() {
       {isLoading ? <Text>Finding similar books...</Text> : null}
       {isBooksFetched ? (
         gotBooks ? (
-          <Text>Books found </Text>
+          <Books books={books} />
         ) : (
           <Text>Unable to find book suggestions.</Text>
         )

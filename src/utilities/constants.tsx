@@ -36,7 +36,7 @@ export const genres: Genre[] = [
   },
 ];
 
-export interface Book {
+export interface BookInterface {
   id: string;
   selfLink: string;
   volumeInfo: {
@@ -54,7 +54,7 @@ export interface Book {
 
 interface TestResponse {
   status: number;
-  items: Book[];
+  items: BookInterface[];
 }
 // test item
 export const testResponse: TestResponse = {
