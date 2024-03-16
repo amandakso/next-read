@@ -11,7 +11,7 @@ export default function Books(props: BooksProps) {
   return (
     <Container>
       <Center>
-        <Flex gap="5">
+        <Flex gap="5" flexWrap={{ base: "wrap", md: "nowrap" }}>
           {books.map((book: BookInterface, i: number) => {
             return <Book key={i} book={book} />;
           })}

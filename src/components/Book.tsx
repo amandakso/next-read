@@ -6,6 +6,14 @@ import {
   Stack,
   Heading,
   Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { BookInterface } from "../utilities/constants";
 
@@ -15,8 +23,9 @@ interface BookProps {
 }
 
 export default function Book(props: BookProps) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Card minWidth={"200px"} alignItems={"center"}>
+    <Card width={"200px"} alignItems={"center"}>
       <CardBody>
         <Stack mt="6" spacing="2">
           <Image
@@ -30,9 +39,30 @@ export default function Book(props: BookProps) {
         </Stack>
       </CardBody>
       <CardFooter>
-        <Button maxWidth="125px" variant="solid" colorScheme="teal">
+        <Button
+          onClick={onOpen}
+          maxWidth="125px"
+          variant="solid"
+          colorScheme="teal"
+        >
           Book Details
         </Button>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>{props.book.volumeInfo.title}</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody></ModalBody>
+            <ModalFooter>
+              <Button colorScheme="teal" mr={3} onClick={onClose}>
+                Close
+              </Button>
+              <Button variant="ghost">
+                <Image src="https://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.gif" />
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </CardFooter>
     </Card>
   );
