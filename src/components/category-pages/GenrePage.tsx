@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heading, Button, Text } from "@chakra-ui/react";
+import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
 import { getRandomIndexNumber } from "../../utilities/helpers";
 import { genres, testResponse, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
@@ -28,6 +28,7 @@ export default function GenrePage() {
     setIsBooks(false);
     setGotBooks(false);
     setBooks([]);
+    setIsLoading(false);
 
     // mimic send api book request (add later)
     setTimeout(() => {
@@ -101,25 +102,37 @@ export default function GenrePage() {
 
   return (
     <>
-      <Heading as="h3" size="lg">
-        Genre: TBR prompts based on the category/style of a book{" "}
-      </Heading>
-      <Button
-        isLoading={isLoading}
-        onClick={handleGenreClick}
-        colorScheme="teal"
-      >
-        Generate Prompt
-      </Button>
-      {isPromptGenerated ? <Text>{genrePrompt}</Text> : null}
-      {isLoading ? <Text>Finding similar books...</Text> : null}
-      {isBooksFetched ? (
-        gotBooks ? (
-          <Books books={books} />
-        ) : (
-          <Text>Unable to find book suggestions.</Text>
-        )
-      ) : null}
+      <Container>
+        <Flex
+          flexDirection={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
+          <Heading as="h3" size="lg">
+            Genre: TBR prompts based on the category/style of a book{" "}
+          </Heading>
+          <Button
+            isLoading={isLoading}
+            onClick={handleGenreClick}
+            colorScheme="teal"
+            maxWidth={"150px"}
+          >
+            Generate Prompt
+          </Button>
+          {isPromptGenerated ? <Text>{genrePrompt}</Text> : null}
+          {isLoading ? <Text>Finding similar books...</Text> : null}
+          {isBooksFetched ? (
+            gotBooks ? (
+              <>
+                <Text>Book Suggestions: </Text>
+                <Books books={books} />
+              </>
+            ) : (
+              <Text>Unable to find book suggestions.</Text>
+            )
+          ) : null}
+        </Flex>
+      </Container>
     </>
   );
 }

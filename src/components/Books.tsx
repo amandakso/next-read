@@ -1,4 +1,4 @@
-import { Container } from "@chakra-ui/react";
+import { Container, Flex, Center } from "@chakra-ui/react";
 import { BookInterface } from "../utilities/constants";
 import Book from "./Book";
 
@@ -11,9 +11,13 @@ export default function Books(props: BooksProps) {
   console.log(books);
   return (
     <Container>
-      {books.map((book: BookInterface, i: number) => {
-        return <Book key={i} book={book} />;
-      })}
+      <Center>
+        <Flex gap="5">
+          {books.map((book: BookInterface, i: number) => {
+            return <Book key={i} book={book} />;
+          })}
+        </Flex>
+      </Center>
     </Container>
   );
 }
