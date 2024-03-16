@@ -12,7 +12,8 @@ export function previewBook(url: string) {
       return false;
     }
   }
-  console.log(url);
-  const testUrl = isValidUrl(url);
-  console.log(testUrl);
+  const bookUrl = isValidUrl(url);
+  if (bookUrl) {
+    window.location.href = url;
+  }
 }

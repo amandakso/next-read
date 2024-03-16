@@ -18,6 +18,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { BookInterface } from "../utilities/constants";
+import { previewBook } from "../utilities/helpers";
 
 interface BookProps {
   key: number;
@@ -26,6 +27,7 @@ interface BookProps {
 
 export default function Book(props: BookProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Card width={"200px"} alignItems={"center"}>
       <CardBody>
@@ -80,13 +82,12 @@ export default function Book(props: BookProps) {
                 {props.book.volumeInfo.averageRating
                   ? props.book.volumeInfo.averageRating
                   : "-"}{" "}
-                / 5 &#40;
+                / 5
                 {props.book.volumeInfo.ratingsCount
                   ? props.book.volumeInfo.ratingsCount == 1
-                    ? "1 review"
-                    : props.book.volumeInfo.ratingsCount + " reviews"
+                    ? "(1 review)"
+                    : "(" + props.book.volumeInfo.ratingsCount + " reviews)"
                   : null}
-                &#41;
               </Text>
               {props.book.volumeInfo.maturityRating !== "NOT_MATURE" ? (
                 <Text>Mature Book</Text>
@@ -98,7 +99,10 @@ export default function Book(props: BookProps) {
               <Button colorScheme="teal" mr={3} onClick={onClose}>
                 Close
               </Button>
-              <Button variant="ghost">
+              <Button
+                variant="ghost"
+                onClick={() => previewBook(props.book.volumeInfo.previewLink)}
+              >
                 <Image src="https://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.gif" />
               </Button>
             </ModalFooter>
