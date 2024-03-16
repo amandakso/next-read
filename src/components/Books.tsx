@@ -8,7 +8,6 @@ interface BooksProps {
 
 export default function Books(props: BooksProps) {
   const books = props.books;
-  console.log(books);
   return (
     <Container>
       <Center>

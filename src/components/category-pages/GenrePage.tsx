@@ -20,7 +20,6 @@ export default function GenrePage() {
   async function handleGenreClick() {
     // get and display random genre prompt
     const prompt = generateGenrePrompt();
-    console.log(prompt);
     setGenrePrompt(prompt.prompt);
     setIsPrompt(true);
     setIsLoading(true);
@@ -50,10 +49,8 @@ export default function GenrePage() {
               }
             }
             setBooks(bookSuggestions);
-            console.log(bookSuggestions);
           } else {
             setBooks(response);
-            console.log(response);
           }
           setGotBooks(true);
         } else {
