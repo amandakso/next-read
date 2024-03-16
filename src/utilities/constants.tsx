@@ -38,7 +38,6 @@ export const genres: Genre[] = [
 
 export interface BookInterface {
   id: string;
-  selfLink: string;
   volumeInfo: {
     title: string;
     subtitle?: string;
@@ -50,6 +49,7 @@ export interface BookInterface {
     ratingsCount?: number;
     maturityRating: string;
     imageLinks: { smallThumbnail: string; thumbnail: string };
+    previewLink: string;
   };
 }
 
@@ -60,11 +60,10 @@ interface TestResponse {
 // test item
 export const testResponse: TestResponse = {
   status: 200,
+
   items: [
     {
       id: "OHclhBVv-X4C",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/OHclhBVv-X4C",
       volumeInfo: {
         title: "The Way of Kings",
         subtitle: "Book One of the Stormlight Archive",
@@ -82,12 +81,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=OHclhBVv-X4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=OHclhBVv-X4C&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=1&source=gbs_api",
       },
     },
     {
       id: "6dt_DwAAQBAJ",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/6dt_DwAAQBAJ",
       volumeInfo: {
         title: "Ninth House",
         authors: ["Leigh Bardugo"],
@@ -102,12 +101,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=6dt_DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=6dt_DwAAQBAJ&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=2&source=gbs_api",
       },
     },
     {
       id: "G5tgDQAAQBAJ",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/G5tgDQAAQBAJ",
       volumeInfo: {
         title: "Tower of Dawn",
         authors: ["Sarah J. Maas"],
@@ -124,12 +123,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=G5tgDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=G5tgDQAAQBAJ&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=3&source=gbs_api",
       },
     },
     {
       id: "JMJ0hN01dO4C",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/JMJ0hN01dO4C",
       volumeInfo: {
         title: "Centaur Aisle",
         authors: ["Piers Anthony"],
@@ -146,12 +145,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=JMJ0hN01dO4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=JMJ0hN01dO4C&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=4&source=gbs_api",
       },
     },
     {
       id: "Tv9kLyxuRygC",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/Tv9kLyxuRygC",
       volumeInfo: {
         title: "The Path of Daggers",
         subtitle: "Book Eight of 'The Wheel of Time'",
@@ -169,12 +168,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=Tv9kLyxuRygC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=Tv9kLyxuRygC&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=5&source=gbs_api",
       },
     },
     {
       id: "Ah0QEAAAQBAJ",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/Ah0QEAAAQBAJ",
       volumeInfo: {
         title: "Empire of the Vampire",
         authors: ["Jay Kristoff"],
@@ -189,12 +188,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=Ah0QEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=Ah0QEAAAQBAJ&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=6&source=gbs_api",
       },
     },
     {
       id: "ttI9DDdL7psC",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/ttI9DDdL7psC",
       volumeInfo: {
         title: "The Complete Grimm's Fairy Tales",
         authors: ["Brothers Grimm"],
@@ -211,12 +210,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=ttI9DDdL7psC&printsec=frontcover&img=1&zoom=1&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=ttI9DDdL7psC&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=7&source=gbs_api",
       },
     },
     {
       id: "ZnsZfWOpdukC",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/ZnsZfWOpdukC",
       volumeInfo: {
         title: "Anathem",
         authors: ["Neal Stephenson"],
@@ -231,12 +230,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=ZnsZfWOpdukC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=ZnsZfWOpdukC&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=8&source=gbs_api",
       },
     },
     {
       id: "DmdFf5PnB4wC",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/DmdFf5PnB4wC",
       volumeInfo: {
         title: "Halo: First Strike",
         authors: ["Eric Nylund"],
@@ -253,12 +252,12 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=DmdFf5PnB4wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=DmdFf5PnB4wC&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=9&source=gbs_api",
       },
     },
     {
       id: "gOy07Z1AAR8C",
-      selfLink:
-        "https://content-books.googleapis.com/books/v1/volumes/gOy07Z1AAR8C",
       volumeInfo: {
         title: "Parable of the Talents",
         subtitle: "A Novel",
@@ -276,6 +275,8 @@ export const testResponse: TestResponse = {
           thumbnail:
             "http://books.google.com/books/content?id=gOy07Z1AAR8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         },
+        previewLink:
+          "http://books.google.com/books?id=gOy07Z1AAR8C&printsec=frontcover&dq=subject:fiction/fantasy&hl=&as_pt=BOOKS&cd=10&source=gbs_api",
       },
     },
   ],
