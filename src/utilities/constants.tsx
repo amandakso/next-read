@@ -334,6 +334,81 @@ export interface BookInterface {
   };
 }
 
+// Favorites
+interface Favorite {
+  name: string;
+  id: string;
+  isbn_13?: string;
+}
+
+/**
+ *
+- Phantom Tollbooth
+- Pride and Prejudice
+- The BFG
+- The Things We Carried
+- Charlotte’s Web
+- To Kill a MockingBird
+- Farenheit 451
+- Flowers for Algernon
+- Ender’s Game
+- A Deadly Education
+ */
+export const favorites: Favorite[] = [
+  {
+    name: "Percy Jackson: The Lightning Thief",
+    id: "FFTJDYx_ZiEC",
+    isbn_13: "9781423131892",
+  },
+  {
+    name: "Percy Jackson: Book 4",
+    id: "K_ZF6kZ9MlgC",
+    isbn_13: "9781423131984",
+  },
+  {
+    name: "Series of Unfortunate Events: Book 2",
+    id: "qwEyXbUAHDcC",
+    isbn_13: "9780064407670",
+  },
+  { name: "Babel", id: "ZWRQEAAAQBAJ", isbn_13: "9780063021440" },
+  { name: "The Tainted Cup", id: "-YK9EAAAQBAJ", isbn_13: "9781984820723" },
+  { name: "Divine Rivals", id: "C5BrEAAAQBAJ", isbn_13: "9781250857446" },
+  { name: "The Final Empire", id: "t_ZYYXZq4RgC", isbn_13: "9781429914567" },
+  {
+    name: "The Ballad of Never After",
+    id: "f05VEAAAQBAJ",
+    isbn_13: "9781250268419",
+  },
+  { name: "Emily Wilde Book 1", id: "JtdkEAAAQBAJ", isbn_13: "9780593500149" },
+  { name: "The Giver", id: "oZRlYDfxXpQC", isbn_13: "9780385732550" },
+  {
+    name: "The Phantom Tollbooth",
+    id: "87UWNi83IrIC",
+    isbn_13: "9780394820378",
+  },
+  { name: "Pride & Prejudice", id: "s1gVAAAAYAAJ" },
+  { name: "The BFG", id: "XJH7DAAAQBAJ", isbn_13: "9780141378572" },
+  {
+    name: "The Things We Carried",
+    id: "Op6eKrkxPq4C",
+    isbn_13: "9780547420295",
+  },
+  { name: "Charlotte's Web", id: "WwN4BgAAQBAJ", isbn_13: "9780062406781" },
+  {
+    name: "To Kill a Mockingbird",
+    id: "PGR2AwAAQBAJ",
+    isbn_13: "9780062368683",
+  },
+  { name: "Fahrenheit 451", id: "AU9YtwAACAAJ", isbn_13: "9780671872298" },
+  {
+    name: "Flowers for Algernon",
+    id: "NRWlitmahXkC",
+    isbn_13: "9780156030304",
+  },
+  { name: "Ender's Game", id: "jaM7DwAAQBAJ", isbn_13: "9780765394866" },
+  { name: "A Deadly Education", id: "0YDJDwAAQBAJ", isbn_13: "9780593128497" },
+];
+
 interface TestResponse {
   status: number;
   items: BookInterface[];
