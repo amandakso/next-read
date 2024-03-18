@@ -34,6 +34,287 @@ export const genres: Genre[] = [
     prompt: genrePromptPhrase + "Fantasy",
     search: "fiction/fantasy/general",
   },
+  {
+    name: "Contemporary Fantasy",
+    prompt: genrePromptPhrase + "Contemporary Fantasy",
+    search: "fiction/fantasy/contemporary",
+  },
+  {
+    name: "Historical Fantasy",
+    prompt: genrePromptPhrase + "Historical Fantasy",
+    search: "fiction/fantasy/historical",
+  },
+  {
+    name: "Epic Fantasy",
+    prompt: genrePromptPhrase + "Epic Fantasy",
+    search: "fiction/fantasy/epic",
+  },
+  {
+    name: "Romance Fantasy",
+    prompt: genrePromptPhrase + "Romantasy",
+    search: "fiction/fantasy/romance",
+  },
+  {
+    name: "Urban Fantasy",
+    prompt: genrePromptPhrase + "Urban Fantasy",
+    search: "fiction/fantasy/urban",
+  },
+  {
+    name: "Gothic Fiction",
+    prompt: genrePromptPhrase + "Gothic Fiction",
+    search: "fiction/gothic",
+  },
+  {
+    name: "Graphic Novel",
+    prompt: genrePromptPhrase + "Graphic Novel",
+    search: "graphic+novel",
+  },
+  {
+    name: "Historical Fiction",
+    prompt: genrePromptPhrase + "Historical Fiction",
+    search: "fiction/historical",
+  },
+  {
+    name: "Historical Fiction",
+    prompt: genrePromptPhrase + "Historical Fiction",
+    search: "fiction/historical/general",
+  },
+  {
+    name: "Literary Fiction",
+    prompt: genrePromptPhrase + "Literary Fiction",
+    search: "fiction/literary",
+  },
+  {
+    name: "Magical Realism",
+    prompt: genrePromptPhrase + "Magical Realism",
+    search: "fiction/magical+realism",
+  },
+  {
+    name: "Mystery",
+    prompt: genrePromptPhrase + "Mystery",
+    search: "fiction/mystery+detective",
+  },
+  {
+    name: "Romance Fiction",
+    prompt: genrePromptPhrase + "Romance",
+    search: "fiction/romance",
+  },
+  {
+    name: "Romance Fiction",
+    prompt: genrePromptPhrase + "Romance",
+    search: "fiction/romance/general",
+  },
+  {
+    name: "Contemporary Romance",
+    prompt: genrePromptPhrase + "Contemporary Romance",
+    search: "fiction/romance/contemporary",
+  },
+  {
+    name: "Historical Romance",
+    prompt: genrePromptPhrase + "Historical Romance",
+    search: "fiction/romance/historical",
+  },
+  {
+    name: "Science Fiction",
+    prompt: genrePromptPhrase + "Science Fiction",
+    search: "fiction/science+fiction",
+  },
+  {
+    name: "Science Fiction",
+    prompt: genrePromptPhrase + "Science Fiction",
+    search: "fiction/science+fiction/general",
+  },
+  {
+    name: "Short Stories",
+    prompt: genrePromptPhrase + "Short Stories",
+    search: "fiction/short+stories",
+  },
+  {
+    name: "Biographies",
+    prompt: genrePromptPhrase + "Biographies",
+    search: "biography",
+  },
+  {
+    name: "Thrillers",
+    prompt: genrePromptPhrase + "Thriller",
+    search: "fiction/thrillers",
+  },
+  {
+    name: "Thrillers",
+    prompt: genrePromptPhrase + "Thriller",
+    search: "fiction/thrillers/general",
+  },
+  {
+    name: "Crime Thrillers",
+    prompt: genrePromptPhrase + "Crime Thriller",
+    search: "fiction/thrillers/crime",
+  },
+  {
+    name: "Spy Thrillers",
+    prompt: genrePromptPhrase + "Spy Thriller",
+    search: "fiction/thrillers/espionage",
+  },
+  {
+    name: "Psych Thrillers",
+    prompt: genrePromptPhrase + "Psychological Thriller",
+    search: "fiction/thrillers/psychological",
+  },
+  {
+    name: "Suspense Thrillers",
+    prompt: genrePromptPhrase + "Suspense Thriller",
+    search: "fiction/thrillers/suspense",
+  },
+  {
+    name: "Poetry",
+    prompt: genrePromptPhrase + "Poetry",
+    search: "poetry",
+  },
+  {
+    name: "Poetry",
+    prompt: genrePromptPhrase + "Poetry",
+    search: "poetry/general",
+  },
+
+  {
+    name: "YA Fiction",
+    prompt: genrePromptPhrase + "Young Adult Fiction",
+    search: "young+adult+fiction",
+  },
+  {
+    name: "YA Fiction",
+    prompt: genrePromptPhrase + "Young Adult Fiction",
+    search: "young+adult+fiction/general",
+  },
+  {
+    name: "YA Fiction: Classics",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Classics)",
+    search: "young+adult+fiction/classics",
+  },
+  {
+    name: "YA Fiction: Graphic Novels",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Comics & Graphic Novels)",
+    search: "young+adult+fiction/comics+&+graphic+novels",
+  },
+  {
+    name: "YA Fiction: Graphic Novels",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Comics & Graphic Novels)",
+    search: "young+adult+fiction/comics+&+graphic+novels/general",
+  },
+  {
+    name: "YA Fiction: Dystopian",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Dystopian)",
+    search: "young+adult+fiction/dystopian",
+  },
+  {
+    name: "YA Fiction: Fantasy",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Fantasy)",
+    search: "young+adult+fiction/fantasy",
+  },
+  {
+    name: "YA Fiction: Fantasy",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Fantasy)",
+    search: "young+adult+fiction/fantasy/general",
+  },
+  {
+    name: "YA Fiction: Contemporary Fantasy",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Contemporary Fantasy)",
+    search: "young+adult+fiction/fantasy/contemporary",
+  },
+  {
+    name: "YA Fiction: Epic Fantasy",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Epic Fantasy)",
+    search: "young+adult+fiction/fantasy/epic",
+  },
+  {
+    name: "YA Fiction: Historical Fantasy",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Historical Fantasy)",
+    search: "young+adult+fiction/fantasy/historical",
+  },
+  {
+    name: "YA Fiction: Romance Fantasy",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Romantasy)",
+    search: "young+adult+fiction/fantasy/romance",
+  },
+  {
+    name: "YA Fiction: Historical",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Historical)",
+    search: "young+adult+fiction/historical",
+  },
+  {
+    name: "YA Fiction: Historical",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Historical)",
+    search: "young+adult+fiction/historical/general",
+  },
+  {
+    name: "YA Fiction: Horror",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Horror)",
+    search: "young+adult+fiction/horror",
+  },
+  {
+    name: "YA Fiction: Literary",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Literary)",
+    search: "young+adult+fiction/literary",
+  },
+  {
+    name: "YA Fiction: Magical Realism",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Magical Realism)",
+    search: "young+adult+fiction/magical+realism",
+  },
+  {
+    name: "YA Fiction: Mystery",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Mystery)",
+    search: "young+adult+fiction/mysteries+&+detective+stories",
+  },
+  {
+    name: "YA Fiction: Romance",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Romance)",
+    search: "young+adult+fiction/romance",
+  },
+  {
+    name: "YA Fiction: Romance",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Romance)",
+    search: "young+adult+fiction/romance/general",
+  },
+  {
+    name: "YA Fiction: Contemporary Romance",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Contemporary Romance)",
+    search: "young+adult+fiction/romance/contemporary",
+  },
+  {
+    name: "YA Fiction: Historical Romance",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Historical Romance)",
+    search: "young+adult+fiction/romance/historical",
+  },
+  {
+    name: "YA Fiction: Science Fiction",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Sci Fi)",
+    search: "young+adult+fiction/science+fiction",
+  },
+  {
+    name: "YA Fiction: Science Fiction",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Sci Fi)",
+    search: "young+adult+fiction/science+fiction/general",
+  },
+  {
+    name: "YA Fiction: Thriller",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Thriller)",
+    search: "young+adult+fiction/thrillers+&+suspense",
+  },
+  {
+    name: "YA Fiction: Spy Thriller",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Spy Thriller)",
+    search: "young+adult+fiction/thrillers+&+suspense/espionage",
+  },
+  {
+    name: "YA Fiction: Psychological Thriller",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Psychological Thriller)",
+    search: "young+adult+fiction/thrillers+&+suspense/psychological",
+  },
+  {
+    name: "YA Fiction: Crime Thriller",
+    prompt: genrePromptPhrase + "Young Adult Fiction (Crime Thriller)",
+    search: "young+adult+fiction/thrillers+&+suspense/crime",
+  },
 ];
 
 export interface BookInterface {
