@@ -3,6 +3,7 @@ import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
 import { getRandomIndexNumber } from "../../utilities/helpers";
 import { genres, testResponse, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
+
 export default function GenrePage() {
   const [genrePrompt, setGenrePrompt] = useState<string>("");
   const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
@@ -19,6 +20,7 @@ export default function GenrePage() {
 
   async function handleGenreClick() {
     // get and display random genre prompt
+    const api_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
     const prompt = generateGenrePrompt();
     setGenrePrompt(prompt.prompt);
     setIsPrompt(true);
@@ -29,7 +31,25 @@ export default function GenrePage() {
     setBooks([]);
     setIsLoading(false);
 
+    try {
+      const res = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=subject/${prompt.search}&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`,
+        {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const resJson = await res.json();
+      console.log(resJson);
+    } catch (err) {
+      console.error(err);
+    }
+
     // mimic send api book request (add later)
+    /*
     setTimeout(() => {
       console.log("Delayed for 3 second.");
       const response = testResponse.items;
@@ -63,7 +83,7 @@ export default function GenrePage() {
         setGotBooks(false);
         setBooks([]);
         setIsLoading(false);
-      }
+      } 
 
       /**
        * check status
@@ -93,8 +113,8 @@ export default function GenrePage() {
        * loading false
        *
        *
-       */
-    }, 3000);
+       *
+    }, 3000); */
   }
 
   return (
