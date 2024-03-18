@@ -33,7 +33,7 @@ export default function GenrePage() {
 
     try {
       const res = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=subject:${prompt.search}&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`,
+        `https://www.googleapis.com/books/v1/volumes?q=subject:"${prompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`,
         {
           method: "GET",
           mode: "cors",
@@ -52,7 +52,7 @@ export default function GenrePage() {
         setIsLoading(false);
       } else {
         // display book results
-        if (resJson.items.length) {
+        if (resJson.items) {
           if (resJson.items.length > 3) {
             const numbersUsed: number[] = [];
             const bookSuggestions: BookInterface[] = [];
