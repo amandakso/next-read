@@ -263,7 +263,7 @@ export const genres: Genre[] = [
   {
     name: "YA Fiction: Mystery",
     prompt: genrePromptPhrase + "Young Adult Fiction (Mystery)",
-    search: "young+adult+fiction/mysteries+&+detective+stories",
+    search: "young+adult+fiction/mysteries+detective+stories",
   },
   {
     name: "YA Fiction: Romance",
