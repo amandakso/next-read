@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
 import { getRandomIndexNumber } from "../../utilities/helpers";
-import { genres, testResponse, BookInterface } from "../../utilities/constants";
+import { genres, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
 
 export default function GenrePage() {
@@ -33,7 +33,7 @@ export default function GenrePage() {
 
     try {
       const res = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=subject/${prompt.search}&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`,
+        `https://www.googleapis.com/books/v1/volumes?q=subject:${prompt.search}&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`,
         {
           method: "GET",
           mode: "cors",
@@ -43,78 +43,46 @@ export default function GenrePage() {
         }
       );
       const resJson = await res.json();
-      console.log(resJson);
-    } catch (err) {
-      console.error(err);
-    }
 
-    // mimic send api book request (add later)
-    /*
-    setTimeout(() => {
-      console.log("Delayed for 3 second.");
-      const response = testResponse.items;
-      const status = testResponse.status;
-      setIsBooks(true);
-      if (status == 200) {
-        if (response.length) {
-          if (response.length > 3) {
+      if (resJson.error) {
+        // unable to fetch books
+        setIsBooks(true);
+        setGotBooks(false);
+        setBooks([]);
+        setIsLoading(false);
+      } else {
+        // display book results
+        if (resJson.items.length) {
+          if (resJson.items.length > 3) {
             const numbersUsed: number[] = [];
             const bookSuggestions: BookInterface[] = [];
-            const max = response.length;
+            const max = resJson.items.length;
             while (bookSuggestions.length < 3) {
               const index = getRandomIndexNumber(max);
               if (!numbersUsed.includes(index)) {
-                bookSuggestions.push(response[index]);
+                bookSuggestions.push(resJson.items[index]);
                 numbersUsed.push(index);
               }
             }
             setBooks(bookSuggestions);
           } else {
-            setBooks(response);
+            setBooks(resJson.items);
           }
           setGotBooks(true);
         } else {
           setGotBooks(false);
           setBooks([]);
         }
+        setIsBooks(true);
         setIsLoading(false);
-      } else {
-        setIsBooks(false);
-        setGotBooks(false);
-        setBooks([]);
-        setIsLoading(false);
-      } 
-
-      /**
-       * check status
-       * if status 200:
-       * set books fetched true
-       *    if books length 0
-       *        got books = false
-       *       set books []
-       *    if books less than 3
-       *        got books = true
-       *       set books (response.items)
-       *    else
-       *       got books = true
-       *       let numbersUsed = []
-       *       let bookSuggestions = []
-       *       get 3 suggestions
-       *       while bookSuggestions.length < 3:
-       *           generate random number, if random number is not in numbersUsed
-       *           add item to books suggestions
-       *           and number to numbersUsed
-       *       set bookSuggestions to books
-       *
-       * set loading false
-       * else:
-       * books fetched false
-       * got books False
-       * loading false
-       *
-       *
-       *
-    }, 3000); */
+      }
+    } catch (err) {
+      console.error(err);
+      setIsBooks(true);
+      setGotBooks(false);
+      setBooks([]);
+      setIsLoading(false);
+    }
   }
 
   return (
