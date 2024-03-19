@@ -29,7 +29,6 @@ export default function GenrePage() {
     setIsBooks(false);
     setGotBooks(false);
     setBooks([]);
-    setIsLoading(false);
 
     try {
       const res = await fetch(
