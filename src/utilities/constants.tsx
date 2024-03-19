@@ -336,7 +336,7 @@ export interface BookInterface {
 
 // Title
 
-const titlePrompt: string = "Read a book with";
+const titlePrompt: string = "Read a book with ";
 
 interface TitleInterface {
   name: string;
@@ -357,7 +357,16 @@ export const titles: TitleInterface[] = [
   },
   {
     name: "nature",
-    options: ["tree", "flower", "mountain", "lake", "forest", "meadow", "leaf"],
+    options: [
+      "tree",
+      "flower",
+      "mountain",
+      "lake",
+      "forest",
+      "meadow",
+      "leaf",
+      "river",
+    ],
     prompt: titlePrompt + "nature in the title",
   },
 ];
