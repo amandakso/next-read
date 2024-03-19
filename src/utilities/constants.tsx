@@ -418,7 +418,7 @@ export const favorites: Favorite[] = [
     isbn_13: "9780394820378",
   },
   { name: "Pride & Prejudice", id: "fuQDzQEACAAJ", isbn_13: "9780141439518" },
-  { name: "The BFG", id: "4beFzQEACAAJ", isbn_13: "9780140315974" },
+  { name: "The BFG", id: "XJH7DAAAQBAJ", isbn_13: "9780140315974" },
   {
     name: "The Things We Carried",
     id: "Op6eKrkxPq4C",
