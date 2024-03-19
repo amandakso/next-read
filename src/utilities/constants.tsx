@@ -366,6 +366,16 @@ export const themes: ThemeInterface[] = [
     prompt: themePrompt + "Redemption",
     search: "redemption",
   },
+  {
+    name: "food",
+    prompt: themePrompt + "Food and Cooking",
+    search: "young%2Badult%2Bfiction%2Fcooking%2B%26%2Bfood",
+  },
+  {
+    name: "small town",
+    prompt: themePrompt + "Small Town",
+    search: "fiction/small+town%2B%26%2Brural",
+  },
 ];
 
 // Favorites
