@@ -334,11 +334,39 @@ export interface BookInterface {
   };
 }
 
+// Title
+
+const titlePrompt: string = "Read a book with";
+
+interface TitleInterface {
+  name: string;
+  options: string[];
+  prompt: string;
+}
+
+export const titles: TitleInterface[] = [
+  {
+    name: "color",
+    options: ["red", "orange", "yellow", "green", "blue", "purple", "pink"],
+    prompt: titlePrompt + "a color in the title",
+  },
+  {
+    name: "mood",
+    options: ["happy", "sad", "mad", "angry", "tired"],
+    prompt: titlePrompt + "a mood in the title",
+  },
+  {
+    name: "nature",
+    options: ["tree", "flower", "mountain", "lake", "forest", "meadow", "leaf"],
+    prompt: titlePrompt + "nature in the title",
+  },
+];
+
 // Favorites
 interface Favorite {
   name: string;
   id: string;
-  isbn_13?: string;
+  isbn_13: string;
 }
 
 export const favorites: Favorite[] = [
