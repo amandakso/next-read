@@ -360,7 +360,7 @@ export const themes: ThemeInterface[] = [
   {
     name: "good vs evil",
     prompt: ThemePrompt + "Good vs. Evil",
-    search: "good+vs+evil",
+    search: '"good+vs+evil"',
   },
   {
     name: "redemption",
