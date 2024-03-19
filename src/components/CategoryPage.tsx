@@ -1,7 +1,7 @@
 //import { useState, useEffect } from "react";
 import { Text } from "@chakra-ui/react";
 import GenrePage from "./category-pages/GenrePage";
-import TitlePage from "./category-pages/TitlePage";
+import ThemePage from "./category-pages/ThemePage";
 import PublishDatePage from "./category-pages/PublishDatePage";
 import BestSellersPage from "./category-pages/BestSellersPage";
 import PersonalFavesPage from "./category-pages/PersonalFavesPage";
@@ -15,7 +15,7 @@ export default function CategoryPage(props: CategoryPageProps) {
   const category = props.category;
   const validCategories = [
     "genre",
-    "title",
+    "theme",
     "publish-date",
     "best-sellers",
     "faves",
@@ -34,8 +34,8 @@ export default function CategoryPage(props: CategoryPageProps) {
     switch (category) {
       case "genre":
         return <GenrePage />;
-      case "title":
-        return <TitlePage />;
+      case "theme":
+        return <ThemePage />;
       case "publish-date":
         return <PublishDatePage />;
       case "best-sellers":

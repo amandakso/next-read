@@ -23,7 +23,7 @@ interface LinkItemProps {
 }
 const LinkItems: Array<LinkItemProps> = [
   { name: "Genre", url: "genre" },
-  { name: "Title", url: "title" },
+  { name: "Theme", url: "theme" },
   { name: "Publish Date", url: "publish-date" },
   { name: "Best Sellers", url: "best-sellers" },
   { name: "Personal Faves", url: "faves" },
