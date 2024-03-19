@@ -336,38 +336,36 @@ export interface BookInterface {
 
 // Title
 
-const titlePrompt: string = "Read a book with ";
+const ThemePrompt: string = "Read a book with the following theme: ";
 
-interface TitleInterface {
+interface ThemeInterface {
   name: string;
-  options: string[];
   prompt: string;
+  search: string;
 }
 
-export const titles: TitleInterface[] = [
+export const themes: ThemeInterface[] = [
   {
-    name: "color",
-    options: ["red", "orange", "yellow", "green", "blue", "purple", "pink"],
-    prompt: titlePrompt + "a color in the title",
+    name: "coming of age story",
+    prompt: ThemePrompt + "Coming of Age",
+    search: '"coming-of-age"',
+  },
+  { name: "love", prompt: ThemePrompt + "Love", search: "love" },
+  { name: "betrayal", prompt: ThemePrompt + "Betrayal", search: "betrayal" },
+  {
+    name: "friendship",
+    prompt: ThemePrompt + "Friendship",
+    search: "friendship",
   },
   {
-    name: "mood",
-    options: ["happy", "sad", "mad", "angry", "tired"],
-    prompt: titlePrompt + "a mood in the title",
+    name: "good vs evil",
+    prompt: ThemePrompt + "Good vs. Evil",
+    search: "good+vs+evil",
   },
   {
-    name: "nature",
-    options: [
-      "tree",
-      "flower",
-      "mountain",
-      "lake",
-      "forest",
-      "meadow",
-      "leaf",
-      "river",
-    ],
-    prompt: titlePrompt + "nature in the title",
+    name: "redemption",
+    prompt: ThemePrompt + "Redemption",
+    search: "redemption",
   },
 ];
 
