@@ -329,7 +329,7 @@ export interface BookInterface {
     averageRating?: number;
     ratingsCount?: number;
     maturityRating: string;
-    imageLinks: { smallThumbnail: string; thumbnail: string };
+    imageLinks?: { smallThumbnail?: string; thumbnail: string };
     previewLink: string;
   };
 }
