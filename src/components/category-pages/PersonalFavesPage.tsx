@@ -81,7 +81,11 @@ export default function PersonalFavesPage() {
         <Heading as="h3" size="lg">
           Favorites: Next Read's book recomendations
         </Heading>
-        <Button onClick={handleFavesClick} colorScheme="teal">
+        <Button
+          isLoading={isLoading}
+          onClick={handleFavesClick}
+          colorScheme="teal"
+        >
           Get Book Recommendations
         </Button>
         {isLoading ? <Text>Getting books...</Text> : null}
