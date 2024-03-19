@@ -341,19 +341,6 @@ interface Favorite {
   isbn_13?: string;
 }
 
-/**
- *
-- Phantom Tollbooth
-- Pride and Prejudice
-- The BFG
-- The Things We Carried
-- Charlotte’s Web
-- To Kill a MockingBird
-- Farenheit 451
-- Flowers for Algernon
-- Ender’s Game
-- A Deadly Education
- */
 export const favorites: Favorite[] = [
   {
     name: "Percy Jackson: The Lightning Thief",
@@ -386,8 +373,8 @@ export const favorites: Favorite[] = [
     id: "87UWNi83IrIC",
     isbn_13: "9780394820378",
   },
-  { name: "Pride & Prejudice", id: "s1gVAAAAYAAJ" },
-  { name: "The BFG", id: "XJH7DAAAQBAJ", isbn_13: "9780141378572" },
+  { name: "Pride & Prejudice", id: "fuQDzQEACAAJ", isbn_13: "9780141439518" },
+  { name: "The BFG", id: "4beFzQEACAAJ", isbn_13: "9780140315974" },
   {
     name: "The Things We Carried",
     id: "Op6eKrkxPq4C",
