@@ -334,9 +334,8 @@ export interface BookInterface {
   };
 }
 
-// Title
-
-const ThemePrompt: string = "Read a book with the following theme: ";
+// Theme
+const themePrompt: string = "Read a book with the following theme: ";
 
 interface ThemeInterface {
   name: string;
@@ -347,24 +346,24 @@ interface ThemeInterface {
 export const themes: ThemeInterface[] = [
   {
     name: "coming of age story",
-    prompt: ThemePrompt + "Coming of Age",
+    prompt: themePrompt + "Coming of Age",
     search: '"coming-of-age"',
   },
-  { name: "love", prompt: ThemePrompt + "Love", search: "love" },
-  { name: "betrayal", prompt: ThemePrompt + "Betrayal", search: "betrayal" },
+  { name: "love", prompt: themePrompt + "Love", search: "love" },
+  { name: "betrayal", prompt: themePrompt + "Betrayal", search: "betrayal" },
   {
     name: "friendship",
-    prompt: ThemePrompt + "Friendship",
+    prompt: themePrompt + "Friendship",
     search: "friendship",
   },
   {
     name: "good vs evil",
-    prompt: ThemePrompt + "Good vs. Evil",
+    prompt: themePrompt + "Good vs. Evil",
     search: '"good+vs+evil"',
   },
   {
     name: "redemption",
-    prompt: ThemePrompt + "Redemption",
+    prompt: themePrompt + "Redemption",
     search: "redemption",
   },
 ];
