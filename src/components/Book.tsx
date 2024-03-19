@@ -39,7 +39,16 @@ export default function Book(props: BookProps) {
             alt={`Book Cover of ${props.book.volumeInfo.title}`}
           />
           <Heading size="sm">{props.book.volumeInfo.title}</Heading>
-          <Heading size="xs">By: {props.book.volumeInfo.authors}</Heading>
+          {props.book.volumeInfo.authors.length > 1 ? (
+            <Heading size="xs">
+              By:{" "}
+              {props.book.volumeInfo.authors.map((author, index) => {
+                return <span key={index}>{author}, </span>;
+              })}
+            </Heading>
+          ) : (
+            <Heading size="xs">By: {props.book.volumeInfo.authors[0]}</Heading>
+          )}
         </Stack>
       </CardBody>
       <CardFooter>
