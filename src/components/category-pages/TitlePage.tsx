@@ -4,6 +4,9 @@ import { titles } from "../../utilities/constants";
 import { getRandomIndexNumber } from "../../utilities/helpers";
 
 export default function TitlePage() {
+  const [titlePrompt, setTitlePrompt] = useState<string>("");
+  const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
+
   function generateTitlePrompt() {
     const max = titles.length;
     const index = getRandomIndexNumber(max);
@@ -12,7 +15,8 @@ export default function TitlePage() {
   function handleTitleClick() {
     console.log("click");
     const prompt = generateTitlePrompt();
-    console.log(prompt);
+    setTitlePrompt(prompt.prompt);
+    setIsPrompt(true);
   }
   return (
     <>
@@ -32,6 +36,7 @@ export default function TitlePage() {
           >
             Generate Prompt
           </Button>
+          {isPromptGenerated ? <Text>{titlePrompt}</Text> : null}
         </Flex>
       </Container>
     </>
