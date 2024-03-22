@@ -2,6 +2,7 @@
   "name": "tbr-generator",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://next-read-ecru.vercel.app/",
   "type": "module",
   "scripts": {
     "dev": "node -r dotenv/config ./node_modules/.bin/vite",
