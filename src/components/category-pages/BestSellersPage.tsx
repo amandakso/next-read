@@ -1,7 +1,7 @@
 export default function BestSellersPage() {
   return (
     <>
-      <h1>"Best Sellers"</h1>
+      <h1>Section in progress. Please check back in the future.</h1>
     </>
   );
 }

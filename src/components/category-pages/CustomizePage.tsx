@@ -1,7 +1,7 @@
 export default function CustomizePage() {
   return (
     <>
-      <h1>"Customize Prompts"</h1>
+      <h1>Section in progress. Please check back in the future.</h1>
     </>
   );
 }
