@@ -20,7 +20,7 @@ export default function GenrePage() {
 
   async function handleGenreClick() {
     // get and display random genre prompt
-    const api_key = import.meta.env.GOOGLE_BOOKS_KEY;
+    const api_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
     const prompt = generateGenrePrompt();
     setGenrePrompt(prompt.prompt);
     setIsPrompt(true);
