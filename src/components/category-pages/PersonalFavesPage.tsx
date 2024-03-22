@@ -11,7 +11,7 @@ export default function PersonalFavesPage() {
   const [books, setBooks] = useState<BookInterface[]>([]);
 
   async function searchBook(volumeid: string) {
-    const api_key = import.meta.env.GOOGLE_BOOKS_KEY;
+    const api_key = process.env.GOOGLE_BOOKS_KEY;
     try {
       const res = await fetch(
         `https://www.googleapis.com/books/v1/volumes/${volumeid}?fields=id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink&key=${api_key}`,

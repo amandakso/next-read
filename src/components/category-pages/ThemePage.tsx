@@ -30,7 +30,7 @@ export default function ThemePage() {
     setGotBooks(false);
     setBooks([]);
 
-    const api_key = import.meta.env.GOOGLE_BOOKS_KEY;
+    const api_key = process.env.GOOGLE_BOOKS_KEY;
 
     try {
       const res = await fetch(
