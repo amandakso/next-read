@@ -49,7 +49,12 @@ export default function Nav() {
         px={4}
         width={"100vw"}
       >
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Flex
+          h={16}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          as={"header"}
+        >
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
