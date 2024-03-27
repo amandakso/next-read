@@ -1,16 +1,23 @@
-import { Text, Link, Center } from "@chakra-ui/react";
+import { Text, Link, Flex, Box, useColorModeValue } from "@chakra-ui/react";
 
 export default function Copyright() {
   return (
-    <Center>
-      <Text position={"fixed"} bottom="0" textAlign={"center"}>
-        <Link href="https://github.com/amandakso/next-read" isExternal>
-          Next Read
-        </Link>
-        {" © "}
-        {new Date().getFullYear()}
-        {"."}
-      </Text>
-    </Center>
+    <Box
+      bg={useColorModeValue("white", "gray.900")}
+      h="100%"
+      w="100%"
+      display={"grid"}
+    >
+      <Flex alignItems={"center"} justifyContent={"center"}>
+        <Text position={"fixed"} bottom="0" textAlign={"center"}>
+          <Link href="https://github.com/amandakso/next-read" isExternal>
+            Next Read
+          </Link>
+          {" © "}
+          {new Date().getFullYear()}
+          {"."}
+        </Text>
+      </Flex>
+    </Box>
   );
 }
