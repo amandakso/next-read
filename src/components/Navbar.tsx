@@ -6,12 +6,15 @@ import {
   HStack,
   Button,
   IconButton,
+  Image,
+  Text,
   useDisclosure,
   useColorModeValue,
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import logo from "../assets/storytelling.png";
 
 interface Props {
   children: React.ReactNode;
@@ -63,7 +66,8 @@ export default function Nav() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Logo</Box>
+            <Image height={"2em"} src={logo} />
+            <Text as={"b"}>Next Read</Text>
             <HStack
               as={"nav"}
               spacing={4}
