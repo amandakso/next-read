@@ -1,13 +1,13 @@
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
 
-import { Heading, Container } from "@chakra-ui/react";
+import { Heading, Container, useColorModeValue } from "@chakra-ui/react";
 
 export default function Prompts() {
   return (
     <>
       <Sidebar />
-      <Container>
+      <Container bg={useColorModeValue("white", "gray.900")} minWidth={"100vw"}>
         <Heading>Pick a prompt category.</Heading>
         <Outlet />
       </Container>
