@@ -39,7 +39,7 @@ export default function Home() {
               <Text as={"i"}> ~ Stephen King</Text>
             </Heading>
           </Center>
-          <Center>
+          <Center pt={".5rem"} flexDir={"column"}>
             <Button onClick={goToPrompts} colorScheme="teal">
               Get Started
             </Button>
