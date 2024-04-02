@@ -31,10 +31,13 @@ export default function Home() {
   return (
     <>
       <Box
-        bgImage={`linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
-        ), url(${backgroundImgUrl})`}
+        bgImage={useColorModeValue(
+          `url(${backgroundImgUrl})`,
+          `linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ), url(${backgroundImgUrl})`
+        )}
         bgSize="cover"
         bgPosition="center"
         height="100vh"
@@ -47,10 +50,7 @@ export default function Home() {
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Center
-            flexDir={"column"}
-            color={useColorModeValue("white", "white")}
-          >
+          <Center flexDir={"column"} color={"white"}>
             <Heading as={"h1"} size="3xl">
               “{quotes[quoteNumber].quote}”
             </Heading>
