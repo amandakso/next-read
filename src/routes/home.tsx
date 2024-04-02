@@ -44,7 +44,7 @@ export default function Home() {
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Center flexDir={"column"}>
+          <Center flexDir={"column"} color={"white"}>
             <Heading as={"h1"} size="3xl">
               “{quotes[quoteNumber].quote}”
             </Heading>
@@ -62,7 +62,7 @@ export default function Home() {
             <Button
               onClick={goToPrompts}
               colorScheme="teal"
-              color={useColorModeValue("black", "white")}
+              color={useColorModeValue("white", "white")}
             >
               Get Started
             </Button>
