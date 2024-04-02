@@ -1,11 +1,4 @@
-import {
-  Text,
-  Link,
-  Flex,
-  Container,
-  Box,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Text, Link, Flex, Box, useColorModeValue } from "@chakra-ui/react";
 
 export default function Copyright() {
   return (
