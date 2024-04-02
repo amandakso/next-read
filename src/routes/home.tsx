@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Box, Flex, Center, Button } from "@chakra-ui/react";
+import { Box, Flex, Center, Button, Heading, Text } from "@chakra-ui/react";
 /**
  *
  * photo background considering
@@ -33,8 +33,11 @@ export default function Home() {
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Center>
-            <h1>homepage</h1>
+          <Center flexDir={"column"}>
+            <Heading as={"h1"}>“Books are a uniquely portable magic.”</Heading>
+            <Heading as={"h2"}>
+              <Text as={"i"}> ~ Stephen King</Text>
+            </Heading>
           </Center>
           <Center>
             <Button onClick={goToPrompts} colorScheme="teal">
