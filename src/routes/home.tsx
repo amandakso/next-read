@@ -18,7 +18,7 @@ https://unsplash.com/photos/blue-and-white-floral-wall-decor-RYtFleIk_4U
 export default function Home() {
   const navigate = useNavigate();
   const backgroundImgUrl: string =
-    /*"https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; */
+    /*"https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";*/
     "https://images.unsplash.com/photo-1591925323327-2b12e3f3fcc2?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   function goToPrompts() {
@@ -31,7 +31,10 @@ export default function Home() {
   return (
     <>
       <Box
-        bgImage={`url(${backgroundImgUrl})`}
+        bgImage={`linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        ), url(${backgroundImgUrl})`}
         bgSize="cover"
         bgPosition="center"
         height="100vh"
@@ -44,7 +47,10 @@ export default function Home() {
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Center flexDir={"column"} color={"white"}>
+          <Center
+            flexDir={"column"}
+            color={useColorModeValue("white", "white")}
+          >
             <Heading as={"h1"} size="3xl">
               “{quotes[quoteNumber].quote}”
             </Heading>
