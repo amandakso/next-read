@@ -7,7 +7,11 @@ export default function Prompts() {
   return (
     <>
       <Sidebar />
-      <Container bg={useColorModeValue("white", "gray.900")} minWidth={"100vw"}>
+      <Container
+        bg={useColorModeValue("white", "gray.900")}
+        minWidth={"100vw"}
+        minHeight={"calc(100vh)"}
+      >
         <Heading>Pick a prompt category.</Heading>
         <Outlet />
       </Container>
