@@ -1,12 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Box, Flex, Center, Button, Heading, Text } from "@chakra-ui/react";
-/**
- *
- * photo background considering
+import { quotes } from "../utilities/constants";
+import { getRandomIndexNumber } from "../utilities/helpers";
+/*
  * https://unsplash.com/photos/white-cup-with-saucer-near-bok-OJZB0VUQKKc
- *
- *
- *
  */
 
 export default function Home() {
@@ -17,6 +14,10 @@ export default function Home() {
   function goToPrompts() {
     navigate("/prompts");
   }
+
+  const max = quotes.length;
+  const quoteNumber = getRandomIndexNumber(max);
+
   return (
     <>
       <Box
@@ -34,9 +35,15 @@ export default function Home() {
           flexDir={"column"}
         >
           <Center flexDir={"column"}>
-            <Heading as={"h1"}>“Books are a uniquely portable magic.”</Heading>
-            <Heading as={"h2"}>
-              <Text as={"i"}> ~ Stephen King</Text>
+            <Heading as={"h1"}>“{quotes[quoteNumber].quote}”</Heading>
+            <Heading as={"h3"}>
+              <Text as={"i"}>
+                {" "}
+                ~{" "}
+                {quotes[quoteNumber].author
+                  ? quotes[quoteNumber].author
+                  : "Unknown"}
+              </Text>
             </Heading>
           </Center>
           <Center pt={".5rem"} flexDir={"column"}>

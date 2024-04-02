@@ -440,6 +440,19 @@ export const favorites: Favorite[] = [
   { name: "A Deadly Education", id: "0YDJDwAAQBAJ", isbn_13: "9780593128497" },
 ];
 
+interface QuoteInterface {
+  quote: string;
+  author?: string;
+}
+
+// Book Quotes
+export const quotes: QuoteInterface[] = [
+  {
+    quote: "Books are a uniquely portable magic.",
+    author: "Stephen King",
+  },
+];
+
 interface TestResponse {
   status: number;
   items: BookInterface[];
