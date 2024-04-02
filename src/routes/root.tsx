@@ -1,12 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import {
-  Grid,
-  Box,
-  Container,
-  GridItem,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import Copyright from "../components/Copyright";
 
