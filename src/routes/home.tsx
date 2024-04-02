@@ -51,10 +51,10 @@ export default function Home() {
           flexDir={"column"}
         >
           <Center flexDir={"column"} color={"white"}>
-            <Heading as={"h1"} size="3xl">
+            <Heading as={"h1"} size="2xl">
               “{quotes[quoteNumber].quote}”
             </Heading>
-            <Heading as={"h2"} size="2xl">
+            <Heading as={"h2"} size="xl">
               <Text as={"i"}>
                 {" "}
                 ~{" "}
