@@ -50,7 +50,7 @@ export default function Home() {
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Center flexDir={"column"} color={"white"}>
+          <Center flexDir={"column"} color={"white"} p={"2rem"}>
             <Heading as={"h1"} size="2xl">
               “{quotes[quoteNumber].quote}”
             </Heading>
