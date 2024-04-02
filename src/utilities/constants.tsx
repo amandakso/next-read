@@ -451,6 +451,30 @@ export const quotes: QuoteInterface[] = [
     quote: "Books are a uniquely portable magic.",
     author: "Stephen King",
   },
+  {
+    quote:
+      "The more that you read, the more things you will know. The more that you learn, the more places you'll go.",
+    author: "Dr. Seuss",
+  },
+  {
+    quote: "Sleep is good, he said, and books are better.",
+    author: "Gearge R.R. Martin",
+  },
+  {
+    quote:
+      "I cannot remember the books I've read any more than the meals I have eaten; even so, they have made me.",
+    author: "Ralph Waldo Emerson",
+  },
+  {
+    quote:
+      "Books are the plane, and the train, and the road. They are the destination, and the journey. They are home.",
+    author: "Anna Quindlen",
+  },
+  {
+    quote:
+      "So Matilda's strong young mind continued to grow, nurtured by the voices of all those authors who had sent their books out into the world like ships on the sea.",
+    author: "Roald Dahl",
+  },
 ];
 
 interface TestResponse {
