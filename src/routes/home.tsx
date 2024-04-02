@@ -1,5 +1,13 @@
 import { useNavigate } from "react-router-dom";
-import { Box, Flex, Center, Button, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Center,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { quotes } from "../utilities/constants";
 import { getRandomIndexNumber } from "../utilities/helpers";
 /*
@@ -51,7 +59,11 @@ export default function Home() {
             </Heading>
           </Center>
           <Center pt={".5rem"} flexDir={"column"}>
-            <Button onClick={goToPrompts} colorScheme="teal">
+            <Button
+              onClick={goToPrompts}
+              colorScheme="teal"
+              color={useColorModeValue("black", "white")}
+            >
               Get Started
             </Button>
           </Center>
