@@ -13,13 +13,15 @@ import { getRandomIndexNumber } from "../utilities/helpers";
 /*
  * https://unsplash.com/photos/white-cup-with-saucer-near-bok-OJZB0VUQKKc
 https://unsplash.com/photos/blue-and-white-floral-wall-decor-RYtFleIk_4U
+https://unsplash.com/photos/white-ceramic-mug-on-white-book-GVhAezjtX-4
  */
 
 export default function Home() {
   const navigate = useNavigate();
   const backgroundImgUrl: string =
     /*"https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";*/
-    "https://images.unsplash.com/photo-1591925323327-2b12e3f3fcc2?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    /*"https://images.unsplash.com/photo-1591925323327-2b12e3f3fcc2?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";*/
+    "https://images.unsplash.com/photo-1600818797017-d6e5027210bb?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   function goToPrompts() {
     navigate("/prompts");
@@ -50,7 +52,11 @@ export default function Home() {
           justifyContent={"center"}
           flexDir={"column"}
         >
-          <Center flexDir={"column"} color={"white"} p={"2rem"}>
+          <Center
+            flexDir={"column"}
+            color={useColorModeValue("black", "white")}
+            p={"2rem"}
+          >
             <Heading as={"h1"} size="2xl">
               “{quotes[quoteNumber].quote}”
             </Heading>
@@ -68,7 +74,7 @@ export default function Home() {
             <Button
               onClick={goToPrompts}
               colorScheme="teal"
-              color={useColorModeValue("white", "white")}
+              color={useColorModeValue("black", "white")}
             >
               Get Started
             </Button>
