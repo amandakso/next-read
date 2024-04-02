@@ -4,12 +4,14 @@ import { quotes } from "../utilities/constants";
 import { getRandomIndexNumber } from "../utilities/helpers";
 /*
  * https://unsplash.com/photos/white-cup-with-saucer-near-bok-OJZB0VUQKKc
+https://unsplash.com/photos/blue-and-white-floral-wall-decor-RYtFleIk_4U
  */
 
 export default function Home() {
   const navigate = useNavigate();
   const backgroundImgUrl: string =
-    "https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    /*"https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; */
+    "https://images.unsplash.com/photo-1591925323327-2b12e3f3fcc2?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   function goToPrompts() {
     navigate("/prompts");
