@@ -475,6 +475,49 @@ export const quotes: QuoteInterface[] = [
       "So Matilda's strong young mind continued to grow, nurtured by the voices of all those authors who had sent their books out into the world like ships on the sea.",
     author: "Roald Dahl",
   },
+  {
+    quote:
+      "Read. Read. Read. Just don't read one type of book. Read different books by various authors so that you develop different style.",
+    author: "R.L. Stine",
+  },
+  {
+    quote:
+      "If I were a young person today, trying to gain a sense of myself in the world, I would do that again by reading, just as I did when I was young.",
+    author: "Maya Angelou",
+  },
+  {
+    quote: "I can feel infinitely alive curled up on the sofa reading a book",
+    author: "Benedict Cumberbatch",
+  },
+  {
+    quote: "If a book is well written, I always find it too short.",
+    author: "Jane Austen",
+  },
+  {
+    quote: "All I have learned, I learned from books.",
+    author: "Abraham Lincoln",
+  },
+  {
+    quote:
+      "He read while he walked. He read while he ate. The other librarians suspected he somehow read while he slept, or perhaps didn't sleep at all.",
+    author: "Laini Taylor",
+  },
+  { quote: "Literature is my Utopia", author: "Helen Keller" },
+  {
+    quote:
+      "I think books are like people, in the sense that they'll turn up in your life when you most need them.",
+    author: "Emma Thompson",
+  },
+  {
+    quote:
+      "You don't spend your life hanging around books without learning a thing or two.",
+    author: "Lemony Snicket",
+  },
+  {
+    quote:
+      "My alma mater was books, a good library... I could spend the rest of my life reading, just satisfying my curiousity",
+    author: "Malcolm X",
+  },
 ];
 
 interface TestResponse {
