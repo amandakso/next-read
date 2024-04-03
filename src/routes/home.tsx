@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -18,6 +19,7 @@ https://unsplash.com/photos/white-ceramic-mug-on-white-book-GVhAezjtX-4
 
 export default function Home() {
   const navigate = useNavigate();
+  const [quoteNumber, setQuoteNumber] = useState<number>(0);
   const backgroundImgUrl: string =
     /*"https://images.unsplash.com/photo-1519682577862-22b62b24e493?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";*/
     /*"https://images.unsplash.com/photo-1591925323327-2b12e3f3fcc2?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";*/
@@ -26,9 +28,10 @@ export default function Home() {
   function goToPrompts() {
     navigate("/prompts");
   }
-
-  const max = quotes.length;
-  const quoteNumber = getRandomIndexNumber(max);
+  useEffect(() => {
+    const max = quotes.length;
+    setQuoteNumber(getRandomIndexNumber(max));
+  }, [setQuoteNumber]);
 
   return (
     <>
