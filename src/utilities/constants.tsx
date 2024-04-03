@@ -378,6 +378,38 @@ export const themes: ThemeInterface[] = [
   },
 ];
 
+// Best Sellers
+interface BestSellersInterface {
+  name: string;
+  prompt: string;
+  search: string;
+}
+
+const bestSellersPhrase: string = "The New York Times Best Sellers List";
+
+export const bestSellers: BestSellersInterface[] = [
+  {
+    name: "Hardcover Fiction",
+    prompt: bestSellersPhrase + " (Hardcover Fiction)",
+    search: "hardcover-fiction",
+  },
+  {
+    name: "Hardcover Nonfiction",
+    prompt: bestSellersPhrase + " (Hardcover Nonfiction)",
+    search: "hardcover-nonfiction",
+  },
+  {
+    name: "Paperback Trade Fiction",
+    prompt: bestSellersPhrase + " (Paperback Trade Fiction)",
+    search: "paperback-trade-fiction",
+  },
+  {
+    name: "Paperback Nonfiction",
+    prompt: bestSellersPhrase + " (Paperback Nonfiction)",
+    search: "paperback-nonfiction",
+  },
+];
+
 // Favorites
 interface Favorite {
   name: string;
