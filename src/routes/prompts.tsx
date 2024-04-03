@@ -1,9 +1,10 @@
 import Sidebar from "../components/Sidebar";
-import { Outlet } from "react-router-dom";
-
+import { useOutlet } from "react-router-dom";
 import { Heading, Container, useColorModeValue } from "@chakra-ui/react";
 
 export default function Prompts() {
+  const outlet = useOutlet();
+
   return (
     <>
       <Sidebar />
@@ -12,8 +13,7 @@ export default function Prompts() {
         minWidth={"100vw"}
         minHeight={"calc(100vh)"}
       >
-        <Heading>Pick a prompt category.</Heading>
-        <Outlet />
+        {outlet || <Heading>Pick a prompt category.</Heading>}
       </Container>
     </>
   );
