@@ -78,7 +78,7 @@ export default function PersonalFavesPage() {
         alignItems={"center"}
         justifyContent={"center"}
       >
-        <Heading as="h3" size="lg">
+        <Heading as="h1" size="lg">
           Favorites: Next Read's book recomendations
         </Heading>
         <Button

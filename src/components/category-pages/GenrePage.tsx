@@ -93,7 +93,7 @@ export default function GenrePage() {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Heading as="h3" size="lg">
+          <Heading as="h1" size="lg">
             Genre: TBR prompts based on the category/style of a book{" "}
           </Heading>
           <Button

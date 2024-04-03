@@ -1,7 +1,10 @@
+import { Heading } from "@chakra-ui/react";
 export default function BestSellersPage() {
   return (
     <>
-      <h1>Section in progress. Please check back in the future.</h1>
+      <Heading as={"h1"} size="lg">
+        Section in progress. Please check back in the future.
+      </Heading>
     </>
   );
 }
