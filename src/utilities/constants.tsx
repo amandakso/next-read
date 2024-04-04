@@ -780,3 +780,365 @@ export const testResponse: TestResponse = {
     },
   ],
 };
+
+// NYT Best Seller Test Response
+
+export const bestSellersTestResponse = {
+  status: "OK",
+  copyright:
+    "Copyright (c) 2024 The New York Times Company.  All Rights Reserved.",
+  num_results: 5,
+  last_modified: "2024-03-27T22:24:44-04:00",
+  results: {
+    list_name: "Hardcover Fiction",
+    list_name_encoded: "hardcover-fiction",
+    bestsellers_date: "2024-03-23",
+    published_date: "2024-04-07",
+    published_date_description: "one_before_latest",
+    next_published_date: "2024-04-14",
+    previous_published_date: "2024-03-31",
+    display_name: "Hardcover Fiction",
+    normal_list_ends_at: 15,
+    updated: "WEEKLY",
+    books: [
+      {
+        rank: 1,
+        rank_last_week: 1,
+        weeks_on_list: 7,
+        asterisk: 0,
+        dagger: 0,
+        primary_isbn10: "1250178630",
+        primary_isbn13: "9781250178633",
+        publisher: "St. Martin's",
+        description:
+          "In 1965, a nursing student follows her brother to serve during the Vietnam War and returns to a divided America.",
+        price: "0.00",
+        title: "THE WOMEN",
+        author: "Kristin Hannah",
+        contributor: "by Kristin Hannah",
+        contributor_note: "",
+        book_image:
+          "https://storage.googleapis.com/du-prd/books/images/9781250178633.jpg",
+        book_image_width: 333,
+        book_image_height: 500,
+        amazon_product_url:
+          "https://www.amazon.com/dp/1250178630?tag=thenewyorktim-20",
+        age_group: "",
+        book_review_link: "",
+        first_chapter_link: "",
+        sunday_review_link: "",
+        article_chapter_link: "",
+        isbns: [
+          {
+            isbn10: "1250178630",
+            isbn13: "9781250178633",
+          },
+          {
+            isbn10: "1250178657",
+            isbn13: "9781250178657",
+          },
+        ],
+        buy_links: [
+          {
+            name: "Amazon",
+            url: "https://www.amazon.com/dp/1250178630?tag=thenewyorktim-20",
+          },
+          {
+            name: "Apple Books",
+            url: "https://goto.applebooks.apple/9781250178633?at=10lIEQ",
+          },
+          {
+            name: "Barnes and Noble",
+            url: "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781250178633",
+          },
+          {
+            name: "Books-A-Million",
+            url: "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FTHE%2BWOMEN%2FKristin%2BHannah%2F9781250178633",
+          },
+          {
+            name: "Bookshop",
+            url: "https://bookshop.org/a/3546/9781250178633",
+          },
+          {
+            name: "IndieBound",
+            url: "https://www.indiebound.org/book/9781250178633?aff=NYT",
+          },
+        ],
+        book_uri: "nyt://book/9ce735af-71cf-5ff3-a367-43ee07e3fdd7",
+      },
+      {
+        rank: 2,
+        rank_last_week: 2,
+        weeks_on_list: 46,
+        asterisk: 0,
+        dagger: 0,
+        primary_isbn10: "1649374046",
+        primary_isbn13: "9781649374042",
+        publisher: "Red Tower",
+        description:
+          "Violet Sorrengail is urged by the commanding general, who also is her mother, to become a candidate for the elite dragon riders.",
+        price: "0.00",
+        title: "FOURTH WING",
+        author: "Rebecca Yarros",
+        contributor: "by Rebecca Yarros",
+        contributor_note: "",
+        book_image:
+          "https://storage.googleapis.com/du-prd/books/images/9781649374042.jpg",
+        book_image_width: 309,
+        book_image_height: 500,
+        amazon_product_url:
+          "https://www.amazon.com/dp/1649374046?tag=thenewyorktim-20",
+        age_group: "",
+        book_review_link: "",
+        first_chapter_link: "",
+        sunday_review_link: "",
+        article_chapter_link: "",
+        isbns: [
+          {
+            isbn10: "1649374046",
+            isbn13: "9781649374042",
+          },
+          {
+            isbn10: "1649374089",
+            isbn13: "9781649374080",
+          },
+          {
+            isbn10: "1705085059",
+            isbn13: "9781705085059",
+          },
+          {
+            isbn10: "1705085032",
+            isbn13: "9781705085035",
+          },
+          {
+            isbn10: "1649376162",
+            isbn13: "9781649376169",
+          },
+        ],
+        buy_links: [
+          {
+            name: "Amazon",
+            url: "https://www.amazon.com/dp/1649374046?tag=thenewyorktim-20",
+          },
+          {
+            name: "Apple Books",
+            url: "https://goto.applebooks.apple/9781649374042?at=10lIEQ",
+          },
+          {
+            name: "Barnes and Noble",
+            url: "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781649374042",
+          },
+          {
+            name: "Books-A-Million",
+            url: "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FFOURTH%2BWING%2FRebecca%2BYarros%2F9781649374042",
+          },
+          {
+            name: "Bookshop",
+            url: "https://bookshop.org/a/3546/9781649374042",
+          },
+          {
+            name: "IndieBound",
+            url: "https://www.indiebound.org/book/9781649374042?aff=NYT",
+          },
+        ],
+        book_uri: "nyt://book/106c2cf0-7d20-51b1-bad4-91c3ebcd131a",
+      },
+      {
+        rank: 3,
+        rank_last_week: 0,
+        weeks_on_list: 1,
+        asterisk: 0,
+        dagger: 0,
+        primary_isbn10: "0316499676",
+        primary_isbn13: "9780316499675",
+        publisher: "Little, Brown",
+        description:
+          "A criminal defense attorney in Biloxi becomes the prime suspect in his wife’s murder.",
+        price: "0.00",
+        title: "THE #1 LAWYER",
+        author: "James Patterson and Nancy Allen",
+        contributor: "by James Patterson and Nancy Allen",
+        contributor_note: "",
+        book_image:
+          "https://storage.googleapis.com/du-prd/books/images/9780316499675.jpg",
+        book_image_width: 323,
+        book_image_height: 500,
+        amazon_product_url:
+          "https://www.amazon.com/dp/0316499676?tag=thenewyorktim-20",
+        age_group: "",
+        book_review_link: "",
+        first_chapter_link: "",
+        sunday_review_link: "",
+        article_chapter_link: "",
+        isbns: [
+          {
+            isbn10: "0316499676",
+            isbn13: "9780316499675",
+          },
+          {
+            isbn10: "0316499692",
+            isbn13: "9780316499699",
+          },
+        ],
+        buy_links: [
+          {
+            name: "Amazon",
+            url: "https://www.amazon.com/dp/0316499676?tag=thenewyorktim-20",
+          },
+          {
+            name: "Apple Books",
+            url: "https://goto.applebooks.apple/9780316499675?at=10lIEQ",
+          },
+          {
+            name: "Barnes and Noble",
+            url: "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780316499675",
+          },
+          {
+            name: "Books-A-Million",
+            url: "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FTHE%2B%25231%2BLAWYER%2FJames%2BPatterson%2Band%2BNancy%2BAllen%2F9780316499675",
+          },
+          {
+            name: "Bookshop",
+            url: "https://bookshop.org/a/3546/9780316499675",
+          },
+          {
+            name: "IndieBound",
+            url: "https://www.indiebound.org/book/9780316499675?aff=NYT",
+          },
+        ],
+        book_uri: "nyt://book/8736f247-4bb0-5b05-8664-28ea55c92479",
+      },
+      {
+        rank: 4,
+        rank_last_week: 0,
+        weeks_on_list: 1,
+        asterisk: 0,
+        dagger: 0,
+        primary_isbn10: "0385550367",
+        primary_isbn13: "9780385550369",
+        publisher: "Doubleday",
+        description:
+          "A reimagining of “Adventures of Huckleberry Finn” shines a different light on Mark Twain's classic, revealing new facets of the character of Jim.",
+        price: "0.00",
+        title: "JAMES",
+        author: "Percival Everett",
+        contributor: "by Percival Everett",
+        contributor_note: "",
+        book_image:
+          "https://storage.googleapis.com/du-prd/books/images/9780385550369.jpg",
+        book_image_width: 333,
+        book_image_height: 500,
+        amazon_product_url:
+          "https://www.amazon.com/dp/0385550367?tag=thenewyorktim-20",
+        age_group: "",
+        book_review_link: "",
+        first_chapter_link: "",
+        sunday_review_link: "",
+        article_chapter_link: "",
+        isbns: [
+          {
+            isbn10: "0385550367",
+            isbn13: "9780385550369",
+          },
+          {
+            isbn10: "0385550375",
+            isbn13: "9780385550376",
+          },
+        ],
+        buy_links: [
+          {
+            name: "Amazon",
+            url: "https://www.amazon.com/dp/0385550367?tag=thenewyorktim-20",
+          },
+          {
+            name: "Apple Books",
+            url: "https://goto.applebooks.apple/9780385550369?at=10lIEQ",
+          },
+          {
+            name: "Barnes and Noble",
+            url: "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9780385550369",
+          },
+          {
+            name: "Books-A-Million",
+            url: "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FJAMES%2FPercival%2BEverett%2F9780385550369",
+          },
+          {
+            name: "Bookshop",
+            url: "https://bookshop.org/a/3546/9780385550369",
+          },
+          {
+            name: "IndieBound",
+            url: "https://www.indiebound.org/book/9780385550369?aff=NYT",
+          },
+        ],
+        book_uri: "nyt://book/5788b098-426a-5f2c-a318-475692df69ee",
+      },
+      {
+        rank: 5,
+        rank_last_week: 3,
+        weeks_on_list: 20,
+        asterisk: 0,
+        dagger: 0,
+        primary_isbn10: "1649374178",
+        primary_isbn13: "9781649374172",
+        publisher: "Red Tower",
+        description:
+          "The second book in the Empyrean series. Violet Sorrengail’s next round of training might require her to betray the man she loves.",
+        price: "0.00",
+        title: "IRON FLAME",
+        author: "Rebecca Yarros",
+        contributor: "by Rebecca Yarros",
+        contributor_note: "",
+        book_image:
+          "https://storage.googleapis.com/du-prd/books/images/9781649374172.jpg",
+        book_image_width: 309,
+        book_image_height: 500,
+        amazon_product_url:
+          "https://www.amazon.com/dp/1649374178?tag=thenewyorktim-20",
+        age_group: "",
+        book_review_link: "",
+        first_chapter_link: "",
+        sunday_review_link: "",
+        article_chapter_link: "",
+        isbns: [
+          {
+            isbn10: "1649374178",
+            isbn13: "9781649374172",
+          },
+          {
+            isbn10: "1705085083",
+            isbn13: "9781705085080",
+          },
+        ],
+        buy_links: [
+          {
+            name: "Amazon",
+            url: "https://www.amazon.com/dp/1649374178?tag=thenewyorktim-20",
+          },
+          {
+            name: "Apple Books",
+            url: "https://goto.applebooks.apple/9781649374172?at=10lIEQ",
+          },
+          {
+            name: "Barnes and Noble",
+            url: "https://www.anrdoezrs.net/click-7990613-11819508?url=https%3A%2F%2Fwww.barnesandnoble.com%2Fw%2F%3Fean%3D9781649374172",
+          },
+          {
+            name: "Books-A-Million",
+            url: "https://www.anrdoezrs.net/click-7990613-35140?url=https%3A%2F%2Fwww.booksamillion.com%2Fp%2FIRON%2BFLAME%2FRebecca%2BYarros%2F9781649374172",
+          },
+          {
+            name: "Bookshop",
+            url: "https://bookshop.org/a/3546/9781649374172",
+          },
+          {
+            name: "IndieBound",
+            url: "https://www.indiebound.org/book/9781649374172?aff=NYT",
+          },
+        ],
+        book_uri: "nyt://book/d3c570c9-3c3a-5c8b-a740-85ea5e92bfc9",
+      },
+    ],
+    corrections: [],
+  },
+};
