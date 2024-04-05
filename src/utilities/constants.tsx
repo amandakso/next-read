@@ -401,7 +401,7 @@ export const bestSellers: BestSellersInterface[] = [
   {
     name: "Paperback Trade Fiction",
     prompt: bestSellersPhrase + " (Paperback Trade Fiction)",
-    search: "paperback-trade-fiction",
+    search: "trade-fiction-paperback",
   },
   {
     name: "Paperback Nonfiction",
