@@ -3,7 +3,7 @@ export function getRandomIndexNumber(max: number) {
   return Math.floor(Math.random() * max);
 }
 
-export function previewBook(url: string) {
+export function previewBook(url: string | undefined) {
   function isValidUrl(str: string) {
     try {
       new URL(str);
@@ -11,6 +11,9 @@ export function previewBook(url: string) {
     } catch (err) {
       return false;
     }
+  }
+  if (url == undefined) {
+    return;
   }
   const bookUrl = isValidUrl(url);
   if (bookUrl) {
