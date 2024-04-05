@@ -23,12 +23,14 @@ export default function BestSellersPage() {
   }
 
   function generateBestSellersDate() {
-    const randomNumber = getRandomIndexNumber(25);
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
-    let searchYear = currentYear - randomNumber;
+    // current year - x = 2010
+    const difference = currentYear - 2009;
+    const randomNumber = getRandomIndexNumber(difference);
+    const searchYear = currentYear - randomNumber;
     // limit year to 2010 or more recent
-    searchYear = searchYear < 2010 ? 2010 : searchYear;
+    // searchYear = searchYear < 2010 ? 2010 : searchYear;
     const searchMonth = getRandomIndexNumber(13);
     const searchDay = getRandomIndexNumber(32);
     let searchDate = new Date(searchYear, searchMonth, searchDay);
