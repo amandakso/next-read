@@ -23,12 +23,12 @@ export default function BestSellersPage() {
   }
 
   function generateBestSellersDate() {
-    const randomNumber = getRandomIndexNumber(50);
+    const randomNumber = getRandomIndexNumber(25);
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
     let searchYear = currentYear - randomNumber;
-    // limit year to 2000 or more recent
-    searchYear = searchYear < 2000 ? 2000 : searchYear;
+    // limit year to 2010 or more recent
+    searchYear = searchYear < 2010 ? 2010 : searchYear;
     const searchMonth = getRandomIndexNumber(13);
     const searchDay = getRandomIndexNumber(32);
     let searchDate = new Date(searchYear, searchMonth, searchDay);
@@ -88,7 +88,9 @@ export default function BestSellersPage() {
       } else {
         console.log(response);
         setIsLoading(false);
-        setBestSellersDate(response.results.bestsellers_date);
+        // [year, month, date]
+        const dateArr = response.results.bestsellers_date.split("-");
+        setBestSellersDate(dateArr[1] + "-" + dateArr[2] + "-" + dateArr[0]);
         const lists = response.results.lists;
         let bookResults = [];
         for (const list in lists) {
