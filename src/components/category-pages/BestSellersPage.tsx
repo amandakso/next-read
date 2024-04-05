@@ -2,7 +2,6 @@ import { Container, Flex, Heading, Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import {
   bestSellers,
-  bestSellersTestResponse,
   BestSellersBookInterface,
 } from "../../utilities/constants";
 import { getRandomIndexNumber } from "../../utilities/helpers";
@@ -15,6 +14,7 @@ export default function BestSellersPage() {
   const [books, setBooks] = useState<BestSellersBookInterface[]>([]);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false);
   const [gotBookResults, setGotBooks] = useState<boolean>(false);
+  const [bestSellersDate, setBestSellersDate] = useState<string>("");
 
   function generateBestSellersPrompt() {
     const max = bestSellers.length;
@@ -36,8 +36,8 @@ export default function BestSellersPage() {
     return searchDate;
   }
 
-  function handleBestSellersClick() {
-    //const api_key = import.meta.env.VITE_NYT_KEY;
+  async function handleBestSellersClick() {
+    const api_key = import.meta.env.VITE_NYT_KEY;
     setIsLoading(true);
     const result = generateBestSellersPrompt();
     const bestSellersDate = generateBestSellersDate();
@@ -48,9 +48,8 @@ export default function BestSellersPage() {
     setIsBooks(false);
     setGotBooks(false);
     setBooks([]);
+    setBestSellersDate("");
 
-    console.log(result);
-    console.log(bestSellersDate);
     const month = bestSellersDate.getMonth() + 1;
     const year = bestSellersDate.getFullYear();
     const day = bestSellersDate.getDate();
@@ -62,41 +61,75 @@ export default function BestSellersPage() {
       month.toString().padStart(2, "0") +
       "-" +
       day.toString().padStart(2, "0");
+    console.log(searchDate);
 
-    const response = bestSellersTestResponse;
+    // fetch from NYT Bestsellers
 
-    console.log(response);
+    try {
+      const res = await fetch(
+        `https://api.nytimes.com/svc/books/v3/lists/full-overview.json?published_date=${searchDate}&api-key=${api_key}`,
+        {
+          method: "GET",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-    if (!response) {
+      const response = await res.json();
+      if (response.status !== "OK") {
+        // error fetching books
+        setIsBooks(true);
+        setGotBooks(false);
+        setBooks([]);
+        setBestSellersDate("");
+        setIsLoading(false);
+      } else {
+        console.log(response);
+        setIsLoading(false);
+        setBestSellersDate(response.results.bestsellers_date);
+        const lists = response.results.lists;
+        let bookResults = [];
+        for (const list in lists) {
+          if (lists[list].list_name_encoded == result.search) {
+            bookResults = lists[list].books;
+            break;
+          }
+        }
+        // display book results
+        console.log(bookResults);
+        if (bookResults.length > 0) {
+          if (bookResults.length > 3) {
+            const numbersUsed: number[] = [];
+            const bookSuggestions = [];
+            const max = bookResults.length;
+            while (bookSuggestions.length < 3) {
+              const index = getRandomIndexNumber(max);
+              if (!numbersUsed.includes(index)) {
+                bookSuggestions.push(bookResults[index]);
+                numbersUsed.push(index);
+              }
+            }
+            setBooks(bookSuggestions);
+            console.log(bookSuggestions);
+          } else {
+            setBooks(bookResults);
+          }
+          setGotBooks(true);
+        } else {
+          setGotBooks(false);
+          setBooks([]);
+        }
+        setIsBooks(true);
+        setIsLoading(false);
+      }
+    } catch (err) {
+      console.error(err);
       setIsBooks(true);
       setGotBooks(false);
       setBooks([]);
-      setIsLoading(false);
-    } else {
-      // display book results
-      if (response.results) {
-        if (response.results.books.length > 3) {
-          const numbersUsed: number[] = [];
-          const bookSuggestions = [];
-          const max = response.results.books.length;
-          while (bookSuggestions.length < 3) {
-            const index = getRandomIndexNumber(max);
-            if (!numbersUsed.includes(index)) {
-              bookSuggestions.push(response.results.books[index]);
-              numbersUsed.push(index);
-            }
-          }
-          setBooks(bookSuggestions);
-          console.log(bookSuggestions);
-        } else {
-          setBooks(response.results.books);
-        }
-        setGotBooks(true);
-      } else {
-        setGotBooks(false);
-        setBooks([]);
-      }
-      setIsBooks(true);
+      setBestSellersDate("");
       setIsLoading(false);
     }
   }
@@ -121,6 +154,7 @@ export default function BestSellersPage() {
             Generate Prompt
           </Button>
           {isPromptGenerated ? <Text>{bestSellersPrompt}</Text> : null}
+          {bestSellersDate !== "" ? <Text>{bestSellersDate}</Text> : null}
           {isLoading ? (
             <Text>Finding books from the Best Sellers list... </Text>
           ) : null}

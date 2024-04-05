@@ -118,7 +118,9 @@ export default function Book(props: BookProps) {
                 </Button>
                 <Button
                   variant="ghost"
-                  onClick={() => previewBook(props.book.volumeInfo.previewLink)}
+                  onClick={() =>
+                    previewBook(props.book?.volumeInfo.previewLink)
+                  }
                 >
                   <Image src="https://www.google.com/intl/en/googlebooks/images/gbs_preview_button1.gif" />
                 </Button>
