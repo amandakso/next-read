@@ -93,7 +93,7 @@ export default function PersonalFavesPage() {
           gotBooks ? (
             <>
               <Text>Book Recommendations: </Text>
-              <Books books={books} />
+              <Books books={books} source={"google"} />
             </>
           ) : (
             <Text>Unable to get books. </Text>

@@ -110,7 +110,7 @@ export default function GenrePage() {
             gotBooks ? (
               <>
                 <Text>Book Suggestions: </Text>
-                <Books books={books} />
+                <Books books={books} source={"google"} />
               </>
             ) : (
               <Text>Unable to find book suggestions.</Text>
