@@ -64,7 +64,6 @@ export default function BestSellersPage() {
       month.toString().padStart(2, "0") +
       "-" +
       day.toString().padStart(2, "0");
-    console.log(searchDate);
 
     // fetch from NYT Bestsellers
 
@@ -93,7 +92,6 @@ export default function BestSellersPage() {
         setBestSellersDate("");
         setIsLoading(false);
       } else {
-        console.log(response);
         setIsLoading(false);
         // [year, month, date]
         const dateArr = response.results.bestsellers_date.split("-");
@@ -107,7 +105,6 @@ export default function BestSellersPage() {
           }
         }
         // display book results
-        console.log(bookResults);
         if (bookResults.length > 0) {
           if (bookResults.length > 3) {
             const numbersUsed: number[] = [];
@@ -121,7 +118,6 @@ export default function BestSellersPage() {
               }
             }
             setBooks(bookSuggestions);
-            console.log(bookSuggestions);
           } else {
             setBooks(bookResults);
           }
