@@ -9,6 +9,7 @@ import Books from "../Books";
 
 export default function BestSellersPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isDisabled, setIsDisabled] = useState<boolean>(false);
   const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
   const [bestSellersPrompt, setBestSellersPrompt] = useState<string>("");
   const [books, setBooks] = useState<BestSellersBookInterface[]>([]);
@@ -78,8 +79,12 @@ export default function BestSellersPage() {
           },
         }
       );
-
       const response = await res.json();
+      setIsDisabled(true);
+      setTimeout(() => {
+        setIsDisabled(false);
+      }, 30000);
+
       if (response.status !== "OK") {
         // error fetching books
         setIsBooks(true);
@@ -129,7 +134,9 @@ export default function BestSellersPage() {
         setIsLoading(false);
       }
     } catch (err) {
-      console.error(err);
+      if (err instanceof Error) {
+        console.error(err.message);
+      }
       setIsBooks(true);
       setGotBooks(false);
       setBooks([]);
@@ -151,6 +158,7 @@ export default function BestSellersPage() {
           </Heading>
           <Button
             isLoading={isLoading}
+            isDisabled={isDisabled}
             colorScheme="teal"
             maxWidth={"150px"}
             onClick={handleBestSellersClick}
