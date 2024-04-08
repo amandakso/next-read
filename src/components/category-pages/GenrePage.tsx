@@ -42,7 +42,6 @@ export default function GenrePage() {
         }
       );
       const resJson = await res.json();
-      console.log(resJson);
 
       if (resJson.error) {
         // unable to fetch books

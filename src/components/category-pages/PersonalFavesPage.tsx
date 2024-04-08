@@ -24,7 +24,6 @@ export default function PersonalFavesPage() {
         }
       );
       const resJson = await res.json();
-      console.log(resJson);
       if (resJson.error) {
         return false;
       } else {
@@ -37,7 +36,6 @@ export default function PersonalFavesPage() {
   }
 
   async function handleFavesClick() {
-    console.log("click");
     setIsLoading(true);
     setIsBooks(false);
     setGotBooks(false);

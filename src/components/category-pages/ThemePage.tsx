@@ -18,7 +18,6 @@ export default function ThemePage() {
     return themes[index];
   }
   async function handleThemeClick() {
-    console.log("click");
     setIsLoading(true);
     const prompt = generateThemePrompt();
 
