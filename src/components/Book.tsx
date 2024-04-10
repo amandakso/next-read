@@ -17,11 +17,14 @@ import {
   Text,
   Center,
 } from "@chakra-ui/react";
+import { Prose } from "@nikolovlazar/chakra-ui-prose";
 import {
   BookInterface,
   BestSellersBookInterface,
 } from "../utilities/constants";
 import { previewBook } from "../utilities/helpers";
+
+import parse from "html-react-parser";
 
 interface BookProps {
   key: number;
@@ -110,7 +113,9 @@ export default function Book(props: BookProps) {
                   <Text>Mature Book</Text>
                 ) : null}
                 <Text mt="1rem">Description: </Text>
-                <Text>{props.book.volumeInfo.description}</Text>
+                {props.book.volumeInfo.description ? (
+                  <Prose>{parse(props.book.volumeInfo.description)}</Prose>
+                ) : null}
               </ModalBody>
               <ModalFooter>
                 <Button colorScheme="teal" mr={3} onClick={onClose}>

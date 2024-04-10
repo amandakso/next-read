@@ -24,6 +24,7 @@ export default function PersonalFavesPage() {
         }
       );
       const resJson = await res.json();
+      console.log(resJson);
       if (resJson.error) {
         return false;
       } else {

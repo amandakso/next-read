@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { withProse } from "@nikolovlazar/chakra-ui-prose";
 import "./index.css";
 
 const breakpoints = {
@@ -14,7 +15,7 @@ const breakpoints = {
 };
 
 // 3. Extend the theme
-const theme = extendTheme({ breakpoints });
+const theme = extendTheme({ breakpoints }, withProse());
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
