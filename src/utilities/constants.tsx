@@ -30,11 +30,6 @@ export const genres: Genre[] = [
     search: "fiction/fantasy",
   },
   {
-    name: "Fantasy",
-    prompt: genrePromptPhrase + "Fantasy",
-    search: "fiction/fantasy/general",
-  },
-  {
     name: "Contemporary Fantasy",
     prompt: genrePromptPhrase + "Contemporary Fantasy",
     search: "fiction/fantasy/contemporary",
@@ -75,11 +70,6 @@ export const genres: Genre[] = [
     search: "fiction/historical",
   },
   {
-    name: "Historical Fiction",
-    prompt: genrePromptPhrase + "Historical Fiction",
-    search: "fiction/historical/general",
-  },
-  {
     name: "Literary Fiction",
     prompt: genrePromptPhrase + "Literary Fiction",
     search: "fiction/literary",
@@ -92,17 +82,12 @@ export const genres: Genre[] = [
   {
     name: "Mystery",
     prompt: genrePromptPhrase + "Mystery",
-    search: "fiction/mystery+detective",
+    search: "fiction/mystery+&+dectective",
   },
   {
     name: "Romance Fiction",
     prompt: genrePromptPhrase + "Romance",
     search: "fiction/romance",
-  },
-  {
-    name: "Romance Fiction",
-    prompt: genrePromptPhrase + "Romance",
-    search: "fiction/romance/general",
   },
   {
     name: "Contemporary Romance",
@@ -120,11 +105,6 @@ export const genres: Genre[] = [
     search: "fiction/science+fiction",
   },
   {
-    name: "Science Fiction",
-    prompt: genrePromptPhrase + "Science Fiction",
-    search: "fiction/science+fiction/general",
-  },
-  {
     name: "Short Stories",
     prompt: genrePromptPhrase + "Short Stories",
     search: "fiction/short+stories",
@@ -138,11 +118,6 @@ export const genres: Genre[] = [
     name: "Thrillers",
     prompt: genrePromptPhrase + "Thriller",
     search: "fiction/thrillers",
-  },
-  {
-    name: "Thrillers",
-    prompt: genrePromptPhrase + "Thriller",
-    search: "fiction/thrillers/general",
   },
   {
     name: "Crime Thrillers",
@@ -170,20 +145,9 @@ export const genres: Genre[] = [
     search: "poetry",
   },
   {
-    name: "Poetry",
-    prompt: genrePromptPhrase + "Poetry",
-    search: "poetry/general",
-  },
-
-  {
     name: "YA Fiction",
     prompt: genrePromptPhrase + "Young Adult Fiction",
     search: "young+adult+fiction",
-  },
-  {
-    name: "YA Fiction",
-    prompt: genrePromptPhrase + "Young Adult Fiction",
-    search: "young+adult+fiction/general",
   },
   {
     name: "YA Fiction: Classics",
@@ -196,11 +160,6 @@ export const genres: Genre[] = [
     search: "young+adult+fiction/comics+&+graphic+novels",
   },
   {
-    name: "YA Fiction: Graphic Novels",
-    prompt: genrePromptPhrase + "Young Adult Fiction (Comics & Graphic Novels)",
-    search: "young+adult+fiction/comics+&+graphic+novels/general",
-  },
-  {
     name: "YA Fiction: Dystopian",
     prompt: genrePromptPhrase + "Young Adult Fiction (Dystopian)",
     search: "young+adult+fiction/dystopian",
@@ -209,11 +168,6 @@ export const genres: Genre[] = [
     name: "YA Fiction: Fantasy",
     prompt: genrePromptPhrase + "Young Adult Fiction (Fantasy)",
     search: "young+adult+fiction/fantasy",
-  },
-  {
-    name: "YA Fiction: Fantasy",
-    prompt: genrePromptPhrase + "Young Adult Fiction (Fantasy)",
-    search: "young+adult+fiction/fantasy/general",
   },
   {
     name: "YA Fiction: Contemporary Fantasy",
@@ -241,11 +195,6 @@ export const genres: Genre[] = [
     search: "young+adult+fiction/historical",
   },
   {
-    name: "YA Fiction: Historical",
-    prompt: genrePromptPhrase + "Young Adult Fiction (Historical)",
-    search: "young+adult+fiction/historical/general",
-  },
-  {
     name: "YA Fiction: Horror",
     prompt: genrePromptPhrase + "Young Adult Fiction (Horror)",
     search: "young+adult+fiction/horror",
@@ -271,11 +220,6 @@ export const genres: Genre[] = [
     search: "young+adult+fiction/romance",
   },
   {
-    name: "YA Fiction: Romance",
-    prompt: genrePromptPhrase + "Young Adult Fiction (Romance)",
-    search: "young+adult+fiction/romance/general",
-  },
-  {
     name: "YA Fiction: Contemporary Romance",
     prompt: genrePromptPhrase + "Young Adult Fiction (Contemporary Romance)",
     search: "young+adult+fiction/romance/contemporary",
@@ -291,24 +235,14 @@ export const genres: Genre[] = [
     search: "young+adult+fiction/science+fiction",
   },
   {
-    name: "YA Fiction: Science Fiction",
-    prompt: genrePromptPhrase + "Young Adult Fiction (Sci Fi)",
-    search: "young+adult+fiction/science+fiction/general",
-  },
-  {
     name: "YA Fiction: Thriller",
     prompt: genrePromptPhrase + "Young Adult Fiction (Thriller)",
-    search: "young+adult+fiction/thrillers+&+suspense",
+    search: "young+adult+fiction/thrillers+suspense",
   },
   {
     name: "YA Fiction: Spy Thriller",
     prompt: genrePromptPhrase + "Young Adult Fiction (Spy Thriller)",
-    search: "young+adult+fiction/thrillers+&+suspense/espionage",
-  },
-  {
-    name: "YA Fiction: Psychological Thriller",
-    prompt: genrePromptPhrase + "Young Adult Fiction (Psychological Thriller)",
-    search: "young+adult+fiction/thrillers+&+suspense/psychological",
+    search: "young+adult+fiction/thrillers+suspense/espionage",
   },
   {
     name: "YA Fiction: Crime Thriller",
