@@ -308,7 +308,7 @@ export const themes: ThemeInterface[] = [
   {
     name: "small town",
     prompt: themePrompt + "Small Town",
-    search: "fiction/small+town%2B%26%2Brural",
+    search: '"fiction/small+town%2B%26%2Brural"',
   },
 ];
 
