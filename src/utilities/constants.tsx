@@ -1,5 +1,5 @@
 // Genres
-interface Genre {
+export interface GenreInterface {
   name: string;
   prompt: string;
   search: string;
@@ -8,7 +8,7 @@ interface Genre {
 // common phrases:
 const genrePromptPhrase: string = "Read a book from the following genre: ";
 
-export const genres: Genre[] = [
+export const genres: GenreInterface[] = [
   {
     name: "Absurdist Fiction",
     prompt: genrePromptPhrase + "Absurdist Fiction",
@@ -271,7 +271,7 @@ export interface BookInterface {
 // Theme
 const themePrompt: string = "Read a book with the following theme: ";
 
-interface ThemeInterface {
+export interface ThemeInterface {
   name: string;
   prompt: string;
   search: string;
@@ -313,7 +313,7 @@ export const themes: ThemeInterface[] = [
 ];
 
 // Best Sellers
-interface BestSellersInterface {
+export interface BestSellersInterface {
   name: string;
   prompt: string;
   search: string;
