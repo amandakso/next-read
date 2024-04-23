@@ -4,7 +4,7 @@ import {
   bestSellers,
   BestSellersBookInterface,
 } from "../../utilities/constants";
-import { getRandomIndexNumber } from "../../utilities/helpers";
+import { getRandomIndexNumber, generatePrompt } from "../../utilities/helpers";
 import Books from "../Books";
 
 export default function BestSellersPage() {
@@ -18,9 +18,7 @@ export default function BestSellersPage() {
   const [bestSellersDate, setBestSellersDate] = useState<string>("");
 
   function generateBestSellersPrompt() {
-    const max = bestSellers.length;
-    const index = getRandomIndexNumber(max);
-    return bestSellers[index];
+    return generatePrompt(bestSellers);
   }
 
   function generateBestSellersDate() {

@@ -1,8 +1,15 @@
+import {
+  GenreInterface,
+  ThemeInterface,
+  BestSellersInterface,
+} from "./constants";
+
 // Generate random number from 0 to max - 1
 export function getRandomIndexNumber(max: number) {
   return Math.floor(Math.random() * max);
 }
 
+//go to book preview url
 export function previewBook(url: string | undefined) {
   function isValidUrl(str: string) {
     try {
@@ -19,4 +26,13 @@ export function previewBook(url: string | undefined) {
   if (bookUrl) {
     window.location.href = url;
   }
+}
+
+type promptsType = GenreInterface | ThemeInterface | BestSellersInterface;
+
+// generate prompt
+export function generatePrompt(prompts: promptsType[]) {
+  const max = prompts.length;
+  const index = getRandomIndexNumber(max);
+  return prompts[index];
 }

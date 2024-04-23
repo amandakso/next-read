@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
-import { getRandomIndexNumber } from "../../utilities/helpers";
+import { getRandomIndexNumber, generatePrompt } from "../../utilities/helpers";
 import { genres, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
 
@@ -13,9 +13,7 @@ export default function GenrePage() {
   const [gotBooks, setGotBooks] = useState<boolean>(false); // check if res json includes books
 
   function generateGenrePrompt() {
-    const max = genres.length;
-    const index = getRandomIndexNumber(max);
-    return genres[index];
+    return generatePrompt(genres);
   }
 
   async function handleGenreClick() {

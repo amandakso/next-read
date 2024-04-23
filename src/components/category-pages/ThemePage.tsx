@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
 import { themes, BookInterface } from "../../utilities/constants";
-import { getRandomIndexNumber } from "../../utilities/helpers";
+import { getRandomIndexNumber, generatePrompt } from "../../utilities/helpers";
 import Books from "../Books";
 
 export default function ThemePage() {
@@ -13,9 +13,7 @@ export default function ThemePage() {
   const [gotBooks, setGotBooks] = useState<boolean>(false); // check if res json includes books
 
   function generateThemePrompt() {
-    const max = themes.length;
-    const index = getRandomIndexNumber(max);
-    return themes[index];
+    return generatePrompt(themes);
   }
   async function handleThemeClick() {
     setIsLoading(true);
