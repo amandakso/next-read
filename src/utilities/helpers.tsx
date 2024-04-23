@@ -36,3 +36,20 @@ export function generatePrompt(prompts: promptsType[]) {
   const index = getRandomIndexNumber(max);
   return prompts[index];
 }
+
+// fetch books
+export async function fetchBooks(url: string) {
+  try {
+    const res = await fetch(url, {
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const resJson = await res.json();
+    return { status: res.status, data: resJson };
+  } catch (error) {
+    return { status: 400, error: error };
+  }
+}

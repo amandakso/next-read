@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
-import { getRandomIndexNumber, generatePrompt } from "../../utilities/helpers";
+import {
+  getRandomIndexNumber,
+  generatePrompt,
+  fetchBooks,
+} from "../../utilities/helpers";
 import { genres, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
 
@@ -27,21 +31,11 @@ export default function GenrePage() {
     setIsBooks(false);
     setGotBooks(false);
     setBooks([]);
+    const url: string = `https://www.googleapis.com/books/v1/volumes?q=subject:"${prompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`;
 
-    try {
-      const res = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=subject:"${prompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`,
-        {
-          method: "GET",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const resJson = await res.json();
-
-      if (resJson.error) {
+    fetchBooks(url).then((response) => {
+      console.log(response);
+      if (response.status !== 200) {
         // unable to fetch books
         setIsBooks(true);
         setGotBooks(false);
@@ -49,21 +43,22 @@ export default function GenrePage() {
         setIsLoading(false);
       } else {
         // display book results
-        if (resJson.items) {
-          if (resJson.items.length > 3) {
+        const data = response.data;
+        if (data.items) {
+          if (data.items.length > 3) {
             const numbersUsed: number[] = [];
             const bookSuggestions: BookInterface[] = [];
-            const max = resJson.items.length;
+            const max = data.items.length;
             while (bookSuggestions.length < 3) {
               const index = getRandomIndexNumber(max);
               if (!numbersUsed.includes(index)) {
-                bookSuggestions.push(resJson.items[index]);
+                bookSuggestions.push(data.items[index]);
                 numbersUsed.push(index);
               }
             }
             setBooks(bookSuggestions);
           } else {
-            setBooks(resJson.items);
+            setBooks(data.items);
           }
           setGotBooks(true);
         } else {
@@ -73,13 +68,7 @@ export default function GenrePage() {
         setIsBooks(true);
         setIsLoading(false);
       }
-    } catch (err) {
-      console.error(err);
-      setIsBooks(true);
-      setGotBooks(false);
-      setBooks([]);
-      setIsLoading(false);
-    }
+    });
   }
 
   return (

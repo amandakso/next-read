@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
 import { themes, BookInterface } from "../../utilities/constants";
-import { getRandomIndexNumber, generatePrompt } from "../../utilities/helpers";
+import {
+  getRandomIndexNumber,
+  generatePrompt,
+  fetchBooks,
+} from "../../utilities/helpers";
 import Books from "../Books";
 
 export default function ThemePage() {
@@ -27,44 +31,34 @@ export default function ThemePage() {
     setGotBooks(false);
     setBooks([]);
 
-    const api_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
+    const api_key: string = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
+    const url: string = `https://www.googleapis.com/books/v1/volumes?q=subject:${prompt.search}&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`;
 
-    try {
-      const res = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=subject:${prompt.search}&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`,
-        {
-          method: "GET",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const resJson = await res.json();
-
-      if (resJson.error) {
-        // unable to fetch books
+    fetchBooks(url).then((response) => {
+      if (response.status !== 200) {
+        //unable to fetch books
         setIsBooks(true);
         setGotBooks(false);
         setBooks([]);
         setIsLoading(false);
       } else {
-        // display book results
-        if (resJson.items) {
-          if (resJson.items.length > 3) {
+        // display books
+        const data = response.data;
+        if (data.items) {
+          if (data.items.length > 3) {
             const numbersUsed: number[] = [];
             const bookSuggestions: BookInterface[] = [];
-            const max = resJson.items.length;
+            const max = data.items.length;
             while (bookSuggestions.length < 3) {
               const index = getRandomIndexNumber(max);
               if (!numbersUsed.includes(index)) {
-                bookSuggestions.push(resJson.items[index]);
+                bookSuggestions.push(data.items[index]);
                 numbersUsed.push(index);
               }
             }
             setBooks(bookSuggestions);
           } else {
-            setBooks(resJson.items);
+            setBooks(data.items);
           }
           setGotBooks(true);
         } else {
@@ -74,10 +68,7 @@ export default function ThemePage() {
         setIsBooks(true);
         setIsLoading(false);
       }
-    } catch (error) {
-      console.error(error);
-    }
-    setIsLoading(false);
+    });
   }
   return (
     <>

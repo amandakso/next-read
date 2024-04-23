@@ -4,7 +4,11 @@ import {
   bestSellers,
   BestSellersBookInterface,
 } from "../../utilities/constants";
-import { getRandomIndexNumber, generatePrompt } from "../../utilities/helpers";
+import {
+  getRandomIndexNumber,
+  generatePrompt,
+  fetchBooks,
+} from "../../utilities/helpers";
 import Books from "../Books";
 
 export default function BestSellersPage() {
@@ -64,26 +68,17 @@ export default function BestSellersPage() {
       day.toString().padStart(2, "0");
 
     // fetch from NYT Bestsellers
+    const url: string = `https://api.nytimes.com/svc/books/v3/lists/full-overview.json?published_date=${searchDate}&api-key=${api_key}`;
 
-    try {
-      const res = await fetch(
-        `https://api.nytimes.com/svc/books/v3/lists/full-overview.json?published_date=${searchDate}&api-key=${api_key}`,
-        {
-          method: "GET",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const response = await res.json();
+    fetchBooks(url).then((response) => {
+      // temporarily disable generate prompt button
       setIsDisabled(true);
       setTimeout(() => {
         setIsDisabled(false);
       }, 30000);
 
-      if (response.status !== "OK") {
-        // error fetching books
+      if (response.status !== 200) {
+        //unable to fetch books
         setIsBooks(true);
         setGotBooks(false);
         setBooks([]);
@@ -91,10 +86,11 @@ export default function BestSellersPage() {
         setIsLoading(false);
       } else {
         setIsLoading(false);
+        const data = response.data;
         // [year, month, date]
-        const dateArr = response.results.bestsellers_date.split("-");
+        const dateArr = data.results.bestsellers_date.split("-");
         setBestSellersDate(dateArr[1] + "-" + dateArr[2] + "-" + dateArr[0]);
-        const lists = response.results.lists;
+        const lists = data.results.lists;
         let bookResults = [];
         for (const list in lists) {
           if (lists[list].list_name_encoded == result.search) {
@@ -127,16 +123,7 @@ export default function BestSellersPage() {
         setIsBooks(true);
         setIsLoading(false);
       }
-    } catch (err) {
-      if (err instanceof Error) {
-        console.error(err.message);
-      }
-      setIsBooks(true);
-      setGotBooks(false);
-      setBooks([]);
-      setBestSellersDate("");
-      setIsLoading(false);
-    }
+    });
   }
   return (
     <>
