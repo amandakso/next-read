@@ -28,10 +28,8 @@ export function previewBook(url: string | undefined) {
   }
 }
 
-type promptsType = GenreInterface | ThemeInterface | BestSellersInterface;
-
 // generate prompt
-export function generatePrompt(prompts: promptsType[]) {
+export function generatePrompt<Type>(prompts: Type[]) {
   const max = prompts.length;
   const index = getRandomIndexNumber(max);
   return prompts[index];
@@ -51,5 +49,28 @@ export async function fetchBooks(url: string) {
     return { status: res.status, data: resJson };
   } catch (error) {
     return { status: 400, error: error };
+  }
+}
+
+export function selectBooks<Type>(bookArray: Type[]) {
+  if (bookArray) {
+    const maxBooksDisplayed = 3;
+    if (bookArray.length > maxBooksDisplayed) {
+      const numbersUsed: number[] = [];
+      const bookSuggestions: Type[] = [];
+      const max = bookArray.length;
+      while (bookSuggestions.length < maxBooksDisplayed) {
+        const index = getRandomIndexNumber(max);
+        if (!numbersUsed.includes(index)) {
+          bookSuggestions.push(bookArray[index]);
+          numbersUsed.push(index);
+        }
+      }
+      return bookSuggestions;
+    } else {
+      return bookArray;
+    }
+  } else {
+    return [];
   }
 }
