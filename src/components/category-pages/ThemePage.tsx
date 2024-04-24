@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
 import { themes, BookInterface } from "../../utilities/constants";
 import {
-  getRandomIndexNumber,
   generatePrompt,
   fetchBooks,
+  selectBooks,
 } from "../../utilities/helpers";
 import Books from "../Books";
 
@@ -44,27 +44,15 @@ export default function ThemePage() {
       } else {
         // display books
         const data = response.data;
-        if (data.items) {
-          if (data.items.length > 3) {
-            const numbersUsed: number[] = [];
-            const bookSuggestions: BookInterface[] = [];
-            const max = data.items.length;
-            while (bookSuggestions.length < 3) {
-              const index = getRandomIndexNumber(max);
-              if (!numbersUsed.includes(index)) {
-                bookSuggestions.push(data.items[index]);
-                numbersUsed.push(index);
-              }
-            }
-            setBooks(bookSuggestions);
-          } else {
-            setBooks(data.items);
-          }
+        const booksToDisplay = selectBooks(data.items);
+        setBooks(booksToDisplay as BookInterface[]);
+
+        if (booksToDisplay.length) {
           setGotBooks(true);
         } else {
           setGotBooks(false);
-          setBooks([]);
         }
+
         setIsBooks(true);
         setIsLoading(false);
       }

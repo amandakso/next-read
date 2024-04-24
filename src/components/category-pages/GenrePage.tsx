@@ -4,6 +4,7 @@ import {
   getRandomIndexNumber,
   generatePrompt,
   fetchBooks,
+  selectBooks,
 } from "../../utilities/helpers";
 import { genres, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
@@ -34,7 +35,6 @@ export default function GenrePage() {
     const url: string = `https://www.googleapis.com/books/v1/volumes?q=subject:"${prompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`;
 
     fetchBooks(url).then((response) => {
-      console.log(response);
       if (response.status !== 200) {
         // unable to fetch books
         setIsBooks(true);
@@ -44,27 +44,16 @@ export default function GenrePage() {
       } else {
         // display book results
         const data = response.data;
-        if (data.items) {
-          if (data.items.length > 3) {
-            const numbersUsed: number[] = [];
-            const bookSuggestions: BookInterface[] = [];
-            const max = data.items.length;
-            while (bookSuggestions.length < 3) {
-              const index = getRandomIndexNumber(max);
-              if (!numbersUsed.includes(index)) {
-                bookSuggestions.push(data.items[index]);
-                numbersUsed.push(index);
-              }
-            }
-            setBooks(bookSuggestions);
-          } else {
-            setBooks(data.items);
-          }
+
+        const booksToDisplay = selectBooks(data.items);
+        setBooks(booksToDisplay as BookInterface[]);
+
+        if (booksToDisplay.length) {
           setGotBooks(true);
         } else {
           setGotBooks(false);
-          setBooks([]);
         }
+
         setIsBooks(true);
         setIsLoading(false);
       }

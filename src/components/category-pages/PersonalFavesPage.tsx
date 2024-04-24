@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
-import { getRandomIndexNumber } from "../../utilities/helpers";
+import { selectBooks } from "../../utilities/helpers";
 import { favorites, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
 
@@ -36,39 +36,36 @@ export default function PersonalFavesPage() {
   }
 
   async function handleFavesClick() {
+    // reset values
     setIsLoading(true);
     setIsBooks(false);
     setGotBooks(false);
 
-    const max = favorites.length;
-    const bookIndexes: number[] = [];
-    while (bookIndexes.length < 3) {
-      const index = getRandomIndexNumber(max);
-      if (!bookIndexes.includes(index)) {
-        bookIndexes.push(index);
-      }
-    }
+    // select favorite books
+    const booksToDisplay = selectBooks(favorites);
+
+    // get book data from selected books
     const bookResults = [];
 
-    for (const bookIndex of bookIndexes) {
-      const result = await searchBook(favorites[bookIndex].id);
+    for (const item of booksToDisplay) {
+      const result = await searchBook(item.id);
       if (result) {
         bookResults.push(result);
       }
     }
 
+    // display books
     if (bookResults.length <= 0) {
       setBooks([]);
-      setIsLoading(false);
-      setIsBooks(true);
       setGotBooks(false);
     } else {
       setBooks(bookResults);
-      setIsLoading(false);
-      setIsBooks(true);
       setGotBooks(true);
     }
+    setIsLoading(false);
+    setIsBooks(true);
   }
+
   return (
     <Container>
       <Flex

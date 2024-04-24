@@ -8,6 +8,7 @@ import {
   getRandomIndexNumber,
   generatePrompt,
   fetchBooks,
+  selectBooks,
 } from "../../utilities/helpers";
 import Books from "../Books";
 
@@ -91,6 +92,7 @@ export default function BestSellersPage() {
         const dateArr = data.results.bestsellers_date.split("-");
         setBestSellersDate(dateArr[1] + "-" + dateArr[2] + "-" + dateArr[0]);
         const lists = data.results.lists;
+
         let bookResults = [];
         for (const list in lists) {
           if (lists[list].list_name_encoded == result.search) {
@@ -99,27 +101,15 @@ export default function BestSellersPage() {
           }
         }
         // display book results
-        if (bookResults.length > 0) {
-          if (bookResults.length > 3) {
-            const numbersUsed: number[] = [];
-            const bookSuggestions = [];
-            const max = bookResults.length;
-            while (bookSuggestions.length < 3) {
-              const index = getRandomIndexNumber(max);
-              if (!numbersUsed.includes(index)) {
-                bookSuggestions.push(bookResults[index]);
-                numbersUsed.push(index);
-              }
-            }
-            setBooks(bookSuggestions);
-          } else {
-            setBooks(bookResults);
-          }
+        const booksToDisplay = selectBooks(bookResults);
+        setBooks(booksToDisplay as BestSellersBookInterface[]);
+
+        if (booksToDisplay.length) {
           setGotBooks(true);
         } else {
           setGotBooks(false);
-          setBooks([]);
         }
+
         setIsBooks(true);
         setIsLoading(false);
       }
