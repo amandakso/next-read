@@ -16,7 +16,13 @@ export default function CustomizePage() {
         <Heading as={"h1"} size="lg">
           Customize: Choose prompts to include in generating a random TBR prompt
         </Heading>
-        <Button onClick={handleCustomizeClick}>Generate Prompt</Button>
+        <Button
+          onClick={handleCustomizeClick}
+          colorScheme="teal"
+          maxWidth={"150px"}
+        >
+          Generate Prompt
+        </Button>
         <Text display={text}>
           Section in progress. Please check back in the future.
         </Text>
