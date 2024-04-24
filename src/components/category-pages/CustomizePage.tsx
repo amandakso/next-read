@@ -3,7 +3,6 @@ import {
   Container,
   Flex,
   Button,
-  Text,
   TableContainer,
   Table,
   Thead,
@@ -19,8 +18,30 @@ import { genres, themes, bestSellers } from "../../utilities/constants";
 
 export default function CustomizePage() {
   const prompts = [...genres, ...themes, ...bestSellers];
+  const [selectedPrompts, setSelectedPrompts] = useState<Set<string>>(
+    () => new Set()
+  );
   function handleCustomizeClick() {
     console.log("tbd");
+  }
+  function handleCheckboxClicked(isChecked: boolean, name: string) {
+    console.log(selectedPrompts);
+    if (isChecked) {
+      setSelectedPrompts((prev) => {
+        const next = new Set(prev);
+        next.add(name);
+        console.log(next);
+        return next;
+      });
+    } else {
+      setSelectedPrompts((prev) => {
+        const next = new Set(prev);
+
+        next.delete(name);
+        console.log(next);
+        return next;
+      });
+    }
   }
   return (
     <Container>
@@ -54,7 +75,15 @@ export default function CustomizePage() {
                 return (
                   <Tr key={index}>
                     <Td>
-                      <Checkbox value={prompt.name} />
+                      <Checkbox
+                        value={prompt.name}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                          handleCheckboxClicked(
+                            e.target.checked,
+                            e.target.value
+                          );
+                        }}
+                      />
                     </Td>
                     <Td whiteSpace={"wrap"}>{prompt.prompt}</Td>
                   </Tr>
