@@ -14,7 +14,6 @@ export default function ThemePage() {
   const [books, setBooks] = useState<BookInterface[]>([]);
   const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false); // check if http get request was received
-  const [gotBooks, setGotBooks] = useState<boolean>(false); // check if res json includes books
 
   function generateThemePrompt() {
     return generatePrompt(themes);
@@ -28,7 +27,6 @@ export default function ThemePage() {
 
     // reset before search
     setIsBooks(false);
-    setGotBooks(false);
     setBooks([]);
 
     const api_key: string = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
@@ -38,7 +36,6 @@ export default function ThemePage() {
       if (response.status !== 200) {
         //unable to fetch books
         setIsBooks(true);
-        setGotBooks(false);
         setBooks([]);
         setIsLoading(false);
       } else {
@@ -46,12 +43,6 @@ export default function ThemePage() {
         const data = response.data;
         const booksToDisplay = selectBooks(data.items);
         setBooks(booksToDisplay as BookInterface[]);
-
-        if (booksToDisplay.length) {
-          setGotBooks(true);
-        } else {
-          setGotBooks(false);
-        }
 
         setIsBooks(true);
         setIsLoading(false);
@@ -80,7 +71,7 @@ export default function ThemePage() {
           {isPromptGenerated ? <Text>{themePrompt}</Text> : null}
           {isLoading ? <Text>Finding similar books...</Text> : null}
           {isBooksFetched ? (
-            gotBooks ? (
+            books.length > 0 ? (
               <>
                 <Text>Book Suggestions: </Text>
                 <Books books={books} source={"google"} />

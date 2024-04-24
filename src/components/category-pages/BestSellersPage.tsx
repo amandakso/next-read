@@ -19,7 +19,6 @@ export default function BestSellersPage() {
   const [bestSellersPrompt, setBestSellersPrompt] = useState<string>("");
   const [books, setBooks] = useState<BestSellersBookInterface[]>([]);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false);
-  const [gotBookResults, setGotBooks] = useState<boolean>(false);
   const [bestSellersDate, setBestSellersDate] = useState<string>("");
 
   function generateBestSellersPrompt() {
@@ -52,7 +51,6 @@ export default function BestSellersPage() {
 
     //reset before search
     setIsBooks(false);
-    setGotBooks(false);
     setBooks([]);
     setBestSellersDate("");
 
@@ -81,7 +79,6 @@ export default function BestSellersPage() {
       if (response.status !== 200) {
         //unable to fetch books
         setIsBooks(true);
-        setGotBooks(false);
         setBooks([]);
         setBestSellersDate("");
         setIsLoading(false);
@@ -103,12 +100,6 @@ export default function BestSellersPage() {
         // display book results
         const booksToDisplay = selectBooks(bookResults);
         setBooks(booksToDisplay as BestSellersBookInterface[]);
-
-        if (booksToDisplay.length) {
-          setGotBooks(true);
-        } else {
-          setGotBooks(false);
-        }
 
         setIsBooks(true);
         setIsLoading(false);
@@ -142,7 +133,7 @@ export default function BestSellersPage() {
             <Text>Finding books from the Best Sellers list... </Text>
           ) : null}
           {isBooksFetched ? (
-            gotBookResults ? (
+            books.length > 0 ? (
               <>
                 <Text>Book Suggestions: </Text>
                 <Books bestsellers={books} source={"nyt"} />

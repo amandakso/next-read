@@ -7,7 +7,6 @@ import Books from "../../components/Books";
 export default function PersonalFavesPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false);
-  const [gotBooks, setGotBooks] = useState<boolean>(false);
   const [books, setBooks] = useState<BookInterface[]>([]);
 
   async function searchBook(volumeid: string) {
@@ -39,7 +38,6 @@ export default function PersonalFavesPage() {
     // reset values
     setIsLoading(true);
     setIsBooks(false);
-    setGotBooks(false);
 
     // select favorite books
     const booksToDisplay = selectBooks(favorites);
@@ -57,11 +55,10 @@ export default function PersonalFavesPage() {
     // display books
     if (bookResults.length <= 0) {
       setBooks([]);
-      setGotBooks(false);
     } else {
       setBooks(bookResults);
-      setGotBooks(true);
     }
+
     setIsLoading(false);
     setIsBooks(true);
   }
@@ -85,7 +82,7 @@ export default function PersonalFavesPage() {
         </Button>
         {isLoading ? <Text>Getting books...</Text> : null}
         {isBooksFetched ? (
-          gotBooks ? (
+          books.length > 0 ? (
             <>
               <Text>Book Recommendations: </Text>
               <Books books={books} source={"google"} />

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
 import {
-  getRandomIndexNumber,
   generatePrompt,
   fetchBooks,
   selectBooks,
@@ -15,7 +14,6 @@ export default function GenrePage() {
   const [books, setBooks] = useState<BookInterface[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false); // check if http get request was received
-  const [gotBooks, setGotBooks] = useState<boolean>(false); // check if res json includes books
 
   function generateGenrePrompt() {
     return generatePrompt(genres);
@@ -30,7 +28,6 @@ export default function GenrePage() {
     setIsLoading(true);
     // reset before search
     setIsBooks(false);
-    setGotBooks(false);
     setBooks([]);
     const url: string = `https://www.googleapis.com/books/v1/volumes?q=subject:"${prompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${api_key}`;
 
@@ -38,7 +35,6 @@ export default function GenrePage() {
       if (response.status !== 200) {
         // unable to fetch books
         setIsBooks(true);
-        setGotBooks(false);
         setBooks([]);
         setIsLoading(false);
       } else {
@@ -47,12 +43,6 @@ export default function GenrePage() {
 
         const booksToDisplay = selectBooks(data.items);
         setBooks(booksToDisplay as BookInterface[]);
-
-        if (booksToDisplay.length) {
-          setGotBooks(true);
-        } else {
-          setGotBooks(false);
-        }
 
         setIsBooks(true);
         setIsLoading(false);
@@ -82,7 +72,7 @@ export default function GenrePage() {
           {isPromptGenerated ? <Text>{genrePrompt}</Text> : null}
           {isLoading ? <Text>Finding similar books...</Text> : null}
           {isBooksFetched ? (
-            gotBooks ? (
+            books.length > 0 ? (
               <>
                 <Text>Book Suggestions: </Text>
                 <Books books={books} source={"google"} />
