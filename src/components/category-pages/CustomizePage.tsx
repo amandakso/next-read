@@ -14,16 +14,32 @@ import {
   CheckboxGroup,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { genres, themes, bestSellers } from "../../utilities/constants";
+import {
+  genres,
+  themes,
+  bestSellers,
+  GenreInterface,
+  ThemeInterface,
+  BestSellersBookInterface,
+  BestSellersInterface,
+} from "../../utilities/constants";
 
 export default function CustomizePage() {
   const prompts = [...genres, ...themes, ...bestSellers];
   const [selectedPrompts, setSelectedPrompts] = useState<Set<string>>(
     () => new Set()
   );
+
   function handleCustomizeClick() {
-    console.log(selectedPrompts);
+    let promptInfo: Array<
+      GenreInterface | ThemeInterface | BestSellersInterface | undefined
+    > = [];
+    for (const item of selectedPrompts) {
+      const found = prompts.find((element) => element.name == item);
+      promptInfo = [...promptInfo, found];
+    }
   }
+
   function handleCheckboxClicked(isChecked: boolean, name: string) {
     if (isChecked) {
       setSelectedPrompts((prev) => {
