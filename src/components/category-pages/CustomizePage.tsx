@@ -1,10 +1,25 @@
-import { Heading, Container, Flex, Button, Text } from "@chakra-ui/react";
+import {
+  Heading,
+  Container,
+  Flex,
+  Button,
+  Text,
+  TableContainer,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody,
+  Td,
+  Checkbox,
+  CheckboxGroup,
+} from "@chakra-ui/react";
 import { useState } from "react";
+import { genres } from "../../utilities/constants";
 
 export default function CustomizePage() {
-  const [text, setText] = useState("none");
   function handleCustomizeClick() {
-    setText("block");
+    console.log("tbd");
   }
   return (
     <Container>
@@ -23,10 +38,39 @@ export default function CustomizePage() {
         >
           Generate Prompt
         </Button>
-        <Text display={text}>
-          Section in progress. Please check back in the future.
-        </Text>
       </Flex>
+      <TableContainer overflowY={"auto"} maxHeight={"300px"}>
+        <Table>
+          <Thead>
+            <Tr>
+              <Th></Th>
+              <Th>Prompt</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <CheckboxGroup>
+              {genres.map((prompt, index) => {
+                return (
+                  <Tr key={index}>
+                    <Td>
+                      <Checkbox value={prompt.name} />
+                    </Td>
+                    <Td whiteSpace={"wrap"}>{prompt.prompt}</Td>
+                  </Tr>
+                );
+              })}
+            </CheckboxGroup>
+            <Tr>
+              <Td>test</Td>
+              <Td>prompt test</Td>
+            </Tr>
+            <Tr backgroundColor={"teal"}>
+              <Td>test</Td>
+              <Td>prompt test</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </TableContainer>
     </Container>
   );
 }
