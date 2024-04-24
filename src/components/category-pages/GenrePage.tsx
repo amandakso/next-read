@@ -15,14 +15,10 @@ export default function GenrePage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false); // check if http get request was received
 
-  function generateGenrePrompt() {
-    return generatePrompt(genres);
-  }
-
   async function handleGenreClick() {
     // get and display random genre prompt
     const api_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
-    const prompt = generateGenrePrompt();
+    const prompt = generatePrompt(genres);
     setGenrePrompt(prompt.prompt);
     setIsPrompt(true);
     setIsLoading(true);

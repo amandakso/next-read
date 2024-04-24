@@ -21,10 +21,6 @@ export default function BestSellersPage() {
   const [isBooksFetched, setIsBooks] = useState<boolean>(false);
   const [bestSellersDate, setBestSellersDate] = useState<string>("");
 
-  function generateBestSellersPrompt() {
-    return generatePrompt(bestSellers);
-  }
-
   function generateBestSellersDate() {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
@@ -44,7 +40,7 @@ export default function BestSellersPage() {
   async function handleBestSellersClick() {
     const api_key = import.meta.env.VITE_NYT_KEY;
     setIsLoading(true);
-    const result = generateBestSellersPrompt();
+    const result = generatePrompt(bestSellers);
     const bestSellersDate = generateBestSellersDate();
     setBestSellersPrompt("Read a book from " + result.prompt);
     setIsPrompt(true);

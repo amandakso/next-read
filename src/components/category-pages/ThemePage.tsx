@@ -15,12 +15,9 @@ export default function ThemePage() {
   const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false); // check if http get request was received
 
-  function generateThemePrompt() {
-    return generatePrompt(themes);
-  }
   async function handleThemeClick() {
     setIsLoading(true);
-    const prompt = generateThemePrompt();
+    const prompt = generatePrompt(themes);
 
     setThemePrompt(prompt.prompt);
     setIsPrompt(true);
