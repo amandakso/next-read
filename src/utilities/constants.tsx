@@ -380,6 +380,7 @@ export const themes: ThemeInterface[] = [
 
 // Best Sellers
 export interface BestSellersInterface {
+  category: "bestseller";
   name: string;
   prompt: string;
   search: string;
@@ -390,21 +391,25 @@ const bestSellersPhrase: string =
 
 export const bestSellers: BestSellersInterface[] = [
   {
+    category: "bestseller",
     name: "Hardcover Fiction",
     prompt: bestSellersPhrase + " (Hardcover Fiction)",
     search: "hardcover-fiction",
   },
   {
+    category: "bestseller",
     name: "Hardcover Nonfiction",
     prompt: bestSellersPhrase + " (Hardcover Nonfiction)",
     search: "hardcover-nonfiction",
   },
   {
+    category: "bestseller",
     name: "Paperback Trade Fiction",
     prompt: bestSellersPhrase + " (Paperback Trade Fiction)",
     search: "trade-fiction-paperback",
   },
   {
+    category: "bestseller",
     name: "Paperback Nonfiction",
     prompt: bestSellersPhrase + " (Paperback Nonfiction)",
     search: "paperback-nonfiction",
