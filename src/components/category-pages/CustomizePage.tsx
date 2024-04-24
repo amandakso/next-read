@@ -22,23 +22,19 @@ export default function CustomizePage() {
     () => new Set()
   );
   function handleCustomizeClick() {
-    console.log("tbd");
+    console.log(selectedPrompts);
   }
   function handleCheckboxClicked(isChecked: boolean, name: string) {
-    console.log(selectedPrompts);
     if (isChecked) {
       setSelectedPrompts((prev) => {
         const next = new Set(prev);
         next.add(name);
-        console.log(next);
         return next;
       });
     } else {
       setSelectedPrompts((prev) => {
         const next = new Set(prev);
-
         next.delete(name);
-        console.log(next);
         return next;
       });
     }
