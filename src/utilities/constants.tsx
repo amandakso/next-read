@@ -321,6 +321,7 @@ export interface BookInterface {
 const themePrompt: string = "Read a book with the following theme: ";
 
 export interface ThemeInterface {
+  category: "theme";
   name: string;
   prompt: string;
   search: string;
@@ -328,33 +329,49 @@ export interface ThemeInterface {
 
 export const themes: ThemeInterface[] = [
   {
+    category: "theme",
     name: "coming of age story",
     prompt: themePrompt + "Coming of Age",
     search: '"coming-of-age"',
   },
-  { name: "love", prompt: themePrompt + "Love", search: "love" },
-  { name: "betrayal", prompt: themePrompt + "Betrayal", search: "betrayal" },
   {
+    category: "theme",
+    name: "love",
+    prompt: themePrompt + "Love",
+    search: "love",
+  },
+  {
+    category: "theme",
+    name: "betrayal",
+    prompt: themePrompt + "Betrayal",
+    search: "betrayal",
+  },
+  {
+    category: "theme",
     name: "friendship",
     prompt: themePrompt + "Friendship",
     search: "friendship",
   },
   {
+    category: "theme",
     name: "good vs evil",
     prompt: themePrompt + "Good vs. Evil",
     search: '"good+vs+evil"',
   },
   {
+    category: "theme",
     name: "redemption",
     prompt: themePrompt + "Redemption",
     search: "redemption",
   },
   {
+    category: "theme",
     name: "food",
     prompt: themePrompt + "Food and Cooking",
     search: "young%2Badult%2Bfiction%2Fcooking%2B%26%2Bfood",
   },
   {
+    category: "theme",
     name: "small town",
     prompt: themePrompt + "Small Town",
     search: '"fiction/small+town%2B%26%2Brural"',
