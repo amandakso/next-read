@@ -86,14 +86,6 @@ export default function CustomizePage() {
                 );
               })}
             </CheckboxGroup>
-            <Tr>
-              <Td>test</Td>
-              <Td>prompt test</Td>
-            </Tr>
-            <Tr backgroundColor={"teal"}>
-              <Td>test</Td>
-              <Td>prompt test</Td>
-            </Tr>
           </Tbody>
         </Table>
       </TableContainer>
