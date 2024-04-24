@@ -15,9 +15,10 @@ import {
   CheckboxGroup,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { genres } from "../../utilities/constants";
+import { genres, themes, bestSellers } from "../../utilities/constants";
 
 export default function CustomizePage() {
+  const prompts = [...genres, ...themes, ...bestSellers];
   function handleCustomizeClick() {
     console.log("tbd");
   }
@@ -49,7 +50,7 @@ export default function CustomizePage() {
           </Thead>
           <Tbody>
             <CheckboxGroup>
-              {genres.map((prompt, index) => {
+              {prompts.map((prompt, index) => {
                 return (
                   <Tr key={index}>
                     <Td>
