@@ -319,7 +319,8 @@ export interface BestSellersInterface {
   search: string;
 }
 
-const bestSellersPhrase: string = "The New York Times Best Sellers List";
+const bestSellersPhrase: string =
+  "Read a book from The New York Times Best Sellers List";
 
 export const bestSellers: BestSellersInterface[] = [
   {

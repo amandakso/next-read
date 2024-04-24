@@ -42,7 +42,7 @@ export default function BestSellersPage() {
     setIsLoading(true);
     const result = generatePrompt(bestSellers);
     const bestSellersDate = generateBestSellersDate();
-    setBestSellersPrompt("Read a book from " + result.prompt);
+    setBestSellersPrompt(result.prompt);
     setIsPrompt(true);
 
     //reset before search
