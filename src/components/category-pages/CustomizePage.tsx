@@ -20,7 +20,6 @@ import {
   bestSellers,
   GenreInterface,
   ThemeInterface,
-  BestSellersBookInterface,
   BestSellersInterface,
 } from "../../utilities/constants";
 
