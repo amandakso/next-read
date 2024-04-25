@@ -3,6 +3,7 @@ import {
   Container,
   Flex,
   Button,
+  ButtonGroup,
   TableContainer,
   Table,
   Thead,
@@ -22,6 +23,7 @@ export default function CustomizePage() {
     prompts.map(() => false)
   );
   const [showResults, setShowResults] = useState<boolean>(false);
+  const [selectedPrompt, setSelectedPrompt] = useState<string>("");
 
   function handleCustomizeClick() {
     console.log(checkedItems);
@@ -40,6 +42,8 @@ export default function CustomizePage() {
     }
     const randomizedPrompt = generatePrompt(selectedPrompts);
     console.log(randomizedPrompt);
+    setSelectedPrompt(randomizedPrompt.prompt);
+    setShowResults(true);
   }
 
   return (
@@ -61,16 +65,24 @@ export default function CustomizePage() {
             Generate Prompt
           </Button>
         ) : (
-          <Button
-            onClick={() => {
-              setShowResults(false);
-              console.log(checkedItems);
-            }}
-            colorScheme="teal"
-            maxWidth={"150px"}
-          >
-            Select Prompts
-          </Button>
+          <ButtonGroup>
+            <Button
+              onClick={handleCustomizeClick}
+              colorScheme="teal"
+              maxWidth={"150px"}
+            >
+              Generate Prompt
+            </Button>
+            <Button
+              onClick={() => {
+                setShowResults(false);
+              }}
+              colorScheme="teal"
+              maxWidth={"150px"}
+            >
+              Return to Prompts
+            </Button>
+          </ButtonGroup>
         )}
       </Flex>
       {!showResults ? (
@@ -108,7 +120,7 @@ export default function CustomizePage() {
           </Table>
         </TableContainer>
       ) : (
-        <Container>test</Container>
+        <Container>{selectedPrompt}</Container>
       )}
     </Container>
   );
