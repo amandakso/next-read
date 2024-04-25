@@ -29,6 +29,7 @@ export default function CustomizePage() {
   const [selectedPrompts, setSelectedPrompts] = useState<Set<string>>(
     () => new Set()
   );
+  const [showResults, setShowResults] = useState<boolean>(false);
 
   function handleCustomizeClick() {
     let promptInfo: Array<
@@ -38,9 +39,12 @@ export default function CustomizePage() {
       const found = prompts.find((element) => element.name == item);
       promptInfo = [...promptInfo, found];
     }
-    console.log(promptInfo);
+    if (promptInfo.length == 0) {
+      return;
+    }
     const randomizedPrompt = generatePrompt(promptInfo);
     console.log(randomizedPrompt);
+    setShowResults(true);
   }
 
   function handleCheckboxClicked(isChecked: boolean, name: string) {
@@ -68,46 +72,62 @@ export default function CustomizePage() {
         <Heading as={"h1"} size="lg">
           Customize: Choose prompts to include in generating a random TBR prompt
         </Heading>
-        <Button
-          onClick={handleCustomizeClick}
-          colorScheme="teal"
-          maxWidth={"150px"}
-        >
-          Generate Prompt
-        </Button>
+        {!showResults ? (
+          <Button
+            onClick={handleCustomizeClick}
+            colorScheme="teal"
+            maxWidth={"150px"}
+          >
+            Generate Prompt
+          </Button>
+        ) : (
+          <Button
+            onClick={() => setShowResults(false)}
+            colorScheme="teal"
+            maxWidth={"150px"}
+          >
+            Select Prompts
+          </Button>
+        )}
       </Flex>
-      <TableContainer overflowY={"auto"} maxHeight={"300px"}>
-        <Table>
-          <Thead>
-            <Tr>
-              <Th></Th>
-              <Th>Prompt</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <CheckboxGroup>
-              {prompts.map((prompt, index) => {
-                return (
-                  <Tr key={index}>
-                    <Td>
-                      <Checkbox
-                        value={prompt.name}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                          handleCheckboxClicked(
-                            e.target.checked,
-                            e.target.value
-                          );
-                        }}
-                      />
-                    </Td>
-                    <Td whiteSpace={"wrap"}>{prompt.prompt}</Td>
-                  </Tr>
-                );
-              })}
-            </CheckboxGroup>
-          </Tbody>
-        </Table>
-      </TableContainer>
+      {showResults ? (
+        <TableContainer overflowY={"auto"} maxHeight={"300px"}>
+          <Table>
+            <Thead>
+              <Tr>
+                <Th></Th>
+                <Th>Prompt</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              <CheckboxGroup>
+                {prompts.map((prompt, index) => {
+                  return (
+                    <Tr key={index}>
+                      <Td>
+                        <Checkbox
+                          value={prompt.name}
+                          onChange={(
+                            e: React.ChangeEvent<HTMLInputElement>
+                          ) => {
+                            handleCheckboxClicked(
+                              e.target.checked,
+                              e.target.value
+                            );
+                          }}
+                        />
+                      </Td>
+                      <Td whiteSpace={"wrap"}>{prompt.prompt}</Td>
+                    </Tr>
+                  );
+                })}
+              </CheckboxGroup>
+            </Tbody>
+          </Table>
+        </TableContainer>
+      ) : (
+        <Container>test</Container>
+      )}
     </Container>
   );
 }
