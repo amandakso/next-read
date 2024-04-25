@@ -15,7 +15,11 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { genres, themes, bestSellers } from "../../utilities/constants";
-import { generatePrompt } from "../../utilities/helpers";
+import {
+  generatePrompt,
+  fetchBooks,
+  selectBooks,
+} from "../../utilities/helpers";
 
 export default function CustomizePage() {
   const prompts = [...genres, ...themes, ...bestSellers];
@@ -26,7 +30,6 @@ export default function CustomizePage() {
   const [selectedPrompt, setSelectedPrompt] = useState<string>("");
 
   function handleCustomizeClick() {
-    console.log(checkedItems);
     // get selected prompts from checked prompts
     const selectedPrompts = [];
     for (let i = 0; i < checkedItems.length; i++) {
@@ -34,15 +37,57 @@ export default function CustomizePage() {
         selectedPrompts.push(prompts[i]);
       }
     }
-    console.log(selectedPrompts);
 
     // generate random prompt
     if (selectedPrompts.length == 0) {
       return;
     }
     const randomizedPrompt = generatePrompt(selectedPrompts);
-    console.log(randomizedPrompt);
     setSelectedPrompt(randomizedPrompt.prompt);
+
+    // set up url based on selected prompt's category
+    const google_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
+    const nyt_key = import.meta.env.VITE_NYT_KEY;
+
+    const category: "bestseller" | "genre" | "theme" =
+      randomizedPrompt.category;
+    let url: string = "";
+
+    switch (category) {
+      case "genre":
+        url = `https://www.googleapis.com/books/v1/volumes?q=subject:"${randomizedPrompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${google_key}`;
+        break;
+      case "theme":
+        url = `https://www.googleapis.com/books/v1/volumes?q=subject:${randomizedPrompt.search}&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${google_key}`;
+
+        break;
+      case "bestseller":
+        url = `https://api.nytimes.com/svc/books/v3/lists/current/${randomizedPrompt.search}.json?api-key=${nyt_key}`;
+        break;
+      default:
+        // invalid category
+        return;
+    }
+
+    // fetch books
+    fetchBooks(url).then((response) => {
+      if (response.status !== 200) {
+        // unable to fetch books
+        // set states to display results
+        console.log("tbd");
+      } else {
+        // display books
+        const data = response.data;
+        let booksToDisplay;
+        if (category == "genre" || category == "theme") {
+          booksToDisplay = selectBooks(data.items);
+        } else {
+          booksToDisplay = selectBooks(data.results.books);
+        }
+        console.log(booksToDisplay);
+      }
+    });
+
     setShowResults(true);
   }
 
