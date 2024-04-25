@@ -24,9 +24,13 @@ export function previewBook(url: string | undefined) {
 
 // generate prompt
 export function generatePrompt<Type>(prompts: Type[]) {
-  const max = prompts.length;
-  const index = getRandomIndexNumber(max);
-  return prompts[index];
+  if (prompts.length > 0) {
+    const max = prompts.length;
+    const index = getRandomIndexNumber(max);
+    return prompts[index];
+  } else {
+    return prompts;
+  }
 }
 
 // fetch books
