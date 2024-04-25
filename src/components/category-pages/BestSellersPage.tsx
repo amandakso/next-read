@@ -132,7 +132,7 @@ export default function BestSellersPage() {
             books.length > 0 ? (
               <>
                 <Text>Book Suggestions: </Text>
-                <Books bestsellers={books} source={"nyt"} />
+                <Books bestsellers={books} category={"bestseller"} />
               </>
             ) : (
               <Text>Unable to find book suggestions</Text>

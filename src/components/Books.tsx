@@ -8,22 +8,25 @@ import Book from "./Book";
 interface BooksProps {
   books?: BookInterface[];
   bestsellers?: BestSellersBookInterface[];
-  source: "google" | "nyt";
+  category: "genre" | "theme" | "bestseller" | "favorite";
 }
 
 export default function Books(props: BooksProps) {
   const books = props.books;
   const bestsellers = props.bestsellers;
-  const source: "google" | "nyt" = props.source;
+  const category: "genre" | "theme" | "bestseller" | "favorite" =
+    props.category;
 
   return (
     <Container>
       <Center>
-        {source == "google" ? (
+        {category == "genre" ||
+        category == "theme" ||
+        category == "favorite" ? (
           <>
             <Flex gap="5" flexWrap={{ base: "wrap", md: "nowrap" }}>
               {books?.map((book: BookInterface, i: number) => {
-                return <Book key={i} book={book} source={source} />;
+                return <Book key={i} book={book} source={"google"} />;
               })}
             </Flex>
           </>
@@ -31,7 +34,7 @@ export default function Books(props: BooksProps) {
           <>
             <Flex gap="5" flexWrap={{ base: "wrap", md: "nowrap" }}>
               {bestsellers?.map((book: BestSellersBookInterface, i: number) => {
-                return <Book key={i} bestseller={book} source={source} />;
+                return <Book key={i} bestseller={book} source={"nyt"} />;
               })}
             </Flex>
           </>

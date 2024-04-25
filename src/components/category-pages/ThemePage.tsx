@@ -71,7 +71,7 @@ export default function ThemePage() {
             books.length > 0 ? (
               <>
                 <Text>Book Suggestions: </Text>
-                <Books books={books} source={"google"} />
+                <Books books={books} category={"theme"} />
               </>
             ) : (
               <Text>Unable to find book suggestions.</Text>

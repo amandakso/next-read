@@ -85,7 +85,7 @@ export default function PersonalFavesPage() {
           books.length > 0 ? (
             <>
               <Text>Book Recommendations: </Text>
-              <Books books={books} source={"google"} />
+              <Books books={books} category={"favorite"} />
             </>
           ) : (
             <Text>Unable to get books. </Text>

@@ -71,7 +71,7 @@ export default function GenrePage() {
             books.length > 0 ? (
               <>
                 <Text>Book Suggestions: </Text>
-                <Books books={books} source={"google"} />
+                <Books books={books} category={"genre"} />
               </>
             ) : (
               <Text>Unable to find book suggestions.</Text>
