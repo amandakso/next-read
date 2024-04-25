@@ -22,6 +22,7 @@ import {
   ThemeInterface,
   BestSellersInterface,
 } from "../../utilities/constants";
+import { generatePrompt } from "../../utilities/helpers";
 
 export default function CustomizePage() {
   const prompts = [...genres, ...themes, ...bestSellers];
@@ -37,6 +38,9 @@ export default function CustomizePage() {
       const found = prompts.find((element) => element.name == item);
       promptInfo = [...promptInfo, found];
     }
+    console.log(promptInfo);
+    const randomizedPrompt = generatePrompt(promptInfo);
+    console.log(randomizedPrompt);
   }
 
   function handleCheckboxClicked(isChecked: boolean, name: string) {
