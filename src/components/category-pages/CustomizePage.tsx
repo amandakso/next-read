@@ -12,14 +12,22 @@ import {
   Tbody,
   Td,
   Checkbox,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { genres, themes, bestSellers } from "../../utilities/constants";
+import {
+  genres,
+  themes,
+  bestSellers,
+  BestSellersBookInterface,
+  BookInterface,
+} from "../../utilities/constants";
 import {
   generatePrompt,
   fetchBooks,
   selectBooks,
 } from "../../utilities/helpers";
+import Books from "../Books";
 
 export default function CustomizePage() {
   const prompts = [...genres, ...themes, ...bestSellers];
@@ -28,8 +36,14 @@ export default function CustomizePage() {
   );
   const [showResults, setShowResults] = useState<boolean>(false);
   const [selectedPrompt, setSelectedPrompt] = useState<string>("");
+  const [promptCategory, setPromptCategory] = useState<
+    "bestseller" | "genre" | "theme" | undefined
+  >(undefined);
+  const [books, setBooks] = useState<
+    BestSellersBookInterface[] | BookInterface[]
+  >([]);
 
-  function handleCustomizeClick() {
+  async function handleCustomizeClick() {
     // get selected prompts from checked prompts
     const selectedPrompts = [];
     for (let i = 0; i < checkedItems.length; i++) {
@@ -51,6 +65,8 @@ export default function CustomizePage() {
 
     const category: "bestseller" | "genre" | "theme" =
       randomizedPrompt.category;
+
+    setPromptCategory(category);
     let url: string = "";
 
     switch (category) {
@@ -84,7 +100,9 @@ export default function CustomizePage() {
         } else {
           booksToDisplay = selectBooks(data.results.books);
         }
-        console.log(booksToDisplay);
+        setBooks(
+          booksToDisplay as BookInterface[] | BestSellersBookInterface[]
+        );
       }
     });
 
@@ -165,7 +183,17 @@ export default function CustomizePage() {
           </Table>
         </TableContainer>
       ) : (
-        <Container>{selectedPrompt}</Container>
+        <Container>
+          <Text>{selectedPrompt}</Text>
+          {promptCategory == "bestseller" ? (
+            <Books
+              bestsellers={books as BestSellersBookInterface[]}
+              category={promptCategory}
+            />
+          ) : (
+            <Books books={books as BookInterface[]} category={promptCategory} />
+          )}
+        </Container>
       )}
     </Container>
   );
