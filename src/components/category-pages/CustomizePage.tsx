@@ -34,6 +34,7 @@ export default function CustomizePage() {
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
     prompts.map(() => false)
   );
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [showResults, setShowResults] = useState<boolean>(false);
   const [selectedPrompt, setSelectedPrompt] = useState<string>("");
   const [promptCategory, setPromptCategory] = useState<
@@ -44,6 +45,9 @@ export default function CustomizePage() {
   >([]);
 
   async function handleCustomizeClick() {
+    // set loading state
+    setIsLoading(true);
+
     // get selected prompts from checked prompts
     const selectedPrompts = [];
     for (let i = 0; i < checkedItems.length; i++) {
@@ -104,9 +108,9 @@ export default function CustomizePage() {
           booksToDisplay as BookInterface[] | BestSellersBookInterface[]
         );
       }
+      setIsLoading(false);
+      setShowResults(true);
     });
-
-    setShowResults(true);
   }
 
   return (
@@ -121,6 +125,7 @@ export default function CustomizePage() {
         </Heading>
         {!showResults ? (
           <Button
+            isLoading={isLoading}
             onClick={handleCustomizeClick}
             colorScheme="teal"
             maxWidth={"150px"}
@@ -130,6 +135,7 @@ export default function CustomizePage() {
         ) : (
           <ButtonGroup>
             <Button
+              isLoading={isLoading}
               onClick={handleCustomizeClick}
               colorScheme="teal"
               maxWidth={"150px"}
