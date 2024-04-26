@@ -94,7 +94,7 @@ export default function CustomizePage() {
       if (response.status !== 200) {
         // unable to fetch books
         // set states to display results
-        console.log("tbd");
+        setBooks([]);
       } else {
         // display books
         const data = response.data;
@@ -191,13 +191,22 @@ export default function CustomizePage() {
       ) : (
         <Container>
           <Text>{selectedPrompt}</Text>
-          {promptCategory == "bestseller" ? (
-            <Books
-              bestsellers={books as BestSellersBookInterface[]}
-              category={promptCategory}
-            />
+          {books.length == 0 ? (
+            <Text> Unable to get book suggestions...</Text>
           ) : (
-            <Books books={books as BookInterface[]} category={promptCategory} />
+            <>
+              {promptCategory == "bestseller" ? (
+                <Books
+                  bestsellers={books as BestSellersBookInterface[]}
+                  category={promptCategory}
+                />
+              ) : (
+                <Books
+                  books={books as BookInterface[]}
+                  category={promptCategory}
+                />
+              )}
+            </>
           )}
         </Container>
       )}
