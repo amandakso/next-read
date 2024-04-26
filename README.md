@@ -1,4 +1,36 @@
-# React + TypeScript + Vite
+# Next Read
+
+## Overview
+
+A web application designed to help avid readers discover the next book to add to their reading lists. Powered by Google Books and the New York Times Books APIs to provide books suggestions based on randomized TBR prompts.
+
+[Live Demo](https://next-read-seven.vercel.app/)
+
+## Features
+
+- Generate book prompts and get book suggestions
+- Select different categories of book prompts
+  - Genre
+  - Theme
+  - Bestsellers
+  - Favorites
+  - Customize
+- Responsive Design
+
+## Technologies
+
+- React
+- Typescript
+- Vite
+- Deployed with Vercel
+- Chakra UI
+
+## APIs
+
+- Google Books API
+- NYT Books API
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -17,12 +49,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
