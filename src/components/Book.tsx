@@ -44,7 +44,7 @@ export default function Book(props: BookProps) {
             <Image
               boxSize={"150px"}
               objectFit="contain"
-              src={`${props.book.volumeInfo.imageLinks?.smallThumbnail}`}
+              src={`${props.book.volumeInfo.imageLinks?.smallThumbnail}` || ""}
               alt={`Book Cover of ${props.book.volumeInfo.title}`}
             />
             <Heading size="sm">{props.book.volumeInfo.title}</Heading>
@@ -81,7 +81,10 @@ export default function Book(props: BookProps) {
                   <Image
                     boxSize={"150px"}
                     objectFit="contain"
-                    src={`${props.book.volumeInfo.imageLinks?.smallThumbnail}`}
+                    src={
+                      `${props.book.volumeInfo.imageLinks?.smallThumbnail}` ||
+                      ""
+                    }
                     alt={`Book Cover of ${props.book.volumeInfo.title}`}
                   />
                 </Center>

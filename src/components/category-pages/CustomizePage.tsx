@@ -58,6 +58,7 @@ export default function CustomizePage() {
 
     // generate random prompt
     if (selectedPrompts.length == 0) {
+      setIsLoading(false);
       return;
     }
     const randomizedPrompt = generatePrompt(selectedPrompts);
@@ -86,6 +87,7 @@ export default function CustomizePage() {
         break;
       default:
         // invalid category
+        setIsLoading(false);
         return;
     }
 
