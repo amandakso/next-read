@@ -420,6 +420,7 @@ export const bestSellers: BestSellersInterface[] = [
 interface MiscBook {
   name: string;
   id: string;
+  isbn_13: string;
 }
 
 interface Miscellaneous {
@@ -443,7 +444,23 @@ export const miscellaneous: Miscellaneous[] = [
     category: "misc",
     name: "nature in the title",
     prompt: miscPhrase + "with nature in the title",
-    results: [],
+    results: [
+      {
+        name: "Flowers for Algernon",
+        id: "NRWlitmahXkC",
+        isbn_13: "9780156030304",
+      },
+      {
+        name: "The Final Empire",
+        id: "t_ZYYXZq4RgC",
+        isbn_13: "9781429914567",
+      },
+      {
+        name: "Percy Jackson: The Lightning Thief",
+        id: "FFTJDYx_ZiEC",
+        isbn_13: "9781423131892",
+      },
+    ],
   },
   {
     category: "misc",
@@ -455,26 +472,65 @@ export const miscellaneous: Miscellaneous[] = [
     category: "misc",
     name: "number in the title",
     prompt: miscPhrase + "with a number in the title",
-    results: [],
+    results: [
+      { name: "Fahrenheit 451", id: "AU9YtwAACAAJ", isbn_13: "9780671872298" },
+    ],
   },
   {
     category: "misc",
     name: "alliterative title",
     prompt: miscPhrase + "with an alliterative title",
-    results: [],
+    results: [
+      {
+        name: "Emily Wilde Book 1",
+        id: "JtdkEAAAQBAJ",
+        isbn_13: "9780593500149",
+      },
+      {
+        name: "Pride & Prejudice",
+        id: "fuQDzQEACAAJ",
+        isbn_13: "9780141439518",
+      },
+    ],
   },
   // page length
   {
     category: "misc",
     name: "more than 500 pages",
     prompt: miscPhrase + "with > 500 pages",
-    results: [],
+    results: [
+      { name: "Babel", id: "ZWRQEAAAQBAJ", isbn_13: "9780063021440" },
+      {
+        name: "The Final Empire",
+        id: "t_ZYYXZq4RgC",
+        isbn_13: "9781429914567",
+      },
+    ],
   },
   {
     category: "misc",
     name: "less than 300 pages",
     prompt: miscPhrase + "with < 300 pages",
-    results: [],
+    results: [
+      { name: "Charlotte's Web", id: "WwN4BgAAQBAJ", isbn_13: "9780062406781" },
+      { name: "Fahrenheit 451", id: "AU9YtwAACAAJ", isbn_13: "9780671872298" },
+      { name: "The Giver", id: "oZRlYDfxXpQC", isbn_13: "9780385732550" },
+      {
+        name: "The Phantom Tollbooth",
+        id: "87UWNi83IrIC",
+        isbn_13: "9780394820378",
+      },
+      {
+        name: "The Things We Carried",
+        id: "Op6eKrkxPq4C",
+        isbn_13: "9780547420295",
+      },
+      {
+        name: "To Kill a Mockingbird",
+        id: "PGR2AwAAQBAJ",
+        isbn_13: "9780062368683",
+      },
+    ],
   },
   // author
   {
@@ -488,7 +544,14 @@ export const miscellaneous: Miscellaneous[] = [
     category: "misc",
     name: "pov",
     prompt: miscPhrase + "told from dual/multiple POVs",
-    results: [],
+    results: [
+      { name: "Divine Rivals", id: "C5BrEAAAQBAJ", isbn_13: "9781250857446" },
+      {
+        name: "The Final Empire",
+        id: "t_ZYYXZq4RgC",
+        isbn_13: "9781429914567",
+      },
+    ],
   },
   // setting
   {
@@ -502,7 +565,30 @@ export const miscellaneous: Miscellaneous[] = [
     category: "misc",
     name: "first in a series",
     prompt: "Read the first book in a series",
-    results: [],
+    results: [
+      {
+        name: "A Deadly Education",
+        id: "0YDJDwAAQBAJ",
+        isbn_13: "9780593128497",
+      },
+      { name: "Divine Rivals", id: "C5BrEAAAQBAJ", isbn_13: "9781250857446" },
+      {
+        name: "Emily Wilde Book 1",
+        id: "JtdkEAAAQBAJ",
+        isbn_13: "9780593500149",
+      },
+      {
+        name: "The Final Empire",
+        id: "t_ZYYXZq4RgC",
+        isbn_13: "9781429914567",
+      },
+      {
+        name: "Percy Jackson: The Lightning Thief",
+        id: "FFTJDYx_ZiEC",
+        isbn_13: "9781423131892",
+      },
+      { name: "The Tainted Cup", id: "-YK9EAAAQBAJ", isbn_13: "9781984820723" },
+    ],
   },
 ];
 
