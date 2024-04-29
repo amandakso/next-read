@@ -416,6 +416,96 @@ export const bestSellers: BestSellersInterface[] = [
   },
 ];
 
+// Miscellaneous
+interface MiscBook {
+  name: string;
+  id: string;
+}
+
+interface Miscellaneous {
+  category: "misc";
+  name: string;
+  prompt: string;
+  results: MiscBook[];
+}
+
+const miscPhrase: string = "Read a book: ";
+
+export const miscellaneous: Miscellaneous[] = [
+  // {
+  //   category: "misc",
+  //   name: "prompt name",
+  //   prompt: miscPhrase + "prompt",
+  //   results: [],
+  // },
+  // title
+  {
+    category: "misc",
+    name: "nature in the title",
+    prompt: miscPhrase + "with nature in the title",
+    results: [],
+  },
+  {
+    category: "misc",
+    name: "one word title",
+    prompt: miscPhrase + "with a one word title",
+    results: [],
+  },
+  {
+    category: "misc",
+    name: "number in the title",
+    prompt: miscPhrase + "with a number in the title",
+    results: [],
+  },
+  {
+    category: "misc",
+    name: "alliterative title",
+    prompt: miscPhrase + "with an alliterative title",
+    results: [],
+  },
+  // page length
+  {
+    category: "misc",
+    name: "more than 500 pages",
+    prompt: miscPhrase + "with > 500 pages",
+    results: [],
+  },
+  {
+    category: "misc",
+    name: "less than 300 pages",
+    prompt: miscPhrase + "with < 300 pages",
+    results: [],
+  },
+  // author
+  {
+    category: "misc",
+    name: "debut",
+    prompt: "Read an author's debut novel",
+    results: [],
+  },
+  // characters
+  {
+    category: "misc",
+    name: "pov",
+    prompt: miscPhrase + "told from dual/multiple POVs",
+    results: [],
+  },
+  // setting
+  {
+    category: "misc",
+    name: "library setting",
+    prompt: miscPhrase + "that takes place in a library or bookshop",
+    results: [],
+  },
+  // series
+  {
+    category: "misc",
+    name: "first in a series",
+    prompt: "Read the first book in a series",
+    results: [],
+  },
+];
+
 // Favorites
 interface Favorite {
   name: string;
