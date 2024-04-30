@@ -439,6 +439,7 @@ export const miscellaneous: Miscellaneous[] = [
   //   prompt: miscPhrase + "prompt",
   //   results: [],
   // },
+
   // title
   {
     category: "misc",
@@ -446,9 +447,24 @@ export const miscellaneous: Miscellaneous[] = [
     prompt: miscPhrase + "with nature in the title",
     results: [
       {
+        name: "A Court of Thorns and Roses",
+        id: "4xsDEQAAQBAJ",
+        isbn_13: "9781619634442",
+      },
+      {
+        name: "A River Enchanted",
+        id: "wgMvEAAAQBAJ",
+        isbn_13: "9780063056008",
+      },
+      {
         name: "Flowers for Algernon",
         id: "NRWlitmahXkC",
         isbn_13: "9780156030304",
+      },
+      {
+        name: "Last Tale of the Flower Bride",
+        id: "5wRwEAAAQBAJ",
+        isbn_13: "9780063206526",
       },
       {
         name: "The Final Empire",
@@ -456,9 +472,39 @@ export const miscellaneous: Miscellaneous[] = [
         isbn_13: "9781429914567",
       },
       {
+        name: "Nettle & Bone",
+        id: "oJsOEAAAQBAJ",
+        isbn_13: "9781250244031",
+      },
+      {
         name: "Percy Jackson: The Lightning Thief",
         id: "FFTJDYx_ZiEC",
         isbn_13: "9781423131892",
+      },
+      {
+        name: "The Priory of the Orange Tree",
+        id: "49RdDwAAQBAJ",
+        isbn_13: "9781635570281",
+      },
+      {
+        name: "She Who Became the Sun",
+        id: "FwX6DwAAQBAJ",
+        isbn_13: "9781250621795",
+      },
+      {
+        name: "The Starless Sea",
+        id: "uYKDDwAAQBAJ",
+        isbn_13: "9780385541220",
+      },
+      {
+        name: "Tom Lake",
+        id: "18OYEAAAQBAJ",
+        isbn_13: "9780063327542",
+      },
+      {
+        name: "Tress of the Emerald Sea",
+        id: "X-REzwEACAAJ",
+        isbn_13: "9781938570322",
       },
     ],
   },
@@ -466,14 +512,150 @@ export const miscellaneous: Miscellaneous[] = [
     category: "misc",
     name: "one word title",
     prompt: miscPhrase + "with a one word title",
-    results: [],
+    results: [
+      {
+        name: "Almond: A Novel",
+        id: "mg6qDwAAQBAJ",
+        isbn_13: "9780062961402",
+      },
+      {
+        name: "Caraval",
+        id: "kA-HDQAAQBAJ",
+        isbn_13: "9781250095251",
+      },
+      {
+        name: "Circe",
+        id: "Vu8vDwAAQBAJ",
+        isbn_13: "9780316556330",
+      },
+      {
+        name: "Dune",
+        id: "v_P2DwAAQBAJ",
+        isbn_13: "9780441005901",
+      },
+      {
+        name: "Emma",
+        id: "RzD2i9kC9SAC",
+        isbn_13: "9780573698996",
+      },
+      {
+        name: "Faebound",
+        id: "gdi_EAAAQBAJ",
+        isbn_13: "9780593723012",
+      },
+      {
+        name: "Fathamfolk",
+        id: "0aLCEAAAQBAJ",
+        isbn_13: "9780316564939",
+      },
+      {
+        name: "Godkiller",
+        id: "6MGzEAAAQBAJ",
+        isbn_13: "9780063348288",
+      },
+      {
+        name: "It",
+        id: "KiszDwAAQBAJ",
+        isbn_13: "9781501175466",
+      },
+      {
+        name: "Legendborn",
+        id: "GOfNDwAAQBAJ",
+        isbn_13: "9781534441620",
+      },
+      {
+        name: "Matilda",
+        id: "_uIlE7DkAzYC",
+        isbn_13: "9780141929453",
+      },
+      {
+        name: "Neverwhere",
+        id: "PqlwZikOXLIC",
+        isbn_13: "9780061793059",
+      },
+      {
+        name: "Scythe",
+        id: "_6TAEAAAQBAJ",
+        isbn_13: "9781442472433",
+      },
+      {
+        name: "Throwback",
+        id: "1bJIzwEACAAJ",
+        isbn_13: "9781638930204",
+      },
+      {
+        name: "Viscious",
+        id: "vYSArk8vNCYC",
+        isbn_13: "9781466822177",
+      },
+      {
+        name: "Yellowface",
+        id: "G4i6zwEACAAJ",
+        isbn_13: "9780008532819",
+      },
+    ],
   },
   {
     category: "misc",
     name: "number in the title",
     prompt: miscPhrase + "with a number in the title",
     results: [
+      {
+        name: "A Tale of Two Cities",
+        id: "i6r6Oyf7RpAC",
+        isbn_13: "9781853260391",
+      },
+      {
+        name: "Daisy Jones and the Six",
+        id: "zZJfDwAAQBAJ",
+        isbn_13: "9781524798635",
+      },
       { name: "Fahrenheit 451", id: "AU9YtwAACAAJ", isbn_13: "9780671872298" },
+      {
+        name: "Life of Pi",
+        id: "c3JeEAAAQBAJ",
+        isbn_13: "9781350295698",
+      },
+      {
+        name: "One Dark Window",
+        id: "8RY_EAAAQBAJ",
+        isbn_13: "9780316312585",
+      },
+      {
+        name: "One For My Enemy",
+        id: "akeXzwEACAAJ",
+        isbn_13: "9781250905581",
+      },
+      {
+        name: "Seven Days in June",
+        id: "JiQBEAAAQBAJ",
+        isbn_13: "9781538719114",
+      },
+      {
+        name: "The Seven Year Slip",
+        id: "ikyMEAAAQBAJ",
+        isbn_13: "9780593336526",
+      },
+      {
+        name: "Six of Crows",
+        id: "yhIRBwAAQBAJ",
+        isbn_13: "9781627795227",
+      },
+      {
+        name: "Station Eleven",
+        id: "2RIcAwAAQBAJ",
+        isbn_13: "9780385353311",
+      },
+      {
+        name: "The Ten Thousand Doors of January",
+        id: "5sWCDwAAQBAJ",
+        isbn_13: "9780316421980",
+      },
+      {
+        name: "20,000 Leagues Under The Sea",
+        id: "w6AFp-xfjP0C",
+        isbn_13: "9781416500209",
+      },
     ],
   },
   {
@@ -482,14 +664,89 @@ export const miscellaneous: Miscellaneous[] = [
     prompt: miscPhrase + "with an alliterative title",
     results: [
       {
+        name: "A Series of Unfortunate Events: A Bad Beginning",
+        id: "fdFiLwEACAAJ",
+        isbn_13: "9781405266062",
+      },
+      {
+        name: "A Good Girl's Guide To Murder",
+        id: "qsudDwAAQBAJ",
+        isbn_13: "9781984896384",
+      },
+      {
+        name: "A Tale of Two Cities",
+        id: "i6r6Oyf7RpAC",
+        isbn_13: "9781853260391",
+      },
+      {
+        name: "A Tempest of Tea",
+        id: "mdBMEAAAQBAJ",
+        isbn_13: "9780374389413",
+      },
+      {
+        name: "The Adventures of Amina Al-Sirafi",
+        id: "KON0EAAAQBAJ",
+        isbn_13: "9780062963529",
+      },
+      {
+        name: "Assassin's Apprentice",
+        id: "eamvmgEACAAJ",
+        isbn_13: "9780007496785",
+      },
+      {
+        name: "The Count of Monte Cristo",
+        id: "RofnDwAAQBAJ",
+        isbn_13: "9780593081501",
+      },
+      {
         name: "Emily Wilde Book 1",
         id: "JtdkEAAAQBAJ",
         isbn_13: "9780593500149",
       },
       {
+        name: "Legends & Lattes",
+        id: "7lJzEAAAQBAJ",
+        isbn_13: "9781250886095",
+      },
+      {
+        name: "The Lies of Locke Lamora",
+        id: "aWFm1w-nU30C",
+        isbn_13: "9780553588941",
+      },
+      {
+        name: "Lunar Love",
+        id: "6fBwEAAAQBAJ",
+        isbn_13: "9781538710272",
+      },
+      {
         name: "Pride & Prejudice",
         id: "fuQDzQEACAAJ",
         isbn_13: "9780141439518",
+      },
+      {
+        name: "Red Rising",
+        id: "nPF9n0SwstMC",
+        isbn_13: "9780345539793",
+      },
+      {
+        name: "Lockwood & Co. #1: The Screaming Staircase",
+        id: "CmisjwEACAAJ",
+        isbn_13: "9781484785164",
+      },
+      {
+        name: "Sense & Sensibility",
+        id: "3FkUf4Vd6sAC",
+        isbn_13: "9781551111254",
+      },
+      {
+        name: "The Seven Year Slip",
+        id: "ikyMEAAAQBAJ",
+        isbn_13: "9780593336526",
+      },
+      {
+        name: "The Starless Sea",
+        id: "uYKDDwAAQBAJ",
+        isbn_13: "9780385541220",
       },
     ],
   },
@@ -499,11 +756,66 @@ export const miscellaneous: Miscellaneous[] = [
     name: "more than 500 pages",
     prompt: miscPhrase + "with > 500 pages",
     results: [
+      {
+        name: "A Game of Thrones",
+        id: "5NomkK4EV68C",
+        isbn_13: "9780553897845",
+      },
       { name: "Babel", id: "ZWRQEAAAQBAJ", isbn_13: "9780063021440" },
+      {
+        name: "The Book That Wouldn't Burn",
+        id: "J-ziEAAAQBAJ",
+        isbn_13: "9780593437926",
+      },
+      {
+        name: "The Count of Monte Cristo",
+        id: "RofnDwAAQBAJ",
+        isbn_13: "9780593081501",
+      },
+      {
+        name: "Dune",
+        id: "v_P2DwAAQBAJ",
+        isbn_13: "9780441005901",
+      },
+      {
+        name: "It",
+        id: "KiszDwAAQBAJ",
+        isbn_13: "9781501175466",
+      },
+      {
+        name: "Legendborn",
+        id: "GOfNDwAAQBAJ",
+        isbn_13: "9781534441620",
+      },
       {
         name: "The Final Empire",
         id: "t_ZYYXZq4RgC",
         isbn_13: "9781429914567",
+      },
+      {
+        name: "The Priory of the Orange Tree",
+        id: "49RdDwAAQBAJ",
+        isbn_13: "9781635570281",
+      },
+      {
+        name: "The Secret History",
+        id: "VO2w8m-ZAeMC",
+        isbn_13: "9780307765697",
+      },
+      {
+        name: "Strange the Dreamer",
+        id: "rD5UCwAAQBAJ",
+        isbn_13: "9780316341646",
+      },
+      {
+        name: "The Way of the Kings",
+        id: "QVn-CgAAQBAJ",
+        isbn_13: "9780765376671",
+      },
+      {
+        name: "The Will of the Many",
+        id: "jlGUEAAAQBAJ",
+        isbn_13: "9781982141196",
       },
     ],
   },
@@ -512,9 +824,44 @@ export const miscellaneous: Miscellaneous[] = [
     name: "less than 300 pages",
     prompt: miscPhrase + "with < 300 pages",
     results: [
+      {
+        name: "A Series of Unfortunate Events: A Bad Beginning",
+        id: "fdFiLwEACAAJ",
+        isbn_13: "9781405266062",
+      },
+      {
+        name: "Almond: A Novel",
+        id: "mg6qDwAAQBAJ",
+        isbn_13: "9780062961402",
+      },
       { name: "Charlotte's Web", id: "WwN4BgAAQBAJ", isbn_13: "9780062406781" },
+      {
+        name: "Days at the Morisaki Bookshop",
+        id: "Vxi2EAAAQBAJ",
+        isbn_13: "9781786583253",
+      },
       { name: "Fahrenheit 451", id: "AU9YtwAACAAJ", isbn_13: "9780671872298" },
       { name: "The Giver", id: "oZRlYDfxXpQC", isbn_13: "9780385732550" },
+      {
+        name: "The Lion, the Witch, and the Wardrobe",
+        id: "H0DX00Nz2EYC",
+        isbn_13: "9780590405959",
+      },
+      {
+        name: "Matilda",
+        id: "_uIlE7DkAzYC",
+        isbn_13: "9780141929453",
+      },
+      {
+        name: "Nettle & Bone",
+        id: "oJsOEAAAQBAJ",
+        isbn_13: "9781250244031",
+      },
+      {
+        name: "On Earth We're Briefly Gorgeous",
+        id: "gJMsEAAAQBAJ",
+        isbn_13: "9780525562047",
+      },
       {
         name: "The Phantom Tollbooth",
         id: "87UWNi83IrIC",
@@ -526,9 +873,19 @@ export const miscellaneous: Miscellaneous[] = [
         isbn_13: "9780547420295",
       },
       {
+        name: "This is How You Lose the Time War",
+        id: "8EyBDwAAQBAJ",
+        isbn_13: "9781534431010",
+      },
+      {
         name: "To Kill a Mockingbird",
         id: "PGR2AwAAQBAJ",
         isbn_13: "9780062368683",
+      },
+      {
+        name: "What You Are Looking For is in the Library",
+        id: "ERaqEAAAQBAJ",
+        isbn_13: "9780369742018",
       },
     ],
   },
@@ -537,7 +894,88 @@ export const miscellaneous: Miscellaneous[] = [
     category: "misc",
     name: "debut",
     prompt: "Read an author's debut novel",
-    results: [],
+    results: [
+      {
+        name: "A Man Called Ove",
+        id: "7mtNAgAAQBAJ",
+        isbn_13: "9781476738031",
+      },
+      {
+        name: "Almond: A Novel",
+        id: "mg6qDwAAQBAJ",
+        isbn_13: "9780062961402",
+      },
+      {
+        name: "Godkiller",
+        id: "6MGzEAAAQBAJ",
+        isbn_13: "9780063348288",
+      },
+      {
+        name: "The Hate U Give",
+        id: "IbFuuQEACAAJ",
+        isbn_13: "9781406387933",
+      },
+      {
+        name: "Jasad Heir",
+        id: "yn2aEAAAQBAJ",
+        isbn_13: "9780316477963",
+      },
+      {
+        name: "Legendborn",
+        id: "GOfNDwAAQBAJ",
+        isbn_13: "9781534441620",
+      },
+      {
+        name: "Legends & Lattes",
+        id: "7lJzEAAAQBAJ",
+        isbn_13: "9781250886095",
+      },
+      {
+        name: "Lunar Love",
+        id: "6fBwEAAAQBAJ",
+        isbn_13: "9781538710272",
+      },
+      {
+        name: "The Martian",
+        id: "MQeHAAAAQBAJ",
+        isbn_13: "9780804139038",
+      },
+      {
+        name: "On Earth We're Briefly Gorgeous",
+        id: "gJMsEAAAQBAJ",
+        isbn_13: "9780525562047",
+      },
+      {
+        name: "The Night Circus",
+        id: "-9F9WaXUhRYC",
+        isbn_13: "9780385534642",
+      },
+      {
+        name: "Red, White & Royal Blue",
+        id: "_jNwDwAAQBAJ",
+        isbn_13: "9781250316776",
+      },
+      {
+        name: "Sense & Sensibility",
+        id: "3FkUf4Vd6sAC",
+        isbn_13: "9781551111254",
+      },
+      {
+        name: "She Who Became the Sun",
+        id: "FwX6DwAAQBAJ",
+        isbn_13: "9781250621795",
+      },
+      {
+        name: "The Song of Achilles",
+        id: "opC3d3ltQ94C",
+        isbn_13: "9780062060631",
+      },
+      {
+        name: "Thursday Murder Club",
+        id: "Tus2EAAAQBAJ",
+        isbn_13: "9781984880987",
+      },
+    ],
   },
   // characters
   {
@@ -545,11 +983,77 @@ export const miscellaneous: Miscellaneous[] = [
     name: "pov",
     prompt: miscPhrase + "told from dual/multiple POVs",
     results: [
+      {
+        name: "A Game of Thrones",
+        id: "5NomkK4EV68C",
+        isbn_13: "9780553897845",
+      },
+      {
+        name: "A River Enchanted",
+        id: "wgMvEAAAQBAJ",
+        isbn_13: "9780063056008",
+      },
+      {
+        name: "An Ember in the Ashes",
+        id: "v8RwDQAAQBAJ",
+        isbn_13: "9781595148049",
+      },
+
+      {
+        name: "Daisy Jones and the Six",
+        id: "zZJfDwAAQBAJ",
+        isbn_13: "9781524798635",
+      },
       { name: "Divine Rivals", id: "C5BrEAAAQBAJ", isbn_13: "9781250857446" },
+      {
+        name: "Godkiller",
+        id: "6MGzEAAAQBAJ",
+        isbn_13: "9780063348288",
+      },
+      {
+        name: "The Kiss of Deception",
+        id: "u4LAAwAAQBAJ",
+        isbn_13: "9780805099232",
+      },
       {
         name: "The Final Empire",
         id: "t_ZYYXZq4RgC",
         isbn_13: "9781429914567",
+      },
+      {
+        name: "She Who Became the Sun",
+        id: "FwX6DwAAQBAJ",
+        isbn_13: "9781250621795",
+      },
+      {
+        name: "Six of Crows",
+        id: "yhIRBwAAQBAJ",
+        isbn_13: "9781627795227",
+      },
+      {
+        name: "The Starless Sea",
+        id: "uYKDDwAAQBAJ",
+        isbn_13: "9780385541220",
+      },
+      {
+        name: "Still Life",
+        id: "NzfzCYqsMOkC",
+        isbn_13: "9781429967235",
+      },
+      {
+        name: "This is How You Lose the Time War",
+        id: "8EyBDwAAQBAJ",
+        isbn_13: "9781534431010",
+      },
+      {
+        name: "Throne of Glass",
+        id: "D8GIcKPGNR8C",
+        isbn_13: "9781408832332",
+      },
+      {
+        name: "Thursday Murder Club",
+        id: "Tus2EAAAQBAJ",
+        isbn_13: "9781984880987",
       },
     ],
   },
@@ -558,24 +1062,201 @@ export const miscellaneous: Miscellaneous[] = [
     category: "misc",
     name: "library setting",
     prompt: miscPhrase + "that takes place in a library or bookshop",
-    results: [],
+    results: [
+      {
+        name: "Book Lovers",
+        id: "Ju5nEAAAQBAJ",
+        isbn_13: "9780593334836",
+      },
+      {
+        name: "The Book That Wouldn't Burn",
+        id: "J-ziEAAAQBAJ",
+        isbn_13: "9780593437926",
+      },
+      {
+        name: "Days at the Morisaki Bookshop",
+        id: "Vxi2EAAAQBAJ",
+        isbn_13: "9781786583253",
+      },
+      {
+        name: "The Invisible Library",
+        id: "2cO2CgAAQBAJ",
+        isbn_13: "9781101988657",
+      },
+      {
+        name: "The Lost Bookshop",
+        id: "zfubEAAAQBAJ",
+        isbn_13: "9780008609207",
+      },
+      {
+        name: "The Midnight Library",
+        id: "ho-rEAAAQBAJ",
+        isbn_13: "9780525559498",
+      },
+      {
+        name: "Sorcery of Thorns",
+        id: "tfH1DwAAQBAJ",
+        isbn_13: "9781481497626",
+      },
+      {
+        name: "The Starless Sea",
+        id: "uYKDDwAAQBAJ",
+        isbn_13: "9780385541220",
+      },
+      {
+        name: "Strange the Dreamer",
+        id: "rD5UCwAAQBAJ",
+        isbn_13: "9780316341646",
+      },
+      {
+        name: "What You Are Looking For is in the Library",
+        id: "ERaqEAAAQBAJ",
+        isbn_13: "9780369742018",
+      },
+    ],
   },
   // series
   {
     category: "misc",
     name: "first in a series",
-    prompt: "Read the first book in a series",
+    prompt: "Read the first book in a series", // some results are of series not yet completed
     results: [
+      {
+        name: "A Court of Thorns and Roses",
+        id: "4xsDEQAAQBAJ",
+        isbn_13: "9781619634442",
+      },
+      {
+        name: "A Curious Begninning",
+        id: "4OQBDAAAQBAJ",
+        isbn_13: "9780451476012",
+      },
       {
         name: "A Deadly Education",
         id: "0YDJDwAAQBAJ",
         isbn_13: "9780593128497",
       },
+      {
+        name: "A Game of Thrones",
+        id: "5NomkK4EV68C",
+        isbn_13: "9780553897845",
+      },
+      {
+        name: "A Good Girl's Guide To Murder",
+        id: "qsudDwAAQBAJ",
+        isbn_13: "9781984896384",
+      },
+      {
+        name: "A River Enchanted",
+        id: "wgMvEAAAQBAJ",
+        isbn_13: "9780063056008",
+      },
+      {
+        name: "A Series of Unfortunate Events: A Bad Beginning",
+        id: "fdFiLwEACAAJ",
+        isbn_13: "9781405266062",
+      },
+      {
+        name: "A Tempest of Tea",
+        id: "mdBMEAAAQBAJ",
+        isbn_13: "9780374389413",
+      },
+      {
+        name: "The Adventures of Amina Al-Sirafi",
+        id: "KON0EAAAQBAJ",
+        isbn_13: "9780062963529",
+      },
+      {
+        name: "An Ember in the Ashes",
+        id: "v8RwDQAAQBAJ",
+        isbn_13: "9781595148049",
+      },
+      {
+        name: "Assassin's Apprentice",
+        id: "eamvmgEACAAJ",
+        isbn_13: "9780007496785",
+      },
+      {
+        name: "The Book That Wouldn't Burn",
+        id: "J-ziEAAAQBAJ",
+        isbn_13: "9780593437926",
+      },
+      {
+        name: "Caraval",
+        id: "kA-HDQAAQBAJ",
+        isbn_13: "9781250095251",
+      },
+      {
+        name: "The Cruel Prince",
+        id: "-RGkDgAAQBAJ",
+        isbn_13: "9780316310284",
+      },
       { name: "Divine Rivals", id: "C5BrEAAAQBAJ", isbn_13: "9781250857446" },
+      {
+        name: "Dune",
+        id: "v_P2DwAAQBAJ",
+        isbn_13: "9780441005901",
+      },
       {
         name: "Emily Wilde Book 1",
         id: "JtdkEAAAQBAJ",
         isbn_13: "9780593500149",
+      },
+      {
+        name: "Faebound",
+        id: "gdi_EAAAQBAJ",
+        isbn_13: "9780593723012",
+      },
+      {
+        name: "Fathamfolk",
+        id: "0aLCEAAAQBAJ",
+        isbn_13: "9780316564939",
+      },
+      {
+        name: "Gideon the Ninth",
+        id: "HHJwDwAAQBAJ",
+        isbn_13: "9781250313171",
+      },
+      { name: "The Giver", id: "oZRlYDfxXpQC", isbn_13: "9780385732550" },
+      {
+        name: "Godkiller",
+        id: "6MGzEAAAQBAJ",
+        isbn_13: "9780063348288",
+      },
+      {
+        name: "Hunger Games",
+        id: "_zSzAwAAQBAJ",
+        isbn_13: "9781407133171",
+      },
+      {
+        name: "The Invisible Library",
+        id: "2cO2CgAAQBAJ",
+        isbn_13: "9781101988657",
+      },
+      {
+        name: "Jasad Heir",
+        id: "yn2aEAAAQBAJ",
+        isbn_13: "9780316477963",
+      },
+      {
+        name: "The Kiss of Deception",
+        id: "u4LAAwAAQBAJ",
+        isbn_13: "9780805099232",
+      },
+      {
+        name: "Legendborn",
+        id: "GOfNDwAAQBAJ",
+        isbn_13: "9781534441620",
+      },
+      {
+        name: "The Lies of Locke Lamora",
+        id: "aWFm1w-nU30C",
+        isbn_13: "9780553588941",
+      },
+      {
+        name: "The Lion, the Witch, and the Wardrobe",
+        id: "H0DX00Nz2EYC",
+        isbn_13: "9780590405959",
       },
       {
         name: "The Final Empire",
@@ -583,11 +1264,71 @@ export const miscellaneous: Miscellaneous[] = [
         isbn_13: "9781429914567",
       },
       {
+        name: "One Dark Window",
+        id: "8RY_EAAAQBAJ",
+        isbn_13: "9780316312585",
+      },
+      {
         name: "Percy Jackson: The Lightning Thief",
         id: "FFTJDYx_ZiEC",
         isbn_13: "9781423131892",
       },
+      {
+        name: "Red Rising",
+        id: "nPF9n0SwstMC",
+        isbn_13: "9780345539793",
+      },
+      {
+        name: "Lockwood & Co. #1: The Screaming Staircase",
+        id: "CmisjwEACAAJ",
+        isbn_13: "9781484785164",
+      },
+      {
+        name: "Scythe",
+        id: "_6TAEAAAQBAJ",
+        isbn_13: "9781442472433",
+      },
+      {
+        name: "Six of Crows",
+        id: "yhIRBwAAQBAJ",
+        isbn_13: "9781627795227",
+      },
+      {
+        name: "Still Life",
+        id: "NzfzCYqsMOkC",
+        isbn_13: "9781429967235",
+      },
+      {
+        name: "Strange the Dreamer",
+        id: "rD5UCwAAQBAJ",
+        isbn_13: "9780316341646",
+      },
       { name: "The Tainted Cup", id: "-YK9EAAAQBAJ", isbn_13: "9781984820723" },
+      {
+        name: "Throne of Glass",
+        id: "D8GIcKPGNR8C",
+        isbn_13: "9781408832332",
+      },
+      {
+        name: "Thursday Murder Club",
+        id: "Tus2EAAAQBAJ",
+        isbn_13: "9781984880987",
+      },
+      {
+        name: "Viscious",
+        id: "vYSArk8vNCYC",
+        isbn_13: "9781466822177",
+      },
+      {
+        name: "The Way of the Kings",
+        id: "QVn-CgAAQBAJ",
+        isbn_13: "9780765376671",
+      },
+      {
+        name: "The Will of the Many",
+        id: "jlGUEAAAQBAJ",
+        isbn_13: "9781982141196",
+      },
     ],
   },
 ];
