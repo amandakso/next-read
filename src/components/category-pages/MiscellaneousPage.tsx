@@ -5,12 +5,13 @@ import { generatePrompt } from "../../utilities/helpers";
 
 export default function MiscellaneousPage() {
   const [miscPrompt, setMiscPrompt] = useState<string>("");
+  const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
 
   async function handleMiscClick() {
     // get and display random misc prompt
     const prompt = generatePrompt(miscellaneous);
     setMiscPrompt(prompt.prompt);
-    console.log(prompt.prompt);
+    setIsPrompt(true);
   }
 
   return (
@@ -26,7 +27,7 @@ export default function MiscellaneousPage() {
         <Button onClick={handleMiscClick} colorScheme="teal">
           Generate Prompt
         </Button>
-        <Text>{miscPrompt}</Text>
+        {isPromptGenerated ? <Text>{miscPrompt}</Text> : null}
       </Flex>
     </Container>
   );
