@@ -1,5 +1,9 @@
-import { Container } from "@chakra-ui/react";
+import { Container, Text } from "@chakra-ui/react";
 
 export default function MiscellaneousPage() {
-  return <Container></Container>;
+  return (
+    <Container>
+      <Text>Section in Progress. Please Check Back in the Future.</Text>
+    </Container>
+  );
 }
