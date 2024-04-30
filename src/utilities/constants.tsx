@@ -430,7 +430,7 @@ interface Miscellaneous {
   results: MiscBook[];
 }
 
-const miscPhrase: string = "Read a book: ";
+const miscPhrase: string = "Read a book ";
 
 export const miscellaneous: Miscellaneous[] = [
   // {
