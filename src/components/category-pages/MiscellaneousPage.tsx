@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Container, Flex, Heading, Button, Text } from "@chakra-ui/react";
-import { miscellaneous } from "../../utilities/constants";
+import { BookInterface, miscellaneous } from "../../utilities/constants";
 import {
   generatePrompt,
   searchGoogleBook,
   selectBooks,
 } from "../../utilities/helpers";
+import Books from "../Books";
 
 export default function MiscellaneousPage() {
   const [miscPrompt, setMiscPrompt] = useState<string>("");
   const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
+  const [books, setBooks] = useState<BookInterface[]>([]);
 
   async function handleMiscClick() {
     // get and display random misc prompt
@@ -29,6 +31,13 @@ export default function MiscellaneousPage() {
         bookResults.push(result);
       }
     }
+
+    // display books
+    if (bookResults.length <= 0) {
+      setBooks([]);
+    } else {
+      setBooks(bookResults);
+    }
   }
 
   return (
@@ -45,6 +54,14 @@ export default function MiscellaneousPage() {
           Generate Prompt
         </Button>
         {isPromptGenerated ? <Text>{miscPrompt}</Text> : null}
+        {books.length > 0 ? (
+          <>
+            <Text>Book Recommendations: </Text>
+            <Books books={books} category={"misc"} />
+          </>
+        ) : (
+          <Text>Unable to get books.</Text>
+        )}
       </Flex>
     </Container>
   );
