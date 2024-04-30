@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { Container, Flex, Heading, Button, Text } from "@chakra-ui/react";
-import { miscellaneous, BookInterface } from "../../utilities/constants";
+import { miscellaneous } from "../../utilities/constants";
+import { generatePrompt } from "../../utilities/helpers";
 
 export default function MiscellaneousPage() {
+  const [miscPrompt, setMiscPrompt] = useState<string>("");
+
+  async function handleMiscClick() {
+    // get and display random misc prompt
+    const prompt = generatePrompt(miscellaneous);
+    setMiscPrompt(prompt.prompt);
+    console.log(prompt.prompt);
+  }
+
   return (
     <Container>
       <Flex
@@ -13,9 +23,11 @@ export default function MiscellaneousPage() {
         <Heading as="h1" size="lg">
           Miscellaneous: uncategorized prompts
         </Heading>
-        <Button colorScheme="teal">Generate Prompt</Button>
+        <Button onClick={handleMiscClick} colorScheme="teal">
+          Generate Prompt
+        </Button>
+        <Text>{miscPrompt}</Text>
       </Flex>
-      <Text>Section in Progress. Please Check Back in the Future.</Text>
     </Container>
   );
 }
