@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Container, Flex, Heading, Button, Text } from "@chakra-ui/react";
 import { miscellaneous } from "../../utilities/constants";
-import { generatePrompt } from "../../utilities/helpers";
+import {
+  generatePrompt,
+  searchGoogleBook,
+  selectBooks,
+} from "../../utilities/helpers";
 
 export default function MiscellaneousPage() {
   const [miscPrompt, setMiscPrompt] = useState<string>("");
@@ -12,6 +16,19 @@ export default function MiscellaneousPage() {
     const prompt = generatePrompt(miscellaneous);
     setMiscPrompt(prompt.prompt);
     setIsPrompt(true);
+
+    // select book suggestions to display
+    const booksToDisplay = selectBooks(prompt.results);
+
+    // get book data from selected books
+    const bookResults = [];
+
+    for (const item of booksToDisplay) {
+      const result = await searchGoogleBook(item.id);
+      if (result) {
+        bookResults.push(result);
+      }
+    }
   }
 
   return (
