@@ -46,6 +46,33 @@ export async function fetchBooks(url: string) {
   }
 }
 
+// search for a book with google api
+
+export async function searchGoogleBook(volumeid: string) {
+  const api_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
+  try {
+    const res = await fetch(
+      `https://www.googleapis.com/books/v1/volumes/${volumeid}?fields=id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink&key=${api_key}`,
+      {
+        method: "GET",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const resJson = await res.json();
+    if (resJson.error) {
+      return false;
+    } else {
+      return resJson;
+    }
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
 export function selectBooks<Type>(bookArray: Type[]) {
   if (bookArray) {
     const maxBooksDisplayed = 3;
