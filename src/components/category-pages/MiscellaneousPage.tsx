@@ -10,10 +10,16 @@ import Books from "../Books";
 
 export default function MiscellaneousPage() {
   const [miscPrompt, setMiscPrompt] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isPromptGenerated, setIsPrompt] = useState<boolean>(false);
+  const [isBooksFetched, setIsBooks] = useState<boolean>(false);
   const [books, setBooks] = useState<BookInterface[]>([]);
 
   async function handleMiscClick() {
+    //reset values
+    setIsLoading(true);
+    setIsBooks(false);
+
     // get and display random misc prompt
     const prompt = generatePrompt(miscellaneous);
     setMiscPrompt(prompt.prompt);
@@ -38,6 +44,9 @@ export default function MiscellaneousPage() {
     } else {
       setBooks(bookResults);
     }
+
+    setIsLoading(false);
+    setIsBooks(true);
   }
 
   return (
@@ -50,18 +59,25 @@ export default function MiscellaneousPage() {
         <Heading as="h1" size="lg">
           Miscellaneous: uncategorized prompts
         </Heading>
-        <Button onClick={handleMiscClick} colorScheme="teal">
+        <Button
+          isLoading={isLoading}
+          onClick={handleMiscClick}
+          colorScheme="teal"
+        >
           Generate Prompt
         </Button>
         {isPromptGenerated ? <Text>{miscPrompt}</Text> : null}
-        {books.length > 0 ? (
-          <>
-            <Text>Book Recommendations: </Text>
-            <Books books={books} category={"misc"} />
-          </>
-        ) : (
-          <Text>Unable to get books.</Text>
-        )}
+        {isLoading ? <Text>Getting books...</Text> : null}
+        {isBooksFetched ? (
+          books.length > 0 ? (
+            <>
+              <Text>Book Recommendations: </Text>
+              <Books books={books} category={"misc"} />
+            </>
+          ) : (
+            <Text>Unable to get books.</Text>
+          )
+        ) : null}
       </Flex>
     </Container>
   );
