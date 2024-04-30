@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Heading, Button, Text, Container, Flex } from "@chakra-ui/react";
-import { selectBooks } from "../../utilities/helpers";
+import { selectBooks, searchGoogleBook } from "../../utilities/helpers";
 import { favorites, BookInterface } from "../../utilities/constants";
 import Books from "../../components/Books";
 
@@ -8,31 +8,6 @@ export default function PersonalFavesPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isBooksFetched, setIsBooks] = useState<boolean>(false);
   const [books, setBooks] = useState<BookInterface[]>([]);
-
-  async function searchBook(volumeid: string) {
-    const api_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
-    try {
-      const res = await fetch(
-        `https://www.googleapis.com/books/v1/volumes/${volumeid}?fields=id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink&key=${api_key}`,
-        {
-          method: "GET",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      const resJson = await res.json();
-      if (resJson.error) {
-        return false;
-      } else {
-        return resJson;
-      }
-    } catch (err) {
-      console.error(err);
-      return false;
-    }
-  }
 
   async function handleFavesClick() {
     // reset values
@@ -46,7 +21,7 @@ export default function PersonalFavesPage() {
     const bookResults = [];
 
     for (const item of booksToDisplay) {
-      const result = await searchBook(item.id);
+      const result = await searchGoogleBook(item.id);
       if (result) {
         bookResults.push(result);
       }
