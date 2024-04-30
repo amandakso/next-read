@@ -25,6 +25,7 @@ const LinkItems: Array<LinkItemProps> = [
   { name: "Genre", url: "genre" },
   { name: "Theme", url: "theme" },
   { name: "Best Sellers", url: "best-sellers" },
+  { name: "Miscellaneous", url: "miscellaneous" },
   { name: "Personal Faves", url: "faves" },
   { name: "Customize", url: "customize" },
 ];
