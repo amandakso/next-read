@@ -8,14 +8,19 @@ import Book from "./Book";
 interface BooksProps {
   books?: BookInterface[];
   bestsellers?: BestSellersBookInterface[];
-  category: "genre" | "theme" | "bestseller" | "favorite" | undefined;
+  category: "genre" | "theme" | "bestseller" | "favorite" | "misc" | undefined;
 }
 
 export default function Books(props: BooksProps) {
   const books = props.books;
   const bestsellers = props.bestsellers;
-  const category: "genre" | "theme" | "bestseller" | "favorite" | undefined =
-    props.category;
+  const category:
+    | "genre"
+    | "theme"
+    | "bestseller"
+    | "favorite"
+    | "misc"
+    | undefined = props.category;
 
   return (
     <>
@@ -24,7 +29,8 @@ export default function Books(props: BooksProps) {
           <Center>
             {category == "genre" ||
             category == "theme" ||
-            category == "favorite" ? (
+            category == "favorite" ||
+            category == "misc" ? (
               <>
                 <Flex gap="5" flexWrap={{ base: "wrap", md: "nowrap" }}>
                   {books?.map((book: BookInterface, i: number) => {
