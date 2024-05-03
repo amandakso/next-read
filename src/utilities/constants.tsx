@@ -423,7 +423,7 @@ interface MiscBook {
   isbn_13: string;
 }
 
-interface MiscellaneousInterface {
+export interface MiscellaneousInterface {
   category: "misc";
   name: string;
   prompt: string;
