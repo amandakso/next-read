@@ -423,7 +423,7 @@ interface MiscBook {
   isbn_13: string;
 }
 
-interface Miscellaneous {
+interface MiscellaneousInterface {
   category: "misc";
   name: string;
   prompt: string;
@@ -432,7 +432,7 @@ interface Miscellaneous {
 
 const miscPhrase: string = "Read a book ";
 
-export const miscellaneous: Miscellaneous[] = [
+export const miscellaneous: MiscellaneousInterface[] = [
   // {
   //   category: "misc",
   //   name: "prompt name",
