@@ -19,8 +19,13 @@ import {
   genres,
   themes,
   bestSellers,
+  miscellaneous,
+  MiscellaneousInterface,
   BestSellersBookInterface,
   BookInterface,
+  GenreInterface,
+  ThemeInterface,
+  BestSellersInterface,
 } from "../../utilities/constants";
 import {
   generatePrompt,
@@ -30,7 +35,7 @@ import {
 import Books from "../Books";
 
 export default function CustomizePage() {
-  const prompts = [...genres, ...themes, ...bestSellers];
+  const prompts = [...genres, ...themes, ...bestSellers, ...miscellaneous];
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
     prompts.map(() => false)
   );
@@ -38,7 +43,7 @@ export default function CustomizePage() {
   const [showResults, setShowResults] = useState<boolean>(false);
   const [selectedPrompt, setSelectedPrompt] = useState<string>("");
   const [promptCategory, setPromptCategory] = useState<
-    "bestseller" | "genre" | "theme" | undefined
+    "bestseller" | "genre" | "theme" | "misc" | undefined
   >(undefined);
   const [books, setBooks] = useState<
     BestSellersBookInterface[] | BookInterface[]
@@ -68,30 +73,42 @@ export default function CustomizePage() {
     const google_key = import.meta.env.VITE_GOOGLE_BOOKS_KEY;
     const nyt_key = import.meta.env.VITE_NYT_KEY;
 
-    const category: "bestseller" | "genre" | "theme" =
+    const category: "bestseller" | "genre" | "theme" | "misc" =
       randomizedPrompt.category;
 
     setPromptCategory(category);
+
+    // set url
     let url: string = "";
 
-    switch (category) {
-      case "genre":
-        url = `https://www.googleapis.com/books/v1/volumes?q=subject:"${randomizedPrompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${google_key}`;
-        break;
-      case "theme":
-        url = `https://www.googleapis.com/books/v1/volumes?q=subject:${randomizedPrompt.search}&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${google_key}`;
-
-        break;
-      case "bestseller":
-        url = `https://api.nytimes.com/svc/books/v3/lists/current/${randomizedPrompt.search}.json?api-key=${nyt_key}`;
-        break;
-      default:
-        // invalid category
-        setIsLoading(false);
-        return;
+    if (category == "genre") {
+      const genrePrompt = randomizedPrompt as GenreInterface;
+      url = `https://www.googleapis.com/books/v1/volumes?q=subject:"${genrePrompt.search}"&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${google_key}`;
+    } else if (category == "theme") {
+      const themePrompt = randomizedPrompt as ThemeInterface;
+      url = `https://www.googleapis.com/books/v1/volumes?q=subject:${themePrompt.search}&langRestrict="en"&fields=items(id, volumeInfo.title, volumeInfo.subtitle, volumeInfo.authors, volumeInfo.publishedDate, volumeInfo.description, volumeInfo.pageCount, volumeInfo.averageRating, volumeInfo.ratingsCount, volumeInfo.maturityRating, volumeInfo.imageLinks, volumeInfo.previewLink)&key=${google_key}`;
+    } else if (category == "bestseller") {
+      const bestSellerPrompt = randomizedPrompt as BestSellersInterface;
+      url = `https://api.nytimes.com/svc/books/v3/lists/current/${bestSellerPrompt.search}.json?api-key=${nyt_key}`;
+    } else if (category == "misc") {
+      // do nothing
+    } else {
+      setIsLoading(false);
+      return;
     }
 
+    let booksToDisplay;
+
     // fetch books
+
+    if (category == "misc") {
+      const miscPrompt = randomizedPrompt as MiscellaneousInterface;
+      booksToDisplay = selectBooks(miscPrompt.results);
+      console.log(booksToDisplay);
+      setIsLoading(false);
+      return;
+    }
+
     fetchBooks(url).then((response) => {
       if (response.status !== 200) {
         // unable to fetch books
@@ -100,7 +117,6 @@ export default function CustomizePage() {
       } else {
         // display books
         const data = response.data;
-        let booksToDisplay;
         if (category == "genre" || category == "theme") {
           booksToDisplay = selectBooks(data.items);
         } else {
