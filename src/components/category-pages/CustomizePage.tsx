@@ -31,6 +31,7 @@ import {
   generatePrompt,
   fetchBooks,
   selectBooks,
+  searchGoogleBook,
 } from "../../utilities/helpers";
 import Books from "../Books";
 
@@ -99,15 +100,27 @@ export default function CustomizePage() {
 
     let booksToDisplay;
 
-    // fetch books
+    // fetch books for misc
 
     if (category == "misc") {
       const miscPrompt = randomizedPrompt as MiscellaneousInterface;
-      booksToDisplay = selectBooks(miscPrompt.results);
-      console.log(booksToDisplay);
+      const selectedBooks = selectBooks(miscPrompt.results);
+      booksToDisplay = [];
+      for (const item of selectedBooks) {
+        const result = await searchGoogleBook(item.id);
+        if (result) {
+          booksToDisplay.push(result);
+        }
+      }
+
+      // display books
+      setBooks(booksToDisplay);
       setIsLoading(false);
+      setShowResults(true);
       return;
     }
+
+    // fetch books from non-misc categories
 
     fetchBooks(url).then((response) => {
       if (response.status !== 200) {
