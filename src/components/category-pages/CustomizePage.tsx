@@ -154,6 +154,15 @@ export default function CustomizePage() {
         <Heading as={"h1"} size="lg">
           Customize: Choose prompts to include in generating a random TBR prompt
         </Heading>
+        <Heading as={"h2"} size="md">
+          Selected Prompts (
+          {
+            checkedItems.filter((item) => {
+              return item == true;
+            }).length
+          }
+          )
+        </Heading>
         {!showResults ? (
           <Button
             isLoading={isLoading}
