@@ -1401,7 +1401,6 @@ export const favorites: Favorite[] = [
     id: "NRWlitmahXkC",
     isbn_13: "9780156030304",
   },
-  { name: "Ender's Game", id: "jaM7DwAAQBAJ", isbn_13: "9780765394866" },
   { name: "A Deadly Education", id: "0YDJDwAAQBAJ", isbn_13: "9780593128497" },
 ];
 
