@@ -628,8 +628,8 @@ export const miscellaneous: MiscellaneousInterface[] = [
       },
       {
         name: "One For My Enemy",
-        id: "akeXzwEACAAJ",
-        isbn_13: "9781250905581",
+        id: "P310EAAAQBAJ",
+        isbn_13: "9781035011605",
       },
       {
         name: "Seven Days in June",
