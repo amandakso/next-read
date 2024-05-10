@@ -5,7 +5,7 @@ import logo from "../assets/storytelling.png";
 export default function About() {
   return (
     <Box minHeight={"calc(100vh)"}>
-      <Heading as="h1" pt={"2rem"} textAlign={"center"}>
+      <Heading as="h1" pt={"5rem"} textAlign={"center"}>
         About Next Read
       </Heading>
       <Text fontSize="2xl" textAlign={"center"} pl={"5rem"} pr={"5rem"}>
