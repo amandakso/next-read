@@ -53,6 +53,7 @@ export default function GenrePage() {
           flexDirection={"column"}
           alignItems={"center"}
           justifyContent={"center"}
+          pt={"1rem"}
         >
           <Heading as="h1" size="lg">
             Genre: TBR prompts based on the category/style of a book{" "}
