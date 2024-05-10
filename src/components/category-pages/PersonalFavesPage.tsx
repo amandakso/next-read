@@ -44,6 +44,7 @@ export default function PersonalFavesPage() {
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"center"}
+        pt={"1rem"}
       >
         <Heading as="h1" size="lg">
           Favorites: Next Read's book recomendations

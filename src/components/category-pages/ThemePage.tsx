@@ -53,6 +53,7 @@ export default function ThemePage() {
           flexDirection={"column"}
           alignItems={"center"}
           justifyContent={"center"}
+          pt={"1rem"}
         >
           <Heading as="h3" size="lg">
             Theme: TBR prompts based on the themes in a book

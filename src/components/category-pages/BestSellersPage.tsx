@@ -109,6 +109,7 @@ export default function BestSellersPage() {
           flexDirection={"column"}
           alignItems={"center"}
           justifyContent={"center"}
+          pt={"1rem"}
         >
           <Heading as={"h1"} size="lg">
             Best Sellers: TBR prompts based on the New York Times Best Sellers

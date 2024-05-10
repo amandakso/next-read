@@ -150,6 +150,7 @@ export default function CustomizePage() {
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"center"}
+        pt={"1rem"}
       >
         <Heading as={"h1"} size="lg">
           Customize: Choose prompts to include in generating a random TBR prompt

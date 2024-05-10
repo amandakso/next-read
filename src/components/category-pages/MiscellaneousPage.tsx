@@ -55,6 +55,7 @@ export default function MiscellaneousPage() {
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"center"}
+        pt={"1rem"}
       >
         <Heading as="h1" size="lg">
           Miscellaneous: uncategorized prompts
