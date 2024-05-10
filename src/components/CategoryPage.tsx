@@ -46,6 +46,4 @@ export default function CategoryPage(props: CategoryPageProps) {
         return <CustomizePage />;
     }
   }
-
-  return <h1>Category: {category}</h1>;
 }
