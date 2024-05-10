@@ -51,6 +51,8 @@ export default function Nav() {
         bg={useColorModeValue("gray.100", "gray.900")}
         px={4}
         width={"100vw"}
+        position={"fixed"}
+        zIndex={200}
       >
         <Flex
           h={16}
