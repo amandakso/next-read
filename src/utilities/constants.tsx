@@ -503,8 +503,8 @@ export const miscellaneous: MiscellaneousInterface[] = [
       },
       {
         name: "Tress of the Emerald Sea",
-        id: "X-REzwEACAAJ",
-        isbn_13: "9781938570322",
+        id: "EzSiEAAAQBAJ",
+        isbn_13: "9781938570346",
       },
     ],
   },
