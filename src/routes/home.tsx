@@ -51,6 +51,7 @@ export default function Home() {
         <Flex
           width={"100vw"}
           height={"100vh"}
+          pt={"5rem"}
           alignContent={"center"}
           justifyContent={"center"}
           flexDir={"column"}
