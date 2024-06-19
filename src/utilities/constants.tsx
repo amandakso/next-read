@@ -529,6 +529,11 @@ export const miscellaneous: MiscellaneousInterface[] = [
         isbn_13: "9780316556330",
       },
       {
+        name: "Coraline",
+        id: "8hUPYZp_COYC",
+        isbn_13: "9781408818626",
+      },
+      {
         name: "Dune",
         id: "v_P2DwAAQBAJ",
         isbn_13: "9780441005901",
@@ -841,6 +846,11 @@ export const miscellaneous: MiscellaneousInterface[] = [
       },
       { name: "Charlotte's Web", id: "WwN4BgAAQBAJ", isbn_13: "9780062406781" },
       {
+        name: "Coraline",
+        id: "8hUPYZp_COYC",
+        isbn_13: "9781408818626",
+      },
+      {
         name: "Days at the Morisaki Bookshop",
         id: "Vxi2EAAAQBAJ",
         isbn_13: "9781786583253",
@@ -849,8 +859,8 @@ export const miscellaneous: MiscellaneousInterface[] = [
       { name: "The Giver", id: "oZRlYDfxXpQC", isbn_13: "9780385732550" },
       {
         name: "The Lion, the Witch, and the Wardrobe",
-        id: "H0DX00Nz2EYC",
-        isbn_13: "9780590405959",
+        id: "rz7J9fFShpkC",
+        isbn_13: "9780064409421",
       },
       {
         name: "Matilda",
@@ -1265,8 +1275,8 @@ export const miscellaneous: MiscellaneousInterface[] = [
       },
       {
         name: "The Lion, the Witch, and the Wardrobe",
-        id: "H0DX00Nz2EYC",
-        isbn_13: "9780590405959",
+        id: "rz7J9fFShpkC",
+        isbn_13: "9780064409421",
       },
       {
         name: "The Final Empire",
@@ -1368,6 +1378,11 @@ export const miscellaneous: MiscellaneousInterface[] = [
       },
       { name: "Charlotte's Web", id: "WwN4BgAAQBAJ", isbn_13: "9780062406781" },
       {
+        name: "Coraline",
+        id: "8hUPYZp_COYC",
+        isbn_13: "9781408818626",
+      },
+      {
         name: "Daisy Jones and the Six",
         id: "zZJfDwAAQBAJ",
         isbn_13: "9781524798635",
@@ -1438,6 +1453,11 @@ export const miscellaneous: MiscellaneousInterface[] = [
         name: "Pride & Prejudice",
         id: "fuQDzQEACAAJ",
         isbn_13: "9780141439518",
+      },
+      {
+        name: "The Princess Bride",
+        id: "DhxUDEbqaZQC",
+        isbn_13: "9780156035422",
       },
       {
         name: "Red, White & Royal Blue",
