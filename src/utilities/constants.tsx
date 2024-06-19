@@ -1345,7 +1345,121 @@ export const miscellaneous: MiscellaneousInterface[] = [
     category: "misc",
     name: "TV/Movie Adaptation",
     prompt: miscPhrase + "with a TV/Movie Adaptation",
-    results: [],
+    results: [
+      {
+        name: "A Game of Thrones",
+        id: "5NomkK4EV68C",
+        isbn_13: "9780553897845",
+      },
+      {
+        name: "A Good Girl's Guide To Murder",
+        id: "qsudDwAAQBAJ",
+        isbn_13: "9781984896384",
+      },
+      {
+        name: "A Man Called Ove",
+        id: "7mtNAgAAQBAJ",
+        isbn_13: "9781476738031",
+      },
+      {
+        name: "A Series of Unfortunate Events: A Bad Beginning",
+        id: "fdFiLwEACAAJ",
+        isbn_13: "9781405266062",
+      },
+      { name: "Charlotte's Web", id: "WwN4BgAAQBAJ", isbn_13: "9780062406781" },
+      {
+        name: "Daisy Jones and the Six",
+        id: "zZJfDwAAQBAJ",
+        isbn_13: "9781524798635",
+      },
+      {
+        name: "Dune",
+        id: "v_P2DwAAQBAJ",
+        isbn_13: "9780441005901",
+      },
+      {
+        name: "Emma",
+        id: "RzD2i9kC9SAC",
+        isbn_13: "9780573698996",
+      },
+      { name: "Fahrenheit 451", id: "AU9YtwAACAAJ", isbn_13: "9780671872298" },
+      { name: "The Giver", id: "oZRlYDfxXpQC", isbn_13: "9780385732550" },
+      {
+        name: "The Hate U Give",
+        id: "IbFuuQEACAAJ",
+        isbn_13: "9781406387933",
+      },
+      {
+        name: "Hunger Games",
+        id: "_zSzAwAAQBAJ",
+        isbn_13: "9781407133171",
+      },
+      {
+        name: "I am Number Four",
+        id: "ZO7wFUFKtw4C",
+        isbn_13: "9780062000767",
+      },
+      {
+        name: "It",
+        id: "KiszDwAAQBAJ",
+        isbn_13: "9781501175466",
+      },
+      {
+        name: "Life of Pi",
+        id: "c3JeEAAAQBAJ",
+        isbn_13: "9781350295698",
+      },
+      {
+        name: "The Lion, the Witch, and the Wardrobe",
+        id: "H0DX00Nz2EYC",
+        isbn_13: "9780590405959",
+      },
+      {
+        name: "Lockwood & Co. #1: The Screaming Staircase",
+        id: "CmisjwEACAAJ",
+        isbn_13: "9781484785164",
+      },
+      {
+        name: "The Martian",
+        id: "MQeHAAAAQBAJ",
+        isbn_13: "9780804139038",
+      },
+      {
+        name: "Matilda",
+        id: "_uIlE7DkAzYC",
+        isbn_13: "9780141929453",
+      },
+      {
+        name: "Percy Jackson: The Lightning Thief",
+        id: "FFTJDYx_ZiEC",
+        isbn_13: "9781423131892",
+      },
+      {
+        name: "Pride & Prejudice",
+        id: "fuQDzQEACAAJ",
+        isbn_13: "9780141439518",
+      },
+      {
+        name: "Red, White & Royal Blue",
+        id: "_jNwDwAAQBAJ",
+        isbn_13: "9781250316776",
+      },
+      {
+        name: "Sense & Sensibility",
+        id: "3FkUf4Vd6sAC",
+        isbn_13: "9781551111254",
+      },
+      {
+        name: "Six of Crows",
+        id: "yhIRBwAAQBAJ",
+        isbn_13: "9781627795227",
+      },
+      {
+        name: "To Kill a Mockingbird",
+        id: "PGR2AwAAQBAJ",
+        isbn_13: "9780062368683",
+      },
+    ],
   },
 ];
 
