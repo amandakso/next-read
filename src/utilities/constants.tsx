@@ -1341,6 +1341,12 @@ export const miscellaneous: MiscellaneousInterface[] = [
       },
     ],
   },
+  {
+    category: "misc",
+    name: "TV/Movie Adaptation",
+    prompt: miscPhrase + "with a TV/Movie Adaptation",
+    results: [],
+  },
 ];
 
 // Favorites
