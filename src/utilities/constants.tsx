@@ -1344,7 +1344,7 @@ export const miscellaneous: MiscellaneousInterface[] = [
   {
     category: "misc",
     name: "TV/Movie Adaptation",
-    prompt: miscPhrase + "with a TV/Movie Adaptation",
+    prompt: miscPhrase + "with a TV series or movie adaptation",
     results: [
       {
         name: "A Game of Thrones",
@@ -1411,8 +1411,8 @@ export const miscellaneous: MiscellaneousInterface[] = [
       },
       {
         name: "The Lion, the Witch, and the Wardrobe",
-        id: "H0DX00Nz2EYC",
-        isbn_13: "9780590405959",
+        id: "rz7J9fFShpkC",
+        isbn_13: "9780064409421",
       },
       {
         name: "Lockwood & Co. #1: The Screaming Staircase",
